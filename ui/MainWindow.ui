@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QWidget" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>880</width>
+    <height>580</height>
+   </size>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>170</red>
+        <green>170</green>
+        <blue>170</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="127">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Accent">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>170</red>
+        <green>170</green>
+        <blue>170</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="127">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Accent">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>170</red>
+        <green>170</green>
+        <blue>170</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>250</green>
+        <blue>252</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="127">
+        <red>127</red>
+        <green>127</green>
+        <blue>127</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Accent">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="font">
+   <font>
+    <family>Slate</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>AdoraFlow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../assets/icons/200x200_logo.png</normaloff>../assets/icons/200x200_logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#mainWindow 	{
+	background: #F7FAFC;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="nav_menu" native="true">
+     <property name="styleSheet">
+      <string notr="true">#nav_menu {
+	background: #1F4744;
+}
+
+#line, #line_2, #line_3, #line_4 {
+	background: #1F4744;
+}</string>
+     </property>
+     <layout class="QVBoxLayout" name="nav_side_menu">
+      <property name="spacing">
+       <number>7</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="system_info_labels">
+        <item alignment="Qt::AlignmentFlag::AlignHCenter">
+         <widget class="QLabel" name="system_date_label">
+          <property name="font">
+           <font>
+            <family>Slate</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #DBF0EE;</string>
+          </property>
+          <property name="text">
+           <string>sysdate</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignmentFlag::AlignHCenter">
+         <widget class="QLabel" name="system_time_label">
+          <property name="font">
+           <font>
+            <family>Slate</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #DBF0EE</string>
+          </property>
+          <property name="text">
+           <string>systime</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="menu_title_container" stretch="0,0,0,0">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignmentFlag::AlignLeft">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../assets/icons/50x50_logo.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignmentFlag::AlignLeft">
+         <widget class="QLabel" name="title_label">
+          <property name="font">
+           <font>
+            <family>Slate</family>
+            <pointsize>16</pointsize>
+            <fontweight>Medium</fontweight>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">padding-top: 10px;
+padding-bottom: 10px;
+color: #DBF0EE;
+letter-spacing: 1px;</string>
+          </property>
+          <property name="text">
+           <string>AdoraFlow</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nav_dashboard">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_dashboard {
+	text-align: left;
+	color: #93BFB8;	
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15;
+	border-radius: 8px;
+}
+
+#nav_dashboard:checked {
+	color: white;
+	font-size: 15pt;
+	padding-left: 20;
+	background-color: #394E4D;
+	background-color: rgba(250, 250, 250, 60);
+}
+
+#nav_dashboard:hover, #nav_dashboard:checked {
+	background-color: rgba(250, 250, 250, 30);
+}
+</string>
+        </property>
+        <property name="text">
+         <string> Dashboard</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/dash.svg</normaloff>../assets/icons/dash.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">nav_button_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nav_patients">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_patients {
+	text-align: left;
+	color: #94D1CC;	
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15;
+	border-radius: 8px;
+
+}
+
+#nav_patients:checked {
+	color: white;
+	font-size: 15pt;
+	padding-left: 20;
+	background-color: rgba(250, 250, 250, 60);
+
+}
+
+#nav_patients:hover, #nav_patients:checked {
+	background-color: rgba(250, 250, 250, 30);
+}</string>
+        </property>
+        <property name="text">
+         <string> Patients</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/person.svg</normaloff>../assets/icons/person.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">nav_button_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nav_appointments">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_appointments{ 
+	text-align: left;
+	color: #94D1CC;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15;
+	border-radius: 8px;
+
+}
+
+#nav_appointments:checked {
+	color: white;
+	font-size: 15pt;
+	padding-left: 20;
+	background-color: rgba(250, 250, 250, 60);
+
+}
+
+#nav_appointments:hover, #nav_appointments:checked {
+	background-color: rgba(250, 250, 250, 30);
+
+}</string>
+        </property>
+        <property name="text">
+         <string>  Appointments</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/calendar.svg</normaloff>../assets/icons/calendar.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">nav_button_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nav_treatments">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_treatments{ 
+	text-align: left;
+	color: #94D1CC;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15;
+	border-radius: 8px;
+
+}
+
+#nav_treatments:checked {
+	color: white;
+	font-size: 15pt;
+	padding-left: 20;
+	background-color: rgba(250, 250, 250, 60);
+
+}
+
+#nav_treatments:hover, #nav_treatements:checked {
+
+	background-color: rgba(250, 250, 250, 30);
+
+}</string>
+        </property>
+        <property name="text">
+         <string>  Treatments</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/notes.svg</normaloff>../assets/icons/notes.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">nav_button_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nav_payments">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_payments{ 
+	text-align: left;
+	color: #94D1CC;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15;
+	border-radius: 8px;
+
+}
+
+#nav_payments:checked {
+	color: white;
+	font-size: 15pt;
+	padding-left: 20;
+	background-color: rgba(250, 250, 250, 60);
+
+}
+
+#nav_payments:hover, #nav_payments:checked {
+	background-color: rgba(250, 250, 250, 30);
+
+}</string>
+        </property>
+        <property name="text">
+         <string>  Payments</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/card.svg</normaloff>../assets/icons/card.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">nav_button_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nav_reports">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_reports{ 
+	text-align: left;
+	color: #94D1CC;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15;
+	border-radius: 8px;
+
+}
+
+#nav_reports:checked {
+	color: white;
+	font-size: 15pt;
+	padding-left: 20;
+	background-color: rgba(250, 250, 250, 60);
+
+}
+
+#nav_reports:hover, #nav_reports:checked {
+	background-color: rgba(250, 250, 250, 30);
+
+}</string>
+        </property>
+        <property name="text">
+         <string> Reports</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/analytics.svg</normaloff>../assets/icons/analytics.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">nav_button_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nav_access">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_access{ 
+	text-align: left;
+	color: #94D1CC;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15;
+	border-radius: 8px;
+
+}
+
+#nav_access:checked {
+	color: white;
+	font-size: 15pt;
+	padding-left: 20;
+	background-color: rgba(250, 250, 250, 60);
+
+}
+
+#nav_access:hover, #nav_access:checked {
+	background-color: rgba(250, 250, 250, 30);
+
+}</string>
+        </property>
+        <property name="text">
+         <string>  Access</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/shield.svg</normaloff>../assets/icons/shield.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">nav_button_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_3">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="Line" name="line_4">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignmentFlag::AlignHCenter">
+       <widget class="QPushButton" name="nav_logout_button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#nav_logout_button {
+	border-radius: 6px;
+	color: white;
+	border: 2px solid #1F4744;
+	padding: 5px;
+	background: #2E6B66;
+}
+
+#nav_logout_button:hover {
+	border-radius: 6px;
+	color: white;
+	border: 2px solid #2E6B66;
+	padding: 5px;
+	background: #367D77;
+
+}
+#nav_logout_button:pressed {
+	background: white;
+	color: #2E6B66;
+	border: 2px solid #2E6B66;
+}</string>
+        </property>
+        <property name="text">
+         <string>Logout</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../assets/icons/logout.svg</normaloff>../assets/icons/logout.svg</iconset>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="main_body_2" native="true">
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <layout class="QVBoxLayout" name="main_body">
+      <property name="leftMargin">
+       <number>14</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="header" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QWidget" name="header_left_2" native="true">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <layout class="QVBoxLayout" name="header_left">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>1</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="system_title_label">
+                <property name="font">
+                 <font>
+                  <family>Slate</family>
+                  <pointsize>11</pointsize>
+                  <fontweight>Medium</fontweight>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">letter-spacing: 1px;
+color: #607473;
+padding-top: 5px;</string>
+                </property>
+                <property name="text">
+                 <string>DENTAL CLINIC MANAGEMENT SYSTEM</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="current_user_label">
+                <property name="font">
+                 <font>
+                  <family>Slate</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">letter-spacing: 1px;
+color: #1F4744;
+padding-left: 1px;</string>
+                </property>
+                <property name="text">
+                 <string>[welcome]</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="connect_feedback">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="mainstack_pages"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="nav_button_group"/>
+ </buttongroups>
+</ui>

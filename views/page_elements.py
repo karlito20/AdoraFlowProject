@@ -1,0 +1,48 @@
+from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtWidgets import QWidget, QDialog
+from PyQt6.uic import loadUi
+
+class ConfirmDialog(QDialog):
+    confirm = pyqtSignal()
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/confirm_dialog.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+
+        self.confirm_button.clicked.connect(lambda: self.confirm.emit())
+        self.cancel_button.clicked.connect(lambda: self.close())
+
+class DashboardListItem(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('ui/item_dashboard.ui', self)
+
+class PatientsListItem(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('ui/item_patients.ui', self)
+
+class PatientDetailsPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_patientdetails.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+
+class PatientFormPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_patientform.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+
+class AppointmentsListItem(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('ui/item_appointments.ui', self)
+
+class AppointmentFormPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_appointmentform.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+
+
