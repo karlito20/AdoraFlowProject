@@ -6,7 +6,7 @@ from views.page_elements import PatientDetailsPopup, PatientFormPopup, ConfirmDi
 
 class PatientsController:
     def __init__(self, patients_page, mainWindow_controller):
-        self.patients_page = patients_page
+        self.page = patients_page
         self.mainWindow_controller = mainWindow_controller
         self.db = self.mainWindow_controller.db
 
@@ -14,15 +14,15 @@ class PatientsController:
         self.populate_patients_list()
 
     def setup(self):
-        self.patients_page.register_button.clicked.connect(lambda: self.show_patient_form(self.patients_page))
-        self.patients_page.refresh_button.clicked.connect(lambda: self.refresh_patients_list())
+        self.page.register_button.clicked.connect(lambda: self.show_patient_form(self.page))
+        self.page.refresh_button.clicked.connect(lambda: self.refresh_patients_list())
 
     def populate_patients_list(self):
         list = self.db.patients_db.get_short_allpatients_details()
 
         for item in list:
             p = PatientsListItem()
-            p.patient_id_label.setText(str(item[0]))
+            p.patient_id_label.setText('ID: ' + str(item[0]))
             p.patient_name_label.setText(item[1])
             p.patient_phone_label.setText(item[2])
             p.patient_email_label.setText(item[3])
@@ -31,11 +31,11 @@ class PatientsController:
             patient_id = item[0]
             p.viewdetails_button.clicked.connect(lambda _, pid=patient_id: self.show_patient_details(pid))
 
-            self.patients_page.records_list_contents.addWidget(p)
+            self.page.records_list_contents.addWidget(p)
 
     def refresh_patients_list(self):
-        while self.patients_page.records_list_contents.count():
-            item = self.patients_page.records_list_contents.takeAt(0)
+        while self.page.records_list_contents.count():
+            item = self.page.records_list_contents.takeAt(0)
             widget = item.widget()
             if widget is not None:
                 widget.setParent(None)
@@ -43,11 +43,12 @@ class PatientsController:
         self.populate_patients_list()
 
     def show_patient_details(self, patient_id):
-        popup = PatientDetailsPopup(self.patients_page)
+        popup = PatientDetailsPopup(self.page)
         details = self.db.patients_db.get_full_patient_details(patient_id)
 
-        popup.id_label.setText('ID: ' + str(details[0]))
-        popup.name_label.setText(details[1] + ' ' + details[2] + ' ' + details[3])
+        print(details)
+        popup.id_label.setText(str(details[0]))
+        popup.name_label.setText(details[1] + ' ' + (details[2] or ' ') + ' ' + details[3])
         popup.bdate_label.setText(str(details[4]))
         popup.gender_label.setText(details[5])
         popup.bloodtype_label.setText(details[6])
@@ -116,7 +117,7 @@ class PatientsController:
         prompt.confirm.connect(lambda: conf())
         def conf():
             self.db.patients_db.delete_patient(id)
-            self.patients_page.feedback_label.setText('Deleted PatientID: ' + str(id))
+            self.page.feedback_label.setText('Deleted PatientID: ' + str(id))
             popup.close()
 
     def dialog_add_patient(self, form, data):
@@ -125,7 +126,7 @@ class PatientsController:
         prompt.confirm.connect(lambda: conf())
         def conf():
             self.db.patients_db.add_patient(*data)
-            self.patients_page.feedback_label.setText('Added patient: ' + data[1] + ' ' + data[2] + '.')
+            self.page.feedback_label.setText('Added patient: ' + data[1] + ' ' + data[2] + '.')
             form.close()
 
     def dialog_edit_patient(self, form, data):
@@ -134,5 +135,5 @@ class PatientsController:
         prompt.confirm.connect(lambda: conf())
         def conf():
             self.db.patients_db.edit_patient(*data)
-            self.patients_page.feedback_label.setText('PatientID: ' + str(data[0]) + ' details changed.')
+            self.page.feedback_label.setText('PatientID: ' + str(data[0]) + ' details changed.')
             form.close()

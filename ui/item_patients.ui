@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>617</width>
-    <height>71</height>
+    <height>66</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -500,6 +500,12 @@
    </property>
    <item>
     <widget class="QWidget" name="records_list_container" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>66</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">#records_list_container {
 	border: 1px solid rgba(150, 150, 150, 90);
@@ -525,10 +531,19 @@
       <property name="bottomMargin">
        <number>6</number>
       </property>
-      <item>
+      <item alignment="Qt::AlignmentFlag::AlignLeft">
        <widget class="QWidget" name="info_1_container" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-left: 15px;</string>
+        </property>
         <layout class="QVBoxLayout" name="info_container_1">
-         <item alignment="Qt::AlignmentFlag::AlignHCenter">
+         <item alignment="Qt::AlignmentFlag::AlignLeft">
           <widget class="QLabel" name="patient_name_label">
            <property name="font">
             <font>
@@ -544,7 +559,7 @@
            </property>
           </widget>
          </item>
-         <item alignment="Qt::AlignmentFlag::AlignHCenter">
+         <item alignment="Qt::AlignmentFlag::AlignLeft">
           <widget class="QLabel" name="patient_id_label">
            <property name="font">
             <font>
@@ -565,6 +580,12 @@
       </item>
       <item>
        <widget class="QWidget" name="info_2_container" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
         <layout class="QVBoxLayout" name="info_container2">
          <item alignment="Qt::AlignmentFlag::AlignLeft">
           <widget class="QLabel" name="patient_phone_label">

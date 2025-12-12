@@ -981,7 +981,7 @@ QPushButton#card1_val, #card2_val, #card3_val, #card4_val {
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>14</pointsize>
+             <pointsize>12</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -1532,7 +1532,7 @@ padding-top: 5px;</string>
               <x>0</x>
               <y>0</y>
               <width>854</width>
-              <height>370</height>
+              <height>373</height>
              </rect>
             </property>
             <property name="palette">
@@ -2018,7 +2018,7 @@ padding-top: 5px;</string>
               <number>10</number>
              </property>
              <property name="topMargin">
-              <number>20</number>
+              <number>6</number>
              </property>
              <property name="rightMargin">
               <number>10</number>

@@ -10,6 +10,12 @@
     <height>77</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>77</height>
+   </size>
+  </property>
   <property name="palette">
    <palette>
     <active>
@@ -499,15 +505,18 @@
     <widget class="QWidget" name="apt_details_container" native="true">
      <property name="styleSheet">
       <string notr="true">#apt_details_container {
-	background: white;
-	border: 1px solid rgba(90, 90, 90, 100);
+	border: 1px solid rgba(150, 150, 150, 90);
 	border-radius: 6px;
+	background: white;
 
 }
 
 #apt_details_container:hover {
 	border: 1px solid #4DB2AA;
-}</string>
+
+}
+
+ </string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
@@ -599,7 +608,7 @@
       <item>
        <widget class="QWidget" name="date_container" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignVCenter">
+         <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="date_label">
            <property name="font">
             <font>
@@ -613,6 +622,48 @@
            </property>
            <property name="text">
             <string>[date]</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="resched_button">
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Slate</family>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#resched_button {
+	background: white;
+	border-radius: 6px;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+
+}
+
+#resched_button:hover {
+	background: #2E6B66;
+	color: white;
+	border: 1px solid #367D77;
+}
+
+#resched_button:pressed {
+	background: #DBF0EE;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+}</string>
+           </property>
+           <property name="text">
+            <string>Reschedule</string>
            </property>
           </widget>
          </item>

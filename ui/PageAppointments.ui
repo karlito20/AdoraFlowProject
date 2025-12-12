@@ -541,6 +541,12 @@
       </item>
       <item alignment="Qt::AlignmentFlag::AlignRight">
        <widget class="QPushButton" name="add_appointment_button">
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
@@ -671,6 +677,19 @@ QCalendarWidget QTableView::item:selected {
 
 }</string>
            </property>
+           <property name="selectedDate">
+            <date>
+             <year>2025</year>
+             <month>12</month>
+             <day>9</day>
+            </date>
+           </property>
+           <property name="gridVisible">
+            <bool>false</bool>
+           </property>
+           <property name="selectionMode">
+            <enum>QCalendarWidget::SelectionMode::SingleSelection</enum>
+           </property>
            <property name="horizontalHeaderFormat">
             <enum>QCalendarWidget::HorizontalHeaderFormat::ShortDayNames</enum>
            </property>
@@ -764,7 +783,7 @@ color: rgb(30, 30, 30);</string>
 </string>
              </property>
              <property name="text">
-              <string>Restore</string>
+              <string>Show recent</string>
              </property>
             </widget>
            </item>
@@ -790,7 +809,7 @@ color: rgb(30, 30, 30);</string>
                  <x>0</x>
                  <y>0</y>
                  <width>300</width>
-                 <height>341</height>
+                 <height>340</height>
                 </rect>
                </property>
                <property name="styleSheet">

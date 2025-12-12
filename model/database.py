@@ -4,6 +4,7 @@ from model.appointments import Appointments
 from model.dentists import Dentists
 from model.patients import Patients
 from model.treatments import Treatments
+from model.users import Users
 
 
 class Database:
@@ -14,12 +15,13 @@ class Database:
         self.appointments_db = Appointments(self.db)
         self.treatments_db = Treatments(self.db)
         self.dentists_db = Dentists(self.db)
+        self.users_db = Users(self.db)
 
     def _createConnection(self):
         db = None
         try:
             db = mysql.connector.connect(
-                host="localhost", user="root", passwd="", database="DentalClinicDB_temp", autocommit=True
+                host="localhost", user="root", passwd="", database="DentalClinicDB_2", autocommit=True
             )
         except mysql.connector.errors.InterfaceError:
             print("Database connection failed.")

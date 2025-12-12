@@ -45,4 +45,24 @@ class AppointmentFormPopup(QDialog):
         loadUi('ui/popup_appointmentform.ui', self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
 
+class ReschedulePopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_resched.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+
+class UserAccessListItem(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('ui/item_useraccess.ui', self)
+
+class UserAccessFormPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_useraccessform.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+
+
+
+
 

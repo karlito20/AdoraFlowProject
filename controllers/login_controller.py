@@ -1,5 +1,7 @@
 from PyQt6.QtCore import QDateTime, QTimer
 
+from model.database import Database
+
 
 class LoginController:
     def __init__(self, login_page, db, application):

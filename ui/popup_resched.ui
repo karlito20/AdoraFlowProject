@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>appointment_form</class>
- <widget class="QDialog" name="appointment_form">
+ <class>popup_resched</class>
+ <widget class="QDialog" name="popup_resched">
   <property name="windowModality">
    <enum>Qt::WindowModality::ApplicationModal</enum>
   </property>
@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>418</width>
-    <height>456</height>
+    <width>344</width>
+    <height>230</height>
    </rect>
   </property>
   <property name="palette">
@@ -486,45 +486,18 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#appointment_form {
+   <string notr="true">#popup_resched {
 	border: 3px solid #2E6B66;
-	border-radius: 3px;
+
 }</string>
   </property>
   <property name="modal">
    <bool>true</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="spacing">
-    <number>12</number>
-   </property>
-   <property name="leftMargin">
-    <number>12</number>
-   </property>
-   <property name="topMargin">
-    <number>12</number>
-   </property>
-   <property name="rightMargin">
-    <number>12</number>
-   </property>
-   <property name="bottomMargin">
-    <number>12</number>
-   </property>
    <item>
-    <widget class="QWidget" name="header_container" native="true">
+    <widget class="QWidget" name="label_container" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="spacing">
-       <number>6</number>
-      </property>
-      <property name="leftMargin">
-       <number>14</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
       <item>
        <widget class="QLabel" name="header_label">
         <property name="font">
@@ -540,7 +513,7 @@
 }</string>
         </property>
         <property name="text">
-         <string>Schedule Appointment</string>
+         <string>Reschedule Appointment</string>
         </property>
        </widget>
       </item>
@@ -549,9 +522,9 @@
    </item>
    <item>
     <widget class="QWidget" name="container" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <spacer name="horizontalSpacer">
+       <spacer name="horizontalSpacer_2">
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -563,30 +536,17 @@
         </property>
        </spacer>
       </item>
-      <item alignment="Qt::AlignmentFlag::AlignRight">
-       <widget class="QWidget" name="label_container" native="true">
+      <item>
+       <widget class="QWidget" name="verticalWidget_2" native="true">
         <property name="styleSheet">
          <string notr="true">color: #1D3533;</string>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <layout class="QVBoxLayout" name="label_container_2">
          <property name="rightMargin">
-          <number>30</number>
+          <number>31</number>
          </property>
          <item alignment="Qt::AlignmentFlag::AlignRight">
           <widget class="QLabel" name="label_2">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Patient Name:</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignmentFlag::AlignRight">
-          <widget class="QLabel" name="label_4">
            <property name="font">
             <font>
              <family>Slate</family>
@@ -612,227 +572,88 @@
           </widget>
          </item>
          <item alignment="Qt::AlignmentFlag::AlignRight">
-          <widget class="QLabel" name="label_6">
+          <widget class="QLabel" name="label_4">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>End time:</string>
            </property>
           </widget>
          </item>
-         <item alignment="Qt::AlignmentFlag::AlignRight">
-          <widget class="QLabel" name="label">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Type:</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignmentFlag::AlignRight">
-          <widget class="QLabel" name="label_7">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Quantity:</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignmentFlag::AlignRight">
-          <widget class="QLabel" name="label_5">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Dentist:</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="input_container" native="true">
-        <property name="styleSheet">
-         <string notr="true">color: #1D3533;
-background: white;
-padding-left: 5px;</string>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <property name="spacing">
-          <number>9</number>
-         </property>
-         <item>
-          <widget class="QComboBox" name="patient_field">
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="date_field">
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="displayFormat">
-            <string>yyyy-MM-d</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTimeEdit" name="starttime_field">
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTimeEdit" name="endtime_field">
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="type_field">
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="quantity_field">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>50</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="dentist_field">
-           <property name="minimumSize">
-            <size>
-             <width>170</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>352</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QWidget" name="verticalWidget" native="true">
+          <property name="styleSheet">
+           <string notr="true">background: white;
+color: #1D3533;</string>
+          </property>
+          <layout class="QVBoxLayout" name="input_container">
+           <item>
+            <widget class="QDateEdit" name="date_field">
+             <property name="minimumSize">
+              <size>
+               <width>160</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="displayFormat">
+              <string>yyyy-MM-dd</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTimeEdit" name="starttime_field">
+             <property name="minimumSize">
+              <size>
+               <width>160</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTimeEdit" name="endtime_field">
+             <property name="minimumSize">
+              <size>
+               <width>160</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
-       <spacer name="horizontalSpacer_2">
+       <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -848,13 +669,10 @@ padding-left: 5px;</string>
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="buttons_container" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <property name="topMargin">
-       <number>16</number>
-      </property>
+    <widget class="QWidget" name="button_container" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <spacer name="horizontalSpacer_4">
+       <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -867,24 +685,15 @@ padding-left: 5px;</string>
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="savebutton">
+       <widget class="QPushButton" name="save_button">
         <property name="minimumSize">
          <size>
           <width>70</width>
           <height>30</height>
          </size>
         </property>
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
         <property name="styleSheet">
-         <string notr="true">#savebutton {
+         <string notr="true">#save_button {
 	background: white;
 	border-radius: 6px;
 	border: 1px solid #1F4744;
@@ -892,13 +701,13 @@ padding-left: 5px;</string>
 
 }
 
-#savebutton:hover {
+#save_button:hover {
 	background: #2E6B66;
 	color: white;
 	border: 1px solid #367D77;
 }
 
-#savebutton:pressed {
+#save_button:pressed {
 	background: #DBF0EE;
 	border: 1px solid #1F4744;
 	color: #1F4744;
@@ -910,67 +719,15 @@ padding-left: 5px;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="clearbutton">
+       <widget class="QPushButton" name="cancel_button">
         <property name="minimumSize">
          <size>
           <width>70</width>
           <height>30</height>
          </size>
         </property>
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
         <property name="styleSheet">
-         <string notr="true">#clearbutton {
-	background: white;
-	border-radius: 6px;
-	border: 1px solid #1F4744;
-	color: #1F4744;
-
-}
-
-#clearbutton:hover {
-	background: #2E6B66;
-	color: white;
-	border: 1px solid #367D77;
-}
-
-#clearbutton:pressed {
-	background: #DBF0EE;
-	border: 1px solid #1F4744;
-	color: #1F4744;
-}</string>
-        </property>
-        <property name="text">
-         <string>Clear</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="cancelbutton">
-        <property name="minimumSize">
-         <size>
-          <width>70</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#cancelbutton {
+         <string notr="true">#cancel_button {
 	border-radius: 6px;
 	color: white;
 	border: 2px solid #1F4744;
@@ -978,19 +735,19 @@ padding-left: 5px;</string>
 	background: #2E6B66;
 }
 
-#cancelbutton:hover {
+#cancel_button:hover {
 	border: 2px solid #2E6B66;
 	background: #367D77;
 
 }
-#cancelbutton:pressed {
+#cancel_button:pressed {
 	background: white;
 	color: #2E6B66;
 	border: 2px solid #2E6B66;
 }</string>
         </property>
         <property name="text">
-         <string>Close</string>
+         <string>Cancel</string>
         </property>
        </widget>
       </item>

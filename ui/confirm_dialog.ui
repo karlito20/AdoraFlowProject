@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>204</width>
+    <width>200</width>
     <height>90</height>
    </rect>
   </property>
@@ -484,6 +484,11 @@
   </property>
   <property name="windowTitle">
    <string>Confirm</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#confirm_dialog {
+	border: 3px solid #2E6B66;
+}</string>
   </property>
   <property name="modal">
    <bool>true</bool>

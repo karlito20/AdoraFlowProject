@@ -2,7 +2,7 @@ from datetime import datetime
 
 from PyQt6.QtCore import QDate, QTime
 
-from views.page_elements import AppointmentsListItem, AppointmentFormPopup, ConfirmDialog
+from views.page_elements import AppointmentsListItem, AppointmentFormPopup, ConfirmDialog, ReschedulePopup
 
 
 class AppointmentsController:
@@ -31,9 +31,11 @@ class AppointmentsController:
             p.name_label.setText(item[0])
             t = datetime.strptime(str(item[1]), '%H:%M:%S')
             p.time_label.setText(t.strftime('%I:%M %p'))
-            p.service_label.setText(item[2])
+            p.service_label.setText(item[2] or "No service")
             d = datetime.strptime(str(item[3]), '%Y-%m-%d')
             p.date_label.setText(d.strftime('%Y, %B %d'))
+            id = item[4]
+            p.resched_button.clicked.connect(lambda _, pid=id: self.show_resched_popup(pid))
             self.page.appointments_list.addWidget(p)
 
     def filter_appointments_list(self):
@@ -54,6 +56,7 @@ class AppointmentsController:
         form.show()
 
         self.set_appointment_form_options(form)
+
         def get_fields_data():
             data = []
             data.append(form.dentist_field.currentData())
@@ -63,7 +66,6 @@ class AppointmentsController:
             end = (datetime.strptime(str(form.endtime_field.text()), "%I:%M %p")).strftime("%H:%M:%S")
             data.append(start)
             data.append(end)
-
             return data
 
         def clearFields():
@@ -98,5 +100,35 @@ class AppointmentsController:
         prompt.show()
         prompt.confirm.connect(lambda: conf())
         def conf():
-            self.db.appointments_db.add_new_appointment(*data)
+            id = self.db.appointments_db.add_new_appointment(*data)
+            self.db.appointments_db.set_appointment_treatment(
+                id, form.type_field.currentData(), int(form.quantity_field.text())
+            )
+            form.close()
+
+    def show_resched_popup(self, id):
+        form = ReschedulePopup(self.page)
+        form.show()
+        data = self.db.appointments_db.get_appointment_date_time(id)
+
+        form.date_field.setDate(QDate.fromString(str(data[0]), 'yyyy-MM-dd'))
+        form.starttime_field.setTime(QTime.fromString(str(data[1]), 'HH:mm:ss'))
+        form.endtime_field.setTime(QTime.fromString(str(data[2]), 'HH:mm:ss'))
+
+        def get_fields_data():
+            data = []
+            data.append(form.date_field.text())
+            data.append((datetime.strptime(form.starttime_field.text().replace("\u202f", " "), "%I:%M %p")).strftime("%H:%M:%S"))
+            data.append((datetime.strptime(form.endtime_field.text().replace("\u202f", " "), "%I:%M %p")).strftime("%H:%M:%S"))
+            return data
+
+        form.cancel_button.clicked.connect(lambda: form.close())
+        form.save_button.clicked.connect(lambda: self.dialog_update_appointment_date_time(form, id, get_fields_data()))
+
+    def dialog_update_appointment_date_time(self, form, id, data):
+        prompt = ConfirmDialog(form)
+        prompt.show()
+        prompt.confirm.connect(lambda: conf())
+        def conf():
+            self.db.appointments_db.update_appointment_date_time(id, *data)
             form.close()
