@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>418</width>
-    <height>456</height>
+    <height>365</height>
    </rect>
   </property>
   <property name="palette">
@@ -629,32 +629,6 @@
              </widget>
             </item>
             <item alignment="Qt::AlignmentFlag::AlignRight">
-             <widget class="QLabel" name="label">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>11</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Type:</string>
-              </property>
-             </widget>
-            </item>
-            <item alignment="Qt::AlignmentFlag::AlignRight">
-             <widget class="QLabel" name="label_7">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>11</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Quantity:</string>
-              </property>
-             </widget>
-            </item>
-            <item alignment="Qt::AlignmentFlag::AlignRight">
              <widget class="QLabel" name="label_5">
               <property name="font">
                <font>
@@ -761,50 +735,6 @@ padding-left: 5px;</string>
               <property name="maximumSize">
                <size>
                 <width>400</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>11</pointsize>
-               </font>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="type_field">
-              <property name="minimumSize">
-               <size>
-                <width>200</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>400</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>11</pointsize>
-               </font>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="quantity_field">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
                 <height>30</height>
                </size>
               </property>

@@ -551,7 +551,7 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>14</pointsize>
+             <pointsize>13</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -567,7 +567,7 @@
            <property name="font">
             <font>
              <family>Slate</family>
-             <pointsize>12</pointsize>
+             <pointsize>10</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -595,7 +595,7 @@
            <property name="font">
             <font>
              <family>Slate</family>
-             <pointsize>12</pointsize>
+             <pointsize>11</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -611,7 +611,7 @@
            <property name="font">
             <font>
              <family>Slate</family>
-             <pointsize>10</pointsize>
+             <pointsize>9</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -625,7 +625,7 @@
         </layout>
        </widget>
       </item>
-      <item>
+      <item alignment="Qt::AlignmentFlag::AlignLeft">
        <widget class="QWidget" name="info_3_container" native="true">
         <layout class="QVBoxLayout" name="info_container3">
          <item alignment="Qt::AlignmentFlag::AlignLeft">

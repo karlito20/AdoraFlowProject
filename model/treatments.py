@@ -9,7 +9,7 @@ class Treatments:
     def get_treatments_list(self):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT treatment_name, treatmentID FROM treatments'
+            'SELECT service_name, serviceID FROM services'
         )
         result = cursor.fetchall()
         cursor.close()

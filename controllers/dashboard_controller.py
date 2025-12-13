@@ -30,6 +30,6 @@ class DashboardController:
             t = datetime.strptime(str(item[0]), '%H:%M:%S')
             a.time_label.setText(t.strftime('%I:%M %p'))
             a.name_label.setText(item[1])
-            a.service_label.setText(item[2])
+            a.service_label.setText(item[2] or "(Pending treatment)")
             a.status_label.setText(item[3])
             self.page.sched_list_contents.addWidget(a)

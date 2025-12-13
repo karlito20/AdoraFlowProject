@@ -31,7 +31,7 @@ class AppointmentsController:
             p.name_label.setText(item[0])
             t = datetime.strptime(str(item[1]), '%H:%M:%S')
             p.time_label.setText(t.strftime('%I:%M %p'))
-            p.service_label.setText(item[2] or "No service")
+            p.service_label.setText(item[2] or "(Pending treatment)")
             d = datetime.strptime(str(item[3]), '%Y-%m-%d')
             p.date_label.setText(d.strftime('%Y, %B %d'))
             id = item[4]
@@ -105,6 +105,7 @@ class AppointmentsController:
                 id, form.type_field.currentData(), int(form.quantity_field.text())
             )
             form.close()
+            self.populate_appointments_list()
 
     def show_resched_popup(self, id):
         form = ReschedulePopup(self.page)
@@ -132,3 +133,4 @@ class AppointmentsController:
         def conf():
             self.db.appointments_db.update_appointment_date_time(id, *data)
             form.close()
+            self.populate_appointments_list()

@@ -23,11 +23,12 @@ class Appointments:
     def get_appointments_today_summary(self):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT a.start_time, CONCAT(p.first_name, " ", p.last_name), t.treatment_name, a.status '
+            'SELECT a.start_time, CONCAT(p.first_name, " ", p.last_name), s.service_name, a.status '
             'FROM appointments a  '
             'LEFT JOIN patients p ON p.patientID = a.patientID '
-            'LEFT JOIN appointment_treatment ap ON ap.appointmentID = a.appointmentID '
-            'LEFT JOIN treatments t ON ap.treatmentID = t.treatmentID '
+            'LEFT JOIN treatments t ON t.appointmentID = a.appointmentID '
+            'LEFT JOIN treatment_service ts ON ts.treatmentID = t.treatmentID '
+            'LEFT JOIN services s ON s.serviceID = ts.serviceID '
             'WHERE a.appointment_date = CURDATE()'
         )
         result = cursor.fetchall()
@@ -37,11 +38,12 @@ class Appointments:
     def get_short_upcoming_appointments(self):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, t.treatment_name, a.appointment_date, a.appointmentID '
+           'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, s.service_name, a.appointment_date, a.appointmentID '
             'FROM appointments a '
             'LEFT JOIN patients p ON (p.patientID=a.patientID) '
-            'LEFT JOIN appointment_treatment ap ON (ap.appointmentID=a.appointmentID) '
-            'LEFT JOIN treatments t ON (ap.treatmentID=t.treatmentID) '
+            'LEFT JOIN treatments t ON (t.appointmentID=a.appointmentID) '
+            'LEFT JOIN treatment_service ts ON (ts.treatmentID=t.treatmentID) '
+            'LEFT JOIN services s ON (s.serviceID=ts.serviceID) '
             'WHERE a.appointment_date >= CURDATE() '
             'ORDER BY a.appointment_date, a.start_time'
         )
@@ -52,11 +54,12 @@ class Appointments:
     def get_short_upcoming_appointments_specificdate(self, date):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, t.treatment_name, a.appointment_date, a.appointmentID '
+            'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, s.service_name, a.appointment_date, a.appointmentID '
             'FROM appointments a '
             'LEFT JOIN patients p ON (p.patientID=a.patientID) '
-            'LEFT JOIN appointment_treatment ap ON (ap.appointmentID=a.appointmentID) '
-            'LEFT JOIN treatments t ON (ap.treatmentID=t.treatmentID) '
+            'LEFT JOIN treatments t ON (a.appointmentID=t.appointmentID) '
+            'LEFT JOIN treatment_service ts ON (ts.treatmentID=t.treatmentID) '
+            'LEFT JOIN services s ON (s.serviceID=ts.serviceID) '
             'WHERE a.appointment_date = %s ' 
             'ORDER BY a.appointment_date', (date,)
         )

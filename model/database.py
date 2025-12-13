@@ -21,7 +21,7 @@ class Database:
         db = None
         try:
             db = mysql.connector.connect(
-                host="localhost", user="root", passwd="", database="DentalClinicDB_2", autocommit=True
+                host="localhost", user="root", passwd="", database="DentalClinicDB", autocommit=True
             )
         except mysql.connector.errors.InterfaceError:
             db = None
