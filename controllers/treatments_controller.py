@@ -9,9 +9,20 @@ class TreatmentsController:
         self.mainWindow_controller = mainWindow_controller
         self.db = self.mainWindow_controller.db
 
+        self.treatments_widgets = []
         self.populate_treatments_list()
+        self.setup()
+
+    def setup(self):
+        self.page.search_input.textChanged.connect(self.search_treatments)
 
     def populate_treatments_list(self):
+        self.treatments_widgets.clear()
+        while self.page.treatment_list_contents.count():
+            widget = self.page.treatment_list_contents.takeAt(0).widget()
+            if widget:
+                widget.deleteLater()
+
         max_cols = 2
         details = self.db.appointments_db.get_upcoming_appointments_name_datetime()
         options = self.db.treatments_db.get_services_id_list()
@@ -39,6 +50,7 @@ class TreatmentsController:
                         int(t.service_field.currentData()),
                     ]))
             self.page.treatment_list_contents.addWidget(t, row, col)
+            self.treatments_widgets.append(t)
 
     def refresh_treatments_list(self):
         while self.page.treatment_list_contents.count():
@@ -58,3 +70,9 @@ class TreatmentsController:
             prompt.close()
             self.refresh_treatments_list()
 
+    def search_treatments(self, text):
+        for widget in self.treatments_widgets:
+            if text.lower() in widget.name_label.text().lower():
+                widget.show()
+            else:
+                widget.hide()

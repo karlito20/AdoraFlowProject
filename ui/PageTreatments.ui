@@ -504,6 +504,9 @@
    <item>
     <widget class="QWidget" name="header_container" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
       <item alignment="Qt::AlignmentFlag::AlignTop">
        <widget class="QLabel" name="header_label">
         <property name="font">
@@ -533,6 +536,12 @@
       </size>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
+      </property>
       <item>
        <widget class="QWidget" name="info_box" native="true">
         <property name="minimumSize">
@@ -598,6 +607,61 @@
      </layout>
     </widget>
    </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="search_input">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>250</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #1D3533;
+background: white;
+padding-left: 5px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Search treatments</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item alignment="Qt::AlignmentFlag::AlignLeft">
     <widget class="QWidget" name="main_container" native="true">
      <property name="minimumSize">
@@ -641,7 +705,7 @@
            <x>0</x>
            <y>0</y>
            <width>339</width>
-           <height>358</height>
+           <height>330</height>
           </rect>
          </property>
          <property name="palette">

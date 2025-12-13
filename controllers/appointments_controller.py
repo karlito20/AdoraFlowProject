@@ -11,6 +11,7 @@ class AppointmentsController:
         self.mainWindow_controller = mainWindow_controller
         self.db = self.mainWindow_controller.db
 
+        self.appointment_widgets = []
         self.setup()
         self.populate_appointments_list()
 
@@ -18,9 +19,15 @@ class AppointmentsController:
         self.page.calendar_widget.selectionChanged.connect(lambda: self.filter_appointments_list())
         self.page.restore_button.clicked.connect(lambda: self.populate_appointments_list())
         self.page.add_appointment_button.clicked.connect(lambda: self.show_appointment_form())
+        self.page.search_input.textChanged.connect(self.search_appointments)
 
     def populate_appointments_list(self, list_filtered=None):
-        self.clear_list()
+        self.appointment_widgets.clear()
+        while self.page.appointments_list.count():
+            widget = self.page.appointments_list.takeAt(0).widget()
+            if widget:
+                widget.deleteLater()
+
         if list_filtered is None:
             list = self.db.appointments_db.get_short_upcoming_appointments()
         else:
@@ -37,6 +44,9 @@ class AppointmentsController:
             id = item[4]
             p.resched_button.clicked.connect(lambda _, pid=id: self.show_resched_popup(pid))
             self.page.appointments_list.addWidget(p)
+            self.appointment_widgets.append(p)
+
+        self.page.appointments_list.addStretch(1)
 
     def filter_appointments_list(self):
         self.clear_list()
@@ -126,3 +136,10 @@ class AppointmentsController:
             self.db.appointments_db.update_appointment_date_time(id, *data)
             form.close()
             self.populate_appointments_list()
+
+    def search_appointments(self, text):
+        for widget in self.appointment_widgets:
+            if text.lower() in widget.name_label.text().lower():
+                widget.show()
+            else:
+                widget.hide()

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>727</width>
-    <height>499</height>
+    <width>763</width>
+    <height>503</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -539,6 +539,50 @@
         </property>
        </widget>
       </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="search_input">
+        <property name="minimumSize">
+         <size>
+          <width>216</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>216</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: #1D3533;
+background: white;
+padding-left: 5px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Search appointments</string>
+        </property>
+       </widget>
+      </item>
       <item alignment="Qt::AlignmentFlag::AlignRight">
        <widget class="QPushButton" name="add_appointment_button">
         <property name="font">
@@ -810,8 +854,8 @@ color: rgb(60, 60, 60);
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>294</width>
-                 <height>335</height>
+                 <width>329</width>
+                 <height>339</height>
                 </rect>
                </property>
                <property name="styleSheet">
