@@ -547,8 +547,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: black;
-</string>
+            <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
             <string>[name]</string>
@@ -564,8 +563,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: black;
-</string>
+            <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
             <string>[time]</string>
@@ -617,8 +615,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: black;
-</string>
+            <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
             <string>[date]</string>
@@ -651,15 +648,11 @@
 }
 
 #resched_button:hover {
-	background: #2E6B66;
-	color: white;
-	border: 1px solid #367D77;
+	background: #DBF0EE;	
 }
 
 #resched_button:pressed {
-	background: #DBF0EE;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	background: #B8E0DD;
 }</string>
            </property>
            <property name="text">

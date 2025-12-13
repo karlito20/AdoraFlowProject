@@ -8,6 +8,7 @@ class ConfirmDialog(QDialog):
         super().__init__(parent)
         loadUi('ui/confirm_dialog.ui', self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
         self.confirm_button.clicked.connect(lambda: self.confirm.emit())
         self.cancel_button.clicked.connect(lambda: self.close())
@@ -27,12 +28,14 @@ class PatientDetailsPopup(QDialog):
         super().__init__(parent)
         loadUi('ui/popup_patientdetails.ui', self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
 class PatientFormPopup(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi('ui/popup_patientform.ui', self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
 class AppointmentsListItem(QWidget):
     def __init__(self):
@@ -44,12 +47,14 @@ class AppointmentFormPopup(QDialog):
         super().__init__(parent)
         loadUi('ui/popup_appointmentform.ui', self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
 class ReschedulePopup(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         loadUi('ui/popup_resched.ui', self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
 class UserAccessListItem(QWidget):
     def __init__(self):
@@ -61,6 +66,7 @@ class UserAccessFormPopup(QDialog):
         super().__init__(parent)
         loadUi('ui/popup_useraccessform.ui', self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
 
 

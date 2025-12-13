@@ -1,3 +1,4 @@
+from datetime import datetime
 from views import DashboardListItem
 
 
@@ -26,7 +27,9 @@ class DashboardController:
 
         for item in list:
             a = DashboardListItem()
-            a.time_label.setText(str(item[0]))
+            t = datetime.strptime(str(item[0]), '%H:%M:%S')
+            a.time_label.setText(t.strftime('%I:%M %p'))
             a.name_label.setText(item[1])
-            a.status_label.setText(item[2])
+            a.service_label.setText(item[2])
+            a.status_label.setText(item[3])
             self.page.sched_list_contents.addWidget(a)

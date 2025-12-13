@@ -23,9 +23,11 @@ class Appointments:
     def get_appointments_today_summary(self):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT a.start_time, CONCAT(p.first_name, " ", p.last_name), a.status '
+            'SELECT a.start_time, CONCAT(p.first_name, " ", p.last_name), t.treatment_name, a.status '
             'FROM appointments a  '
             'LEFT JOIN patients p ON p.patientID = a.patientID '
+            'LEFT JOIN appointment_treatment ap ON ap.appointmentID = a.appointmentID '
+            'LEFT JOIN treatments t ON ap.treatmentID = t.treatmentID '
             'WHERE a.appointment_date = CURDATE()'
         )
         result = cursor.fetchall()

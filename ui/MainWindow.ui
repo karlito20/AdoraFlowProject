@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>991</width>
     <height>580</height>
    </rect>
   </property>
@@ -1203,12 +1203,12 @@ letter-spacing: 1px;</string>
 	color: white;
 	border: 2px solid #2E6B66;
 	padding: 5px;
-	background: #367D77;
+	background: #265955;
 
 }
 #nav_logout_button:pressed {
-	background: white;
-	color: #2E6B66;
+	background: #1F4744;
+	color: white;
 	border: 2px solid #2E6B66;
 }</string>
         </property>

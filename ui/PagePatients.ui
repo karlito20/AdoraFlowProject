@@ -515,7 +515,7 @@
      <property name="font">
       <font>
        <family>Slate Medium</family>
-       <pointsize>21</pointsize>
+       <pointsize>25</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -576,15 +576,15 @@
 #register_button:hover {
 	border-radius: 6px;
 	color: white;
-	border: 2px solid #2E6B66;
+	border: 2px solid #1F4744;
 	padding: 5px;
-	background: #367D77;
+	background: #265955;
 
 }
 #register_button:pressed {
-	background: white;
-	color: #2E6B66;
-	border: 2px solid #2E6B66;
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
 }</string>
        </property>
        <property name="text">
@@ -598,7 +598,7 @@
     <widget class="QWidget" name="records_container" native="true">
      <property name="styleSheet">
       <string notr="true">#records_container {
-	border: 1px solid gray;
+	border: 1px solid rgba(100, 100, 100, 90);
 	border-radius: 10px;
 	background: white;
 }
@@ -614,7 +614,13 @@
       <property name="leftMargin">
        <number>2</number>
       </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
       <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
        <number>2</number>
       </property>
       <item>
@@ -627,67 +633,113 @@
           <number>20</number>
          </property>
          <property name="leftMargin">
-          <number>1</number>
+          <number>6</number>
          </property>
          <property name="topMargin">
-          <number>1</number>
+          <number>2</number>
          </property>
-         <item alignment="Qt::AlignmentFlag::AlignHCenter">
-          <widget class="QLabel" name="col1_name">
-           <property name="font">
-            <font>
-             <family>Slate Medium</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Patient Name</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignmentFlag::AlignLeft">
-          <widget class="QLabel" name="col4_name">
-           <property name="font">
-            <font>
-             <family>Slate Medium</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Contact Info</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignmentFlag::AlignLeft">
-          <widget class="QLabel" name="col3_name">
-           <property name="font">
-            <font>
-             <family>Slate Medium</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="text">
-            <string>Birthdate</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignmentFlag::AlignLeft">
-          <widget class="QLabel" name="col2_name">
-           <property name="font">
-            <font>
-             <family>Slate Medium</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Gender</string>
-           </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>2</number>
+         </property>
+         <item>
+          <widget class="QWidget" name="widget" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="leftMargin">
+             <number>25</number>
+            </property>
+            <item alignment="Qt::AlignmentFlag::AlignRight">
+             <widget class="QLabel" name="col1_name">
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Patient Name</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
+          <widget class="QLabel" name="label">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignLeft">
+          <widget class="QWidget" name="widget_2" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="col4_name">
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Contact Info</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_3" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="col3_name">
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>Birthdate</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_4" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QLabel" name="col2_name">
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Gender</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignLeft">
           <widget class="QPushButton" name="refresh_button">
            <property name="maximumSize">
             <size>
@@ -698,7 +750,7 @@
            <property name="font">
             <font>
              <family>Slate</family>
-             <pointsize>10</pointsize>
+             <pointsize>11</pointsize>
              <underline>false</underline>
             </font>
            </property>
@@ -755,7 +807,7 @@
               <x>0</x>
               <y>0</y>
               <width>601</width>
-              <height>344</height>
+              <height>346</height>
              </rect>
             </property>
             <property name="styleSheet">

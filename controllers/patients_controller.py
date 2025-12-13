@@ -46,7 +46,6 @@ class PatientsController:
         popup = PatientDetailsPopup(self.page)
         details = self.db.patients_db.get_full_patient_details(patient_id)
 
-        print(details)
         popup.id_label.setText(str(details[0]))
         popup.name_label.setText(details[1] + ' ' + (details[2] or ' ') + ' ' + details[3])
         popup.bdate_label.setText(str(details[4]))
@@ -119,6 +118,7 @@ class PatientsController:
             self.db.patients_db.delete_patient(id)
             self.page.feedback_label.setText('Deleted PatientID: ' + str(id))
             popup.close()
+            self.refresh_patients_list()
 
     def dialog_add_patient(self, form, data):
         prompt = ConfirmDialog(form)
@@ -128,6 +128,7 @@ class PatientsController:
             self.db.patients_db.add_patient(*data)
             self.page.feedback_label.setText('Added patient: ' + data[1] + ' ' + data[2] + '.')
             form.close()
+            self.refresh_patients_list()
 
     def dialog_edit_patient(self, form, data):
         prompt = ConfirmDialog(form)
@@ -137,3 +138,4 @@ class PatientsController:
             self.db.patients_db.edit_patient(*data)
             self.page.feedback_label.setText('PatientID: ' + str(data[0]) + ' details changed.')
             form.close()
+            self.refresh_patients_list()

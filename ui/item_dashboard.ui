@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>90</height>
+    <width>484</width>
+    <height>76</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>400</width>
-    <height>90</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>90</height>
+    <height>16777215</height>
    </size>
   </property>
   <property name="palette">
@@ -122,11 +122,7 @@
    <string>element</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#list_item {
-	background: white;
-	margin: 5px;
-}
-
+   <string notr="true">
 #time_label, #status_label, #name_label {
 	color: black;
 }
@@ -135,10 +131,16 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
-    <number>6</number>
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>6</number>
+    <number>4</number>
    </property>
    <item>
     <widget class="QWidget" name="container" native="true">
@@ -159,113 +161,149 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="leftMargin">
-       <number>1</number>
+       <number>20</number>
       </property>
       <property name="rightMargin">
-       <number>1</number>
+       <number>20</number>
       </property>
-      <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
-       <widget class="QWidget" name="time_container" native="true">
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>28</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#time_container {
-	border: 1px solid gray;
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="cont1" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item alignment="Qt::AlignmentFlag::AlignVCenter">
+          <widget class="QWidget" name="time_box" native="true">
+           <property name="styleSheet">
+            <string notr="true">#time_box {
+	background: #F0FDFA;
+	border: 1px solid #B8E0DD;
 	border-radius: 5px;
-	background: #367D77;
+}</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter">
+             <widget class="QLabel" name="time_label">
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #1F4744;</string>
+              </property>
+              <property name="text">
+               <string>00:00</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="name_box" native="true">
+        <property name="styleSheet">
+         <string notr="true">#cont2 {
+	border: 1px solid black;
 }</string>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter">
-          <widget class="QLabel" name="time_label">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="sizeIncrement">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="baseSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="leftMargin">
+          <number>14</number>
+         </property>
+         <item alignment="Qt::AlignmentFlag::AlignLeft">
+          <widget class="QLabel" name="name_label">
            <property name="font">
             <font>
-             <family>Slate</family>
-             <pointsize>10</pointsize>
+             <family>Slate Medium</family>
+             <pointsize>13</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: white;</string>
+            <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
-            <string>[time]</string>
+            <string>[name]</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignLeft">
+          <widget class="QLabel" name="service_label">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #607473;
+</string>
+           </property>
+           <property name="text">
+            <string>[service]</string>
            </property>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-      <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter">
-       <widget class="QLabel" name="name_label">
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>12</pointsize>
-         </font>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
-        <property name="text">
-         <string>[name]</string>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
-       <widget class="QWidget" name="status_container" native="true">
-        <property name="maximumSize">
+        <property name="sizeHint" stdset="0">
          <size>
-          <width>100</width>
-          <height>34</height>
+          <width>40</width>
+          <height>20</height>
          </size>
         </property>
-        <property name="styleSheet">
-         <string notr="true">#status_container {
-	border: 1px solid gray;
-	border-radius: 5px;
-	background: #367D77;
-}</string>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
-          <widget class="QLabel" name="status_label">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QWidget" name="cont2" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignVCenter">
+          <widget class="QWidget" name="status_box" native="true">
            <property name="styleSheet">
-            <string notr="true">color: white;</string>
+            <string notr="true">#status_box {
+	border: 1px solid black;
+	background: rgba(180, 180, 180, 60);
+	border: 1px solid rgba(160, 160, 160, 70);
+	border-radius: 10px;
+}</string>
            </property>
-           <property name="text">
-            <string>[action]</string>
-           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="status_label">
+              <property name="font">
+               <font>
+                <family>Slate</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(60, 60, 60);</string>
+              </property>
+              <property name="text">
+               <string>[status]</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>

@@ -18,9 +18,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#info_popup {
-	background: #F7FAFC;
-	border-radius:3px;
-border: 3px solid #2E6B66;
+	background: transparent;
+
 }</string>
   </property>
   <property name="modal">
@@ -28,214 +27,227 @@ border: 3px solid #2E6B66;
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QWidget" name="header_container" native="true">
+    <widget class="QWidget" name="container" native="true">
      <property name="styleSheet">
-      <string notr="true">#header_container {
+      <string notr="true">#container {
+	border: 3px solid #2E6B66;
 	background: #F7FAFC;
+	border-radius: 15px;
 }</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="spacing">
-       <number>2</number>
-      </property>
-      <property name="leftMargin">
-       <number>26</number>
-      </property>
-      <property name="topMargin">
-       <number>16</number>
-      </property>
-      <property name="rightMargin">
-       <number>6</number>
-      </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
       <item>
-       <widget class="QLabel" name="name_label">
-        <property name="font">
-         <font>
-          <family>Slate Medium</family>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
+       <widget class="QWidget" name="header_container" native="true">
         <property name="styleSheet">
-         <string notr="true">color: rgb(50, 50, 50);
-</string>
+         <string notr="true">#header_container {
+	background: #F7FAFC;
+}</string>
         </property>
-        <property name="text">
-         <string>[name]</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="widget" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>2</number>
+         </property>
          <property name="leftMargin">
-          <number>0</number>
+          <number>26</number>
+         </property>
+         <property name="topMargin">
+          <number>16</number>
          </property>
          <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
+          <number>6</number>
          </property>
          <item>
-          <widget class="QWidget" name="widget_3" native="true">
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>16777215</height>
-            </size>
+          <widget class="QLabel" name="name_label">
+           <property name="font">
+            <font>
+             <family>Slate Medium</family>
+             <pointsize>20</pointsize>
+            </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(65, 65, 65);</string>
+            <string notr="true">color: rgb(50, 50, 50);
+</string>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
-            <property name="leftMargin">
-             <number>6</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item alignment="Qt::AlignmentFlag::AlignLeft">
-             <widget class="QLabel" name="label">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>PatientID:</string>
-              </property>
-             </widget>
-            </item>
-            <item alignment="Qt::AlignmentFlag::AlignLeft">
-             <widget class="QLabel" name="label_2">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Gender:</string>
-              </property>
-             </widget>
-            </item>
-            <item alignment="Qt::AlignmentFlag::AlignLeft">
-             <widget class="QLabel" name="label_3">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>DOB:</string>
-              </property>
-             </widget>
-            </item>
-            <item alignment="Qt::AlignmentFlag::AlignLeft">
-             <widget class="QLabel" name="label_4">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Blood type:</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <property name="text">
+            <string>[name]</string>
+           </property>
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="widget_2" native="true">
-           <layout class="QVBoxLayout" name="verticalLayout_4">
+          <widget class="QWidget" name="widget" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <property name="leftMargin">
-             <number>6</number>
-            </property>
-            <property name="topMargin">
              <number>0</number>
             </property>
             <property name="rightMargin">
-             <number>6</number>
+             <number>0</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="id_label">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-               </font>
+             <widget class="QWidget" name="widget_3" native="true">
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>16777215</height>
+               </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(90, 90, 90);</string>
+               <string notr="true">color: rgb(65, 65, 65);</string>
               </property>
-              <property name="text">
-               <string>[id]</string>
-              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item alignment="Qt::AlignmentFlag::AlignLeft">
+                <widget class="QLabel" name="label">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>PatientID:</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignmentFlag::AlignLeft">
+                <widget class="QLabel" name="label_2">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Gender:</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignmentFlag::AlignLeft">
+                <widget class="QLabel" name="label_3">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>DOB:</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignmentFlag::AlignLeft">
+                <widget class="QLabel" name="label_4">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Blood type:</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="gender_label">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(90, 90, 90);</string>
-              </property>
-              <property name="text">
-               <string>[gender]</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="bdate_label">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(90, 90, 90);</string>
-              </property>
-              <property name="text">
-               <string>[bdate]</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="bloodtype_label">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(90, 90, 90);</string>
-              </property>
-              <property name="text">
-               <string>[bloodtyp]</string>
-              </property>
+             <widget class="QWidget" name="widget_2" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="id_label">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(90, 90, 90);</string>
+                 </property>
+                 <property name="text">
+                  <string>[id]</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="gender_label">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(90, 90, 90);</string>
+                 </property>
+                 <property name="text">
+                  <string>[gender]</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="bdate_label">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(90, 90, 90);</string>
+                 </property>
+                 <property name="text">
+                  <string>[bdate]</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="bloodtype_label">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(90, 90, 90);</string>
+                 </property>
+                 <property name="text">
+                  <string>[bloodtyp]</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
@@ -244,28 +256,25 @@ border: 3px solid #2E6B66;
         </layout>
        </widget>
       </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QWidget" name="info_cards" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="spacing">
-       <number>22</number>
-      </property>
-      <property name="leftMargin">
-       <number>6</number>
-      </property>
-      <property name="topMargin">
-       <number>6</number>
-      </property>
-      <property name="rightMargin">
-       <number>6</number>
-      </property>
       <item>
-       <widget class="QWidget" name="contact_card" native="true">
-        <property name="styleSheet">
-         <string notr="true">#contact_card {
+       <widget class="QWidget" name="info_cards" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>22</number>
+         </property>
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QWidget" name="contact_card" native="true">
+           <property name="styleSheet">
+            <string notr="true">#contact_card {
 	border: 1px solid #B8E0DD;
 	border-radius: 10px;
 	background: #F0FDFA;
@@ -275,118 +284,118 @@ border: 3px solid #2E6B66;
 	color: #2E6B66;
 	padding-left: 5px;
 }</string>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <property name="topMargin">
-          <number>6</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="contact_header">
-           <property name="font">
-            <font>
-             <family>Slate Medium</family>
-             <pointsize>14</pointsize>
-            </font>
            </property>
-           <property name="styleSheet">
-            <string notr="true">padding-left: 2px;
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="contact_header">
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>14</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">padding-left: 2px;
 color: #1F4744;
 </string>
-           </property>
-           <property name="text">
-            <string>Contact Details</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="phone_label">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(90, 90, 90);</string>
-           </property>
-           <property name="text">
-            <string>[phone]</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="email_label">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(90, 90, 90);</string>
-           </property>
-           <property name="text">
-            <string>[email]</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="address_label">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(90, 90, 90);</string>
-           </property>
-           <property name="text">
-            <string>[address]</string>
-           </property>
+              </property>
+              <property name="text">
+               <string>Contact Details</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="phone_label">
+              <property name="font">
+               <font>
+                <family>Slate</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(90, 90, 90);</string>
+              </property>
+              <property name="text">
+               <string>[phone]</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="email_label">
+              <property name="font">
+               <font>
+                <family>Slate</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(90, 90, 90);</string>
+              </property>
+              <property name="text">
+               <string>[email]</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="address_label">
+              <property name="font">
+               <font>
+                <family>Slate</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(90, 90, 90);</string>
+              </property>
+              <property name="text">
+               <string>[address]</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QWidget" name="button_container" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
-       <widget class="QPushButton" name="edit_button">
-        <property name="minimumSize">
-         <size>
-          <width>70</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#edit_button {
+       <widget class="QWidget" name="button_container" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
+          <widget class="QPushButton" name="edit_button">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#edit_button {
 	background: white;
 	border-radius: 6px;
 	border: 1px solid #1F4744;
@@ -395,41 +404,37 @@ color: #1F4744;
 }
 
 #edit_button:hover {
-	background: #2E6B66;
-	color: white;
-	border: 1px solid #367D77;
+	background: #DBF0EE;	
 }
 
 #edit_button:pressed {
-	background: #DBF0EE;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	background: #B8E0DD;
 }</string>
-        </property>
-        <property name="text">
-         <string>Edit Record</string>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
-       <widget class="QPushButton" name="delete_button">
-        <property name="minimumSize">
-         <size>
-          <width>70</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#delete_button {
+           </property>
+           <property name="text">
+            <string>Edit Record</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
+          <widget class="QPushButton" name="delete_button">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#delete_button {
 	background: white;
 	border-radius: 6px;
 	border: 1px solid #1F4744;
@@ -438,41 +443,37 @@ color: #1F4744;
 }
 
 #delete_button:hover {
-	background: #2E6B66;
-	color: white;
-	border: 1px solid #367D77;
+	background: #DBF0EE;	
 }
 
 #delete_button:pressed {
-	background: #DBF0EE;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	background: #B8E0DD;
 }</string>
-        </property>
-        <property name="text">
-         <string>Delete Record</string>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
-       <widget class="QPushButton" name="close_button">
-        <property name="minimumSize">
-         <size>
-          <width>70</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#close_button {
+           </property>
+           <property name="text">
+            <string>Delete Record</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
+          <widget class="QPushButton" name="close_button">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#close_button {
 	border-radius: 6px;
 	color: white;
 	border: 2px solid #1F4744;
@@ -483,20 +484,23 @@ color: #1F4744;
 #close_button:hover {
 	border-radius: 6px;
 	color: white;
-	border: 2px solid #2E6B66;
+	border: 2px solid #1F4744;
 	padding: 5px;
-	background: #367D77;
+	background: #265955;
 
 }
 #close_button:pressed {
-	background: white;
-	color: #2E6B66;
-	border: 2px solid #2E6B66;
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
 }</string>
-        </property>
-        <property name="text">
-         <string>Close</string>
-        </property>
+           </property>
+           <property name="text">
+            <string>Close</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>

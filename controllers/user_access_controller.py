@@ -52,8 +52,10 @@ class UserAccessController:
         form = UserAccessFormPopup(self.page)
         form.show()
         data = self.db.users_db.get_user_credentials(id)
-        form.user_field.setCurrentText(str(id))
         form.pass_field.setText(data[1])
+        form.user_field.setDisabled(True)
+        form.user_field.setEditable(True)
+        form.user_field.setCurrentText(str(id))
 
         def get_pwdfield_data():
             return form.pass_field.text()
@@ -63,6 +65,7 @@ class UserAccessController:
 
     def set_useraccess_form_options(self, form):
         employees = self.db.users_db.get_employees_without_user()
+        print(employees)
         for e in employees:
             form.user_field.addItem(e[1] + ' ' + e[2] + ' - ' + str(e[0]), e[0])
         form.user_field.setCurrentIndex(-1)

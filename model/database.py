@@ -24,6 +24,7 @@ class Database:
                 host="localhost", user="root", passwd="", database="DentalClinicDB_2", autocommit=True
             )
         except mysql.connector.errors.InterfaceError:
+            db = None
             print("Database connection failed.")
 
         return db

@@ -125,15 +125,11 @@
 }
 
 #edit_button:hover {
-	background: #2E6B66;
-	color: white;
-	border: 1px solid #367D77;
+	background: #DBF0EE;	
 }
 
 #edit_button:pressed {
-	background: #DBF0EE;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	background: #B8E0DD;
 }</string>
            </property>
            <property name="text">
@@ -168,15 +164,11 @@
 }
 
 #delete_button:hover {
-	background: #2E6B66;
-	color: white;
-	border: 1px solid #367D77;
+	background: #DBF0EE;	
 }
 
 #delete_button:pressed {
-	background: #DBF0EE;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	background: #B8E0DD;
 }</string>
            </property>
            <property name="text">

@@ -506,7 +506,7 @@
      <property name="font">
       <font>
        <family>Slate Medium</family>
-       <pointsize>21</pointsize>
+       <pointsize>25</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -560,17 +560,14 @@
 }
 
 #add_appointment_button:hover {
-	border-radius: 6px;
-	color: white;
-	border: 2px solid #2E6B66;
-	padding: 5px;
-	background: #367D77;
+	border: 2px solid #367D77;
+	background: #265955;
 
 }
 #add_appointment_button:pressed {
-	background: white;
-	color: #2E6B66;
-	border: 2px solid #2E6B66;
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
 }</string>
         </property>
         <property name="text">
@@ -588,19 +585,19 @@
        <number>20</number>
       </property>
       <property name="leftMargin">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="topMargin">
        <number>6</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>2</number>
       </property>
       <item>
        <widget class="QWidget" name="calendar_container" native="true">
         <property name="styleSheet">
          <string notr="true">#calendar_container {
-	border: 1px solid rgba(90, 90, 90, 100);
+	border: 1px solid rgba(100, 100, 100, 90);
 	border-radius: 10px;
 	background: white;
 }</string>
@@ -717,7 +714,7 @@ QCalendarWidget QTableView::item:selected {
         </property>
         <property name="styleSheet">
          <string notr="true">#table_container {
-	border: 1px solid rgba(90, 90, 90, 100);
+	border: 1px solid rgba(100, 100, 100, 90);
 	border-radius: 10px;
 	background: white;
 
@@ -743,13 +740,14 @@ QCalendarWidget QTableView::item:selected {
              <property name="font">
               <font>
                <family>Slate Medium</family>
-               <pointsize>12</pointsize>
+               <pointsize>13</pointsize>
               </font>
              </property>
              <property name="styleSheet">
               <string notr="true">padding-left: 10px;
 padding-top: 5px;
-color: rgb(30, 30, 30);</string>
+color: rgb(60, 60, 60);
+</string>
              </property>
              <property name="text">
               <string>Upcoming Appointments</string>
@@ -761,6 +759,7 @@ color: rgb(30, 30, 30);</string>
              <property name="font">
               <font>
                <family>Slate</family>
+               <pointsize>11</pointsize>
               </font>
              </property>
              <property name="cursor">
@@ -783,7 +782,7 @@ color: rgb(30, 30, 30);</string>
 </string>
              </property>
              <property name="text">
-              <string>Show recent</string>
+              <string>Show all</string>
              </property>
             </widget>
            </item>
@@ -798,7 +797,10 @@ color: rgb(30, 30, 30);</string>
             <item>
              <widget class="QScrollArea" name="scrollArea">
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">#scrollArea {
+	border: 1px solid white;
+	background: white;
+}</string>
               </property>
               <property name="widgetResizable">
                <bool>true</bool>
@@ -808,8 +810,8 @@ color: rgb(30, 30, 30);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>300</width>
-                 <height>340</height>
+                 <width>294</width>
+                 <height>331</height>
                 </rect>
                </property>
                <property name="styleSheet">

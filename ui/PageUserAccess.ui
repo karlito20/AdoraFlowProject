@@ -500,7 +500,7 @@
      <property name="font">
       <font>
        <family>Slate Medium</family>
-       <pointsize>21</pointsize>
+       <pointsize>25</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -557,17 +557,14 @@
 }
 
 #add_button:hover {
-	border-radius: 6px;
-	color: white;
-	border: 2px solid #2E6B66;
-	padding: 5px;
-	background: #367D77;
+	border: 2px solid #1F4744;
+	background: #265955;
 
 }
 #add_button:pressed {
-	background: white;
-	color: #2E6B66;
-	border: 2px solid #2E6B66;
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
 }</string>
         </property>
         <property name="text">
@@ -614,7 +611,8 @@
         <property name="styleSheet">
          <string notr="true">padding-left: 10px;
 padding-top: 5px;
-color: rgb(30, 30, 30);</string>
+color: rgb(60, 60, 60);
+</string>
         </property>
         <property name="text">
          <string>System Access</string>
@@ -640,8 +638,8 @@ color: rgb(30, 30, 30);</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>687</width>
-           <height>157</height>
+           <width>683</width>
+           <height>150</height>
           </rect>
          </property>
          <property name="sizePolicy">
