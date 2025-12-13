@@ -85,11 +85,6 @@ class AppointmentsController:
             form.patient_field.addItem(p[0], p[1])
         form.patient_field.setCurrentIndex(-1)
 
-        types = self.db.treatments_db.get_treatments_list()
-        for t in types:
-            form.type_field.addItem(t[0], t[1])
-        form.type_field.setCurrentIndex(-1)
-
         dentists = self.db.dentists_db.get_dentist_id_list()
         for d in dentists:
             form.dentist_field.addItem(d[0], d[1])
@@ -100,10 +95,7 @@ class AppointmentsController:
         prompt.show()
         prompt.confirm.connect(lambda: conf())
         def conf():
-            id = self.db.appointments_db.add_new_appointment(*data)
-            self.db.appointments_db.set_appointment_treatment(
-                id, form.type_field.currentData(), int(form.quantity_field.text())
-            )
+            self.db.appointments_db.add_new_appointment(*data)
             form.close()
             self.populate_appointments_list()
 

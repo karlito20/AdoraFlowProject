@@ -1,5 +1,6 @@
 from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtWidgets import QWidget, QDialog
+from PyQt6.QtGui import QColor
+from PyQt6.QtWidgets import QWidget, QDialog, QGraphicsDropShadowEffect
 from PyQt6.uic import loadUi
 
 class ConfirmDialog(QDialog):
@@ -68,7 +69,20 @@ class UserAccessFormPopup(QDialog):
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
+class TreatmentsListItem(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('ui/item_treatment.ui', self)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
+        apply_shadow(self.container)
 
+def apply_shadow(widget):
+    shadow = QGraphicsDropShadowEffect()
+    shadow.setBlurRadius(10)
+    shadow.setXOffset(1)
+    shadow.setYOffset(1)
+    shadow.setColor(QColor(Qt.GlobalColor.gray))
+    widget.setGraphicsEffect(shadow)
 
 

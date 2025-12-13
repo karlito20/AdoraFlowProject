@@ -496,7 +496,7 @@
     <number>10</number>
    </property>
    <property name="topMargin">
-    <number>20</number>
+    <number>16</number>
    </property>
    <property name="rightMargin">
     <number>18</number>
@@ -811,7 +811,7 @@ color: rgb(60, 60, 60);
                  <x>0</x>
                  <y>0</y>
                  <width>294</width>
-                 <height>331</height>
+                 <height>335</height>
                 </rect>
                </property>
                <property name="styleSheet">

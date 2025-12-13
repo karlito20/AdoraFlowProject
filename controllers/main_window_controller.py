@@ -3,6 +3,7 @@ from PyQt6.QtCore import QDateTime, QTimer
 from controllers.appointments_controller import AppointmentsController
 from controllers.dashboard_controller import DashboardController
 from controllers.patients_controller import PatientsController
+from controllers.treatments_controller import TreatmentsController
 from controllers.user_access_controller import UserAccessController
 from views import *
 from views.page_elements import ConfirmDialog
@@ -23,6 +24,7 @@ class MainWindowController:
         self.patients_controller = PatientsController(self.pages[1], self)
         self.appointments_controller = AppointmentsController(self.pages[2], self)
         self.useraccess_controller = UserAccessController(self.pages[6], self)
+        self.treatments_controller = TreatmentsController(self.pages[3], self)
 
         self.setup_labels()
         self.setup_buttons()

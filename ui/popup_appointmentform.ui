@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>418</width>
-    <height>365</height>
+    <width>411</width>
+    <height>368</height>
    </rect>
   </property>
   <property name="palette">
@@ -623,6 +623,12 @@
             </item>
             <item alignment="Qt::AlignmentFlag::AlignRight">
              <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <family>Slate</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>End time:</string>
               </property>

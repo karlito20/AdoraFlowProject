@@ -49,6 +49,7 @@ class Appointments:
         )
         result = cursor.fetchall()
         cursor.close()
+        print(len(result))
         return result
 
     def get_short_upcoming_appointments_specificdate(self, date):
@@ -99,3 +100,25 @@ class Appointments:
             'UPDATE appointments SET appointment_date = %s, start_time = %s, end_time = %s WHERE appointmentID = %s',
             (date, start, end, id)
         )
+
+    def count_pending_appointments(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(*) FROM appointments WHERE status <>"Completed" '
+        )
+        result = cursor.fetchall()
+        cursor.close()
+        return result[0][0]
+
+    def get_upcoming_appointments_name_datetime(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT CONCAT(p.first_name, " ", p.last_name), a.appointment_date, a.start_time, a.appointmentID, p.patientID '
+            'FROM appointments a '
+            'LEFT JOIN patients p ON (p.patientID=a.patientID) '
+            'WHERE a.status <> "Completed" '
+            'ORDER BY a.appointment_date, a.start_time'
+        )
+        result = cursor.fetchall()
+        cursor.close()
+        return result

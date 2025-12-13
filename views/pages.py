@@ -34,6 +34,8 @@ class TreatmentsPage(QWidget):
         super().__init__()
         loadUi('ui/PageTreatments.ui', self)
 
+        apply_shadow(self.info_box)
+
 class PaymentsPage(QWidget):
     def __init__(self):
         super().__init__()
