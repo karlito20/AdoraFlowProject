@@ -60,6 +60,7 @@ class PatientsController:
         popup.edit_button.clicked.connect(lambda: self.show_patient_form(popup, True, details[0]))
         popup.delete_button.clicked.connect(lambda: self.dialog_delete_patient(popup, details[0]))
         popup.close_button.clicked.connect(lambda: popup.close())
+        popup.delete_button.hide() # shouldnt delete records
 
     def show_patient_form(self, parent, edit=None, id=None):
         form = PatientFormPopup(parent)

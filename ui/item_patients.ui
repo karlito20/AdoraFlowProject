@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>601</width>
-    <height>70</height>
+    <height>65</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -503,13 +503,13 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>70</height>
+       <height>65</height>
       </size>
      </property>
      <property name="styleSheet">
       <string notr="true">#records_list_container {
 	border: 1px solid rgba(150, 150, 150, 90);
-	border-radius: 6px;
+	border-radius: 2px;
 	background: white;
 
 }
@@ -523,13 +523,13 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="topMargin">
-       <number>6</number>
+       <number>2</number>
       </property>
       <property name="rightMargin">
        <number>30</number>
       </property>
       <property name="bottomMargin">
-       <number>6</number>
+       <number>2</number>
       </property>
       <item alignment="Qt::AlignmentFlag::AlignLeft">
        <widget class="QWidget" name="info_1_container" native="true">

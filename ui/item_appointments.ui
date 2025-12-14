@@ -579,8 +579,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: black;
-</string>
+            <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
             <string>[service]</string>

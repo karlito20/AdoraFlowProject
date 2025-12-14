@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>344</width>
-    <height>230</height>
+    <width>378</width>
+    <height>269</height>
    </rect>
   </property>
   <property name="palette">
@@ -513,13 +513,12 @@ border: 3px solid #2E6B66;
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>16</pointsize>
+             <pointsize>20</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">#header_label {
 	color: rgb(60, 60, 60);
-	letter-spacing: 1px;
 }</string>
            </property>
            <property name="text">

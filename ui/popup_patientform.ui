@@ -515,7 +515,9 @@
 	background: #F7FAFC;
 	border-radius: 15px;
 
-}</string>
+}
+
+</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <property name="rightMargin">
@@ -541,13 +543,12 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>16</pointsize>
+             <pointsize>20</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">#header_label {
 	color: rgb(60, 60, 60);
-	letter-spacing: 1px;
 }</string>
            </property>
            <property name="text">

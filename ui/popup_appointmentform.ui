@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>411</width>
-    <height>368</height>
+    <width>422</width>
+    <height>376</height>
    </rect>
   </property>
   <property name="palette">
@@ -530,7 +530,7 @@
           <number>14</number>
          </property>
          <property name="topMargin">
-          <number>0</number>
+          <number>6</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
@@ -540,13 +540,12 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>16</pointsize>
+             <pointsize>20</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">#header_label {
 	color: rgb(60, 60, 60);
-	letter-spacing: 1px;
 }</string>
            </property>
            <property name="text">

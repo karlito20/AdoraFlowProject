@@ -3,6 +3,14 @@ from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QWidget, QDialog, QGraphicsDropShadowEffect
 from PyQt6.uic import loadUi
 
+class ErrorDialog(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_error.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.close_button.clicked.connect(lambda: self.close())
+
 class ConfirmDialog(QDialog):
     confirm = pyqtSignal()
     def __init__(self, parent=None):
@@ -76,6 +84,26 @@ class TreatmentsListItem(QWidget):
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
         apply_shadow(self.container)
+
+class InvoiceListItem(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('ui/item_invoice.ui', self)
+
+class PaymentFormPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_payment.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+
+class ReceiptPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_receipt.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+
 
 def apply_shadow(widget):
     shadow = QGraphicsDropShadowEffect()

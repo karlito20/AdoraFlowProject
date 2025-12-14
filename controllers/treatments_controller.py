@@ -1,6 +1,6 @@
 from datetime import datetime, date
 
-from views.page_elements import TreatmentsListItem, ConfirmDialog
+from views.page_elements import TreatmentsListItem, ConfirmDialog, ErrorDialog
 
 
 class TreatmentsController:
@@ -39,16 +39,7 @@ class TreatmentsController:
                 t.service_field.addItem(str(o[0]), int(o[1]))
                 t.service_field.setCurrentIndex(-1)
 
-            t.save_button.clicked.connect(
-                lambda _, t=t, item=item: self.dialog_add_treatment(
-                    [
-                        int(item[4]),
-                        int(self.mainWindow_controller.userid),
-                        int(item[3]),
-                        str(date.today()),
-                        t.notes_field.toPlainText(),
-                        int(t.service_field.currentData()),
-                    ]))
+            t.save_button.clicked.connect( lambda _, t=t, item=item: self.dialog_add_treatment(item, t))
             self.page.treatment_list_contents.addWidget(t, row, col)
             self.treatments_widgets.append(t)
 
@@ -61,12 +52,26 @@ class TreatmentsController:
 
         self.populate_treatments_list()
 
-    def dialog_add_treatment(self, data):
+    def dialog_add_treatment(self, item, t):
         prompt = ConfirmDialog(self.page)
         prompt.show()
         prompt.confirm.connect(lambda: conf())
         def conf():
-            self.db.treatments_db.handle_add_treatment(*data)
+            print(item[4], self.mainWindow_controller.userid, item[3], date.today(), t.notes_field.toPlainText(),
+                  int(t.service_field.currentData()))
+            try:
+                self.db.treatments_db.handle_add_treatment(
+                    int(item[4]),
+                    int(self.mainWindow_controller.userid),
+                    int(item[3]),
+                    str(date.today()),
+                    t.notes_field.toPlainText(),
+                    int(t.service_field.currentData()))
+            except TypeError:
+                err = ErrorDialog(self.page)
+                prompt.close()
+                err.show()
+                return
             prompt.close()
             self.refresh_treatments_list()
 

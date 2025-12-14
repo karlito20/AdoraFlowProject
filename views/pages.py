@@ -20,6 +20,8 @@ class PatientsPage(QWidget):
         loadUi('ui/PagePatients.ui', self)
 
         apply_shadow(self.records_container)
+        apply_shadow(self.register_button)
+        apply_shadow(self.search_input)
 
 class AppointmentsPage(QWidget):
     def __init__(self):
@@ -27,19 +29,25 @@ class AppointmentsPage(QWidget):
         loadUi('ui/PageAppointments.ui', self)
 
         apply_shadow(self.table_container)
-        apply_shadow((self.calendar_container))
+        apply_shadow(self.calendar_container)
+        apply_shadow(self.add_appointment_button)
+        apply_shadow(self.search_input)
 
 class TreatmentsPage(QWidget):
     def __init__(self):
         super().__init__()
         loadUi('ui/PageTreatments.ui', self)
 
+        apply_shadow(self.search_input)
         apply_shadow(self.info_box)
 
 class PaymentsPage(QWidget):
     def __init__(self):
         super().__init__()
         loadUi('ui/PagePayments.ui', self)
+
+        apply_shadow(self.main_container)
+        apply_shadow(self.search_input)
 
 class ReportsPage(QWidget):
     def __init__(self):
@@ -50,6 +58,9 @@ class UserAccessPage(QWidget):
     def __init__(self):
         super().__init__()
         loadUi('ui/PageUserAccess.ui', self)
+
+        apply_shadow(self.add_button)
+        apply_shadow(self.container)
 
 def apply_shadow(widget):
     shadow = QGraphicsDropShadowEffect()

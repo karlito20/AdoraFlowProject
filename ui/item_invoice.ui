@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>item_invoice</class>
+ <widget class="QWidget" name="item_invoice">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>713</width>
+    <height>65</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Slate</family>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="main_container" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>65</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#main_container {
+	background: white;
+	color: black;
+	border: 1px solid rgba(60, 60, 60, 60);
+	border-radius: 2px;
+}
+
+#main_container:hover {
+		border: 1px solid #4DB2AA;
+}</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="cont1" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item alignment="Qt::AlignmentFlag::AlignHCenter">
+          <widget class="QLabel" name="id_label">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 60, 60);</string>
+           </property>
+           <property name="text">
+            <string>[id]</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="cont2" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item alignment="Qt::AlignmentFlag::AlignLeft">
+          <widget class="QLabel" name="name_label">
+           <property name="font">
+            <font>
+             <family>Slate Medium</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 60, 60);</string>
+           </property>
+           <property name="text">
+            <string>[name]</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="cont3" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="service_label">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 60, 60);</string>
+           </property>
+           <property name="text">
+            <string>[service]</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="cont4" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLabel" name="date_label">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 60, 60);</string>
+           </property>
+           <property name="text">
+            <string>[date]</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="cont5" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QLabel" name="amount_label">
+           <property name="font">
+            <font>
+             <family>Slate Medium</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 60, 60);</string>
+           </property>
+           <property name="text">
+            <string>[amount]</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+       <widget class="QWidget" name="cont6" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>65</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#cont6 {
+	background: rgba(60, 60, 60, 60);
+	border: 1px solid rgba(90, 90, 90, 90);
+ 	border-radius: 15px;
+}</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item alignment="Qt::AlignmentFlag::AlignHCenter">
+          <widget class="QLabel" name="status_label">
+           <property name="font">
+            <font>
+             <family>Slate Medium</family>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 60, 60);</string>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="cont7" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item alignment="Qt::AlignmentFlag::AlignRight">
+          <widget class="QPushButton" name="action_button">
+           <property name="minimumSize">
+            <size>
+             <width>65</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#action_button {
+	background: white;
+	border-radius: 6px;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+
+}
+
+#action_button:hover {
+	background: #DBF0EE;	
+}
+
+#action_button:pressed {
+	background: #B8E0DD;
+}</string>
+           </property>
+           <property name="text">
+            <string>Process</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

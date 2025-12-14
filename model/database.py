@@ -2,6 +2,7 @@ import mysql.connector
 
 from model.appointments import Appointments
 from model.dentists import Dentists
+from model.invoices import Invoices
 from model.patients import Patients
 from model.treatments import Treatments
 from model.users import Users
@@ -16,12 +17,13 @@ class Database:
         self.treatments_db = Treatments(self.db)
         self.dentists_db = Dentists(self.db)
         self.users_db = Users(self.db)
+        self.invoices_db = Invoices(self.db)
 
     def _createConnection(self):
         db = None
         try:
             db = mysql.connector.connect(
-                host="localhost", user="root", passwd="", database="DentalClinicDB", autocommit=True
+                host="localhost", user="root", passwd="", database="DentalClinicDB_2", autocommit=True
             )
         except mysql.connector.errors.InterfaceError:
             db = None

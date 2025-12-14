@@ -511,13 +511,13 @@
         <property name="font">
          <font>
           <family>Slate Medium</family>
-          <pointsize>16</pointsize>
+          <pointsize>25</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">#header_label {
 	color: rgb(60, 60, 60);
-	letter-spacing: 1px;
+
 }</string>
         </property>
         <property name="text">
