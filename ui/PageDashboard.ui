@@ -918,8 +918,7 @@ Revenue (PHP)</string>
                </font>
               </property>
               <property name="text">
-               <string>Patient
-Satisfaction</string>
+               <string>Placeholder</string>
               </property>
               <property name="wordWrap">
                <bool>true</bool>

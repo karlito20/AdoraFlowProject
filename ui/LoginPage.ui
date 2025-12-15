@@ -1123,10 +1123,12 @@ border-top: 1px solid rgba(100, 100, 100, 90);</string>
            </property>
            <property name="styleSheet">
             <string notr="true">padding: 5px;
-color: #305F5B;</string>
+color: #305F5B;
+letter-spacing: 1px;</string>
            </property>
            <property name="text">
-            <string>[LOGO]</string>
+            <string>Dental Clinic
+Management System</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>

@@ -1,6 +1,11 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
+
 class Invoices:
     def __init__(self, db):
         self.db = db
+        self.engine = create_engine("mysql+mysqlconnector://root:@localhost/DentalClinicDB_2")
 
     def get_invoice_list(self):
         cursor = self.db.cursor()
@@ -71,3 +76,13 @@ class Invoices:
         result = cursor.fetchone()
         cursor.close()
         return result
+
+    def payment_method_count(self):
+        query = """
+        SELECT payment_method, COUNT(payment_method) as count
+        FROM payments
+        GROUP BY payment_method
+        """
+
+        df = pd.read_sql(query, self.engine)
+        return df

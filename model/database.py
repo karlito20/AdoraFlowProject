@@ -12,12 +12,13 @@ class Database:
     def __init__(self):
         self.db = self._createConnection()
 
-        self.patients_db = Patients(self.db)
-        self.appointments_db = Appointments(self.db)
-        self.treatments_db = Treatments(self.db)
-        self.dentists_db = Dentists(self.db)
-        self.users_db = Users(self.db)
-        self.invoices_db = Invoices(self.db)
+        if self.db is not None:
+            self.patients_db = Patients(self.db)
+            self.appointments_db = Appointments(self.db)
+            self.treatments_db = Treatments(self.db)
+            self.dentists_db = Dentists(self.db)
+            self.users_db = Users(self.db)
+            self.invoices_db = Invoices(self.db)
 
     def _createConnection(self):
         db = None

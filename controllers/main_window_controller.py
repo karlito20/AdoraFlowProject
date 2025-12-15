@@ -79,7 +79,7 @@ class MainWindowController:
         for page in self.pages:
             self.page.mainstack_pages.addWidget(page)
 
-    def hide_buttons(self):
+    def hide_buttons(self)  :
         # improve this
         if self.usertype == 'Receptionist':
             self.page.nav_treatments.hide()

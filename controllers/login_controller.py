@@ -17,6 +17,7 @@ class LoginController:
         self.start_clock()
 
     def attempt_login(self):
+        self.db = Database()
         if self.db.db is None:
             self.page.login_feedback.setText('Connection error.')
             self.page.login_feedback.setStyleSheet('color: rgb(220, 0, 0);')
