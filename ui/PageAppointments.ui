@@ -580,7 +580,7 @@ border-radius: 5px;
 border: 1px solid gray;</string>
         </property>
         <property name="placeholderText">
-         <string>Search appointments</string>
+         <string>Search patient name</string>
         </property>
        </widget>
       </item>
@@ -846,6 +846,9 @@ color: rgb(60, 60, 60);
 	border: 1px solid white;
 	background: white;
 }</string>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
               </property>
               <property name="widgetResizable">
                <bool>true</bool>

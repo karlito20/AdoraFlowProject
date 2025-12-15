@@ -23,3 +23,10 @@ class Reports:
         """
         df = pd.read_sql(query, self.database.engine)
         return df
+
+    def get_overall_revenue(self):
+        cursor = self.db.cursor()
+        cursor.execute("SELECT SUM(amount_paid) AS revenue FROM payments")
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0]

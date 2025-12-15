@@ -1,6 +1,6 @@
-from PyQt6.QtCharts import QChart, QChartView, QPieSlice, QPieSeries, QCategoryAxis
+from PyQt6.QtCharts import QChart, QChartView, QPieSlice, QPieSeries, QCategoryAxis, QLineSeries, QValueAxis
 from PyQt6.QtCore import Qt, QMargins
-from PyQt6.QtGui import QColor, QPainter
+from PyQt6.QtGui import QColor, QPainter, QFont
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QLineEdit
 from PyQt6.uic import loadUi
 
@@ -76,13 +76,18 @@ class ReportsPage(QWidget):
 
     def setup(self):
         apply_shadow(self.piechart_container)
+        apply_shadow(self.linegraph_container)
+        apply_shadow(self.card1)
+        apply_shadow(self.card2)
 
     def setup_piechart(self):
         self.piechart = QChart()
-        self.piechart.setTitle("Payments")
+        self.piechart.setTitle("Service Popularity")
         self.piechart.legend().setVisible(True)
-        self.piechart.legend().setAlignment(Qt.AlignmentFlag.AlignBottom)
+        self.piechart.legend().setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.piechart.legend().setFont(QFont('Slate', 10))
         self.piechart.setMargins(QMargins(0, 0, 0, 0))
+        self.piechart.setTitleFont(QFont('Slate Medium', 12))
         self.payments_pie = QPieSeries()
         self.piechart.addSeries(self.payments_pie)
 
@@ -97,7 +102,10 @@ class ReportsPage(QWidget):
         self.linegraph.setTitle("Monthly Revenue")
         self.linegraph.legend().setVisible(True)
         self.linegraph.legend().setAlignment(Qt.AlignmentFlag.AlignBottom)
+        self.linegraph.legend().setFont(QFont('Slate', 10))
         self.linegraph.setMargins(QMargins(0, 0, 0, 0))
+        self.linegraph.setTitleFont(QFont('Slate Medium', 12))
+
         chart_view = QChartView(self.linegraph)
         chart_view.setStyleSheet("background:white;")
         chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)

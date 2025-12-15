@@ -594,7 +594,7 @@ border-radius: 5px;
 border: 1px solid gray;</string>
        </property>
        <property name="placeholderText">
-        <string>Search patients</string>
+        <string>Search patient name</string>
        </property>
       </widget>
      </item>

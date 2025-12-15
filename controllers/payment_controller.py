@@ -42,7 +42,7 @@ class PaymentController:
                     l.cont6.setStyleSheet('#cont6 {background-color: #F0FDFA; border: 1px solid #B8E0DD; border-radius: 15px;}')
                     l.status_label.setStyleSheet('background-color: #F0FDFA; color: #2E6B66;')
                     l.action_button.setText('View\nReceipt')
-                    l.action_button.setStyleSheet('#action_button{color:#367d77;background:white;border:1px solid white;}#action_button:hover{text-decoration:underline;}')
+                    l.action_button.setStyleSheet('#action_button{color:#367d77;background:transparent;border:0px;}#action_button:hover{text-decoration:underline;}')
 
             handle_status_variations()
             id = item[0]
@@ -75,6 +75,7 @@ class PaymentController:
         form.show()
         details = self.db.invoices_db.get_invoice_details(id)
 
+        form.invoiceid_label.setText(str(details[0]))
         form.name_label.setText(details[1])
         form.service_label.setText(details[2])
         form.date_label.setText(str(details[3]))

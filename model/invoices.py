@@ -12,7 +12,7 @@ class Invoices:
             'LEFT JOIN patients p ON (p.patientID=i.patientID) '
             'LEFT JOIN treatment_service ts ON (ts.treatmentID=i.treatmentID) '
             'LEFT JOIN services s ON (s.serviceID=ts.serviceID) '
-            'ORDER BY i.status DESC'
+            'ORDER BY i.invoice_date DESC'
         )
         result = cursor.fetchall()
         cursor.close()

@@ -18,7 +18,7 @@ class Database:
         if self.db is not None:
             self.patients_db = Patients(self.db)
             self.appointments_db = Appointments(self.db)
-            self.treatments_db = Treatments(self.db)
+            self.treatments_db = Treatments(self.db, self)
             self.dentists_db = Dentists(self.db)
             self.users_db = Users(self.db)
             self.invoices_db = Invoices(self.db)

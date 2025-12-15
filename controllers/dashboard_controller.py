@@ -33,3 +33,4 @@ class DashboardController:
             a.service_label.setText(item[2] or "(Pending treatment)")
             a.status_label.setText(item[3])
             self.page.sched_list_contents.addWidget(a)
+        self.page.sched_list_contents.addStretch(1)

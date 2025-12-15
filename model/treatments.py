@@ -1,10 +1,10 @@
-from model.appointments import Appointments
-from model.patients import Patients
+import pandas as pd
 
 
 class Treatments:
-    def __init__(self, db):
+    def __init__(self, db, database):
         self.db = db
+        self.database = database
 
     def get_treatments_list(self):
         cursor = self.db.cursor()
@@ -55,3 +55,23 @@ class Treatments:
             '(%s, %s, CURDATE(), %s, "Unpaid") ', (patientID, treatmentID, default_price)
         )
         cursor.close()
+
+    def get_service_count(self):
+        query = """
+            SELECT s.service_name AS service, COUNT(s.service_name) as count
+            FROM treatments t
+                LEFT JOIN treatment_service ts ON ts.treatmentID=t.treatmentID
+                LEFT JOIN services s ON ts.serviceID=s.serviceID
+            GROUP BY s.service_name
+            """
+        df = pd.read_sql(query, self.database.engine)
+        return df
+
+    def get_treatments_count(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(treatmentID) AS count FROM treatments'
+        )
+        result = cursor.fetchone()[0]
+        cursor.close()
+        return result

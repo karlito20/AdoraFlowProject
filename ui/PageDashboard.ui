@@ -839,8 +839,8 @@ Patients</string>
                </font>
               </property>
               <property name="text">
-               <string>Monthly
-Revenue (PHP)</string>
+               <string>Revenue
+This Month (PHP)</string>
               </property>
               <property name="wordWrap">
                <bool>true</bool>
@@ -984,9 +984,10 @@ Revenue (PHP)</string>
      <property name="styleSheet">
       <string notr="true">#sched_overview {
 	border: 1px solid rgba(100, 100, 100, 90);
-	border-radius: 30px;
+	border-radius: 10px;
 	background: white;
-}	</string>
+}
+</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_7">
       <property name="spacing">
