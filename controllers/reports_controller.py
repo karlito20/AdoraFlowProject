@@ -66,3 +66,7 @@ class ReportsController:
         axis_y.setLabelsFont(QFont('Slate', 7))
         self.page.linegraph.addAxis(axis_y, Qt.AlignmentFlag.AlignLeft)
         series.attachAxis(axis_y)
+
+    def refresh_page(self):
+        self.update_piechart()
+        self.setup_labels()

@@ -123,6 +123,7 @@ class PaymentController:
             prompt.close()
             form.close()
             self.populate_invoice_list()
+            self.mainWindow_controller.reports_controller.refresh_page()
 
     def show_receipt_preview(self, id):
         popup = ReceiptPopup(self.page)

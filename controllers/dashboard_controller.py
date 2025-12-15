@@ -21,6 +21,7 @@ class DashboardController:
         self.page.card1_val.setText(str(self.db.patients_db.get_total_patients()))
         self.page.card2_val.setText(str(self.db.appointments_db.get_total_appointments_today()))
         self.page.card3_val.setText(f'{self.db.appointments_db.get_total_revenue_thismonth():,}')
+        self.page.card4_val.setText(str(self.db.treatments_db.get_treatments_count_this_month()))
 
     def populate_appointments_today_list(self):
         list = self.db.appointments_db.get_appointments_today_summary()

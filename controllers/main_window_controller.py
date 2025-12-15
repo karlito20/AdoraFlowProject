@@ -89,8 +89,17 @@ class MainWindowController:
             self.page.nav_access.hide()
             self.dashboard_controller.page.viewall_button.hide()
             self.appointments_controller.page.add_appointment_button.hide()
+            self.patients_controller.page.register_button.hide()
+            self.page.nav_appointments.hide()
+            self.page.nav_reports.hide()
         elif self.usertype == 'Assistant':
             self.page.nav_appointments.hide()
             self.page.nav_treatments.hide()
             self.page.nav_payments.hide()
+            self.dashboard_controller.page.viewall_button.hide()
+            self.patients_controller.page.register_button.hide()
+            self.appointments_controller.page.add_appointment_button.hide()
+            self.page.nav_reports.hide()
             self.page.nav_access.hide()
+        elif self.usertype == 'Admin':
+            self.page.nav_treatments.hide()

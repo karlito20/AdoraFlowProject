@@ -75,3 +75,13 @@ class Treatments:
         result = cursor.fetchone()[0]
         cursor.close()
         return result
+
+    def get_treatments_count_this_month(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(treatmentID) FROM treatments '
+            'WHERE MONTH(treatment_date) >= MONTH(CURDATE()) '
+        )
+        result = cursor.fetchone()[0]
+        cursor.close()
+        return result

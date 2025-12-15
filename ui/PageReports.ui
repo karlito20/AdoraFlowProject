@@ -799,16 +799,10 @@ Revenue (PHP)</string>
         </layout>
        </widget>
       </item>
-      <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop">
-       <widget class="QPushButton" name="pushButton">
-        <property name="minimumSize">
-         <size>
-          <width>80</width>
-          <height>30</height>
-         </size>
-        </property>
+      <item>
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>PushButton</string>
+         <string/>
         </property>
        </widget>
       </item>
