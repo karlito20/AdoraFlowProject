@@ -60,7 +60,7 @@ class PatientsController:
         popup.edit_button.clicked.connect(lambda: self.show_patient_form(popup, True, details[0]))
         popup.delete_button.clicked.connect(lambda: self.dialog_delete_patient(popup, details[0]))
         popup.close_button.clicked.connect(lambda: popup.close())
-        popup.delete_button.hide() # shouldnt delete records
+        popup.delete_button.hide()  # shouldnt delete records
 
     def show_patient_form(self, parent, edit=None, id=None):
         form = PatientFormPopup(parent)
@@ -103,11 +103,22 @@ class PatientsController:
             form.email_field.setText(data[8])
             form.address_field.setText(data[9])
 
+        def validate_and_save():
+            if not form.fname_field.text().strip() or not form.lastname_field.text().strip():
+                form.feedback_label.setText('Invalid fields.')
+                return  # Stop the save process
+
+            form.save_button.show()
+            if edit:
+                self.dialog_edit_patient(form, get_fields_data())
+            else:
+                self.dialog_add_patient(form, get_fields_data())
+
         if edit:
             load_data_to_fields()
-            form.save_button.clicked.connect(lambda: self.dialog_edit_patient(form, get_fields_data()))
+            form.save_button.clicked.connect(validate_and_save)
         else:
-            form.save_button.clicked.connect(lambda: self.dialog_add_patient(form, get_fields_data()))
+            form.save_button.clicked.connect(validate_and_save)
 
         form.clear_button.clicked.connect(lambda: clearFields())
         form.cancel_button.clicked.connect(lambda: form.close())
@@ -116,6 +127,7 @@ class PatientsController:
         prompt = ConfirmDialog(popup)
         prompt.show()
         prompt.confirm.connect(lambda: conf())
+
         def conf():
             self.db.patients_db.delete_patient(id)
             self.page.feedback_label.setText('Deleted PatientID: ' + str(id))
@@ -126,6 +138,7 @@ class PatientsController:
         prompt = ConfirmDialog(form)
         prompt.show()
         prompt.confirm.connect(lambda: conf())
+
         def conf():
             self.db.patients_db.add_patient(*data)
             self.page.feedback_label.setText('Added patient: ' + data[1] + ' ' + data[2] + '.')
@@ -136,6 +149,7 @@ class PatientsController:
         prompt = ConfirmDialog(form)
         prompt.show()
         prompt.confirm.connect(lambda: conf())
+
         def conf():
             self.db.patients_db.edit_patient(*data)
             self.page.feedback_label.setText('PatientID: ' + str(data[0]) + ' details changed.')

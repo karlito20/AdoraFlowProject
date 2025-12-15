@@ -1,7 +1,7 @@
-from PyQt6.QtCharts import QChart, QChartView, QPieSlice, QPieSeries
+from PyQt6.QtCharts import QChart, QChartView, QPieSlice, QPieSeries, QCategoryAxis
 from PyQt6.QtCore import Qt, QMargins
 from PyQt6.QtGui import QColor, QPainter
-from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
+from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QLineEdit
 from PyQt6.uic import loadUi
 
 class DashboardPage(QWidget):
@@ -62,7 +62,7 @@ class PaymentsPage(QWidget):
         self.setup()
 
     def setup(self):
-        apply_shadow(self.main_container)
+        apply_shadow(self.container)
         apply_shadow(self.search_input)
 
 class ReportsPage(QWidget):
@@ -72,23 +72,37 @@ class ReportsPage(QWidget):
 
         self.setup()
         self.setup_piechart()
+        self.setup_linegraph()
 
     def setup(self):
         apply_shadow(self.piechart_container)
 
     def setup_piechart(self):
-        chart = QChart()
-        chart.setTitle("Payments")
-        chart.legend().setVisible(True)
-        chart.legend().setAlignment(Qt.AlignmentFlag.AlignBottom)
-        chart.setMargins(QMargins(0, 0, 0, 0))
+        self.piechart = QChart()
+        self.piechart.setTitle("Payments")
+        self.piechart.legend().setVisible(True)
+        self.piechart.legend().setAlignment(Qt.AlignmentFlag.AlignBottom)
+        self.piechart.setMargins(QMargins(0, 0, 0, 0))
         self.payments_pie = QPieSeries()
-        chart.addSeries(self.payments_pie)
+        self.piechart.addSeries(self.payments_pie)
 
-        chart_view = QChartView(chart)
+        chart_view = QChartView(self.piechart)
         chart_view.setStyleSheet("background:white;")
         chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)
+        chart_view.setContentsMargins(QMargins(0, 0, 0, 0))
         self.piechart_layout.addWidget(chart_view)
+
+    def setup_linegraph(self):
+        self.linegraph = QChart()
+        self.linegraph.setTitle("Monthly Revenue")
+        self.linegraph.legend().setVisible(True)
+        self.linegraph.legend().setAlignment(Qt.AlignmentFlag.AlignBottom)
+        self.linegraph.setMargins(QMargins(0, 0, 0, 0))
+        chart_view = QChartView(self.linegraph)
+        chart_view.setStyleSheet("background:white;")
+        chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)
+        chart_view.setContentsMargins(QMargins(0, 0, 0, 0))
+        self.linegraph_layout.addWidget(chart_view)
 
 class UserAccessPage(QWidget):
     def __init__(self):

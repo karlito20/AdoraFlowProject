@@ -43,17 +43,28 @@
        <height>65</height>
       </size>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">#main_container {
-	background: white;
-	color: black;
-	border: 1px solid rgba(60, 60, 60, 60);
+	border-top: 1px solid rgba(150, 150, 150, 90);
 	border-radius: 2px;
+	background: white;
+
 }
 
 #main_container:hover {
-		border: 1px solid #4DB2AA;
-}</string>
+	background: rgba(230, 230, 230, 150);
+}
+
+ </string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="topMargin">
@@ -65,7 +76,7 @@
       <item>
        <widget class="QWidget" name="cont1" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item alignment="Qt::AlignmentFlag::AlignHCenter">
+         <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="id_label">
            <property name="font">
             <font>
@@ -109,7 +120,7 @@
       <item>
        <widget class="QWidget" name="cont3" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
+         <item alignment="Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="service_label">
            <property name="font">
             <font>
@@ -131,7 +142,7 @@
       <item>
        <widget class="QWidget" name="cont4" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
+         <item alignment="Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="date_label">
            <property name="font">
             <font>
@@ -152,7 +163,7 @@
       <item>
        <widget class="QWidget" name="cont5" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_6">
-         <item>
+         <item alignment="Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="amount_label">
            <property name="font">
             <font>

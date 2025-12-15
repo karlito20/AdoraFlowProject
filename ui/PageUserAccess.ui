@@ -623,6 +623,7 @@ color: rgb(60, 60, 60);
        <widget class="QScrollArea" name="scrollArea">
         <property name="styleSheet">
          <string notr="true">#scrollArea {
+	border: 1px solid white;
 	background: white;
 }
 
@@ -638,8 +639,8 @@ color: rgb(60, 60, 60);
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>683</width>
-           <height>150</height>
+           <width>685</width>
+           <height>152</height>
           </rect>
          </property>
          <property name="sizePolicy">

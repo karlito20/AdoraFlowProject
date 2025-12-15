@@ -571,7 +571,7 @@
        <property name="minimumSize">
         <size>
          <width>250</width>
-         <height>30</height>
+         <height>32</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -589,7 +589,9 @@
        <property name="styleSheet">
         <string notr="true">color: #1D3533;
 background: white;
-padding-left: 5px;</string>
+padding-left: 5px;
+border-radius: 5px;
+border: 1px solid gray;</string>
        </property>
        <property name="placeholderText">
         <string>Search patients</string>
@@ -835,7 +837,7 @@ padding-left: 5px;</string>
             <property name="bottomMargin">
              <number>4</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignTop">
              <widget class="QPushButton" name="refresh_button">
               <property name="maximumSize">
                <size>
@@ -857,7 +859,6 @@ padding-left: 5px;</string>
                <string notr="true">#refresh_button {
 	text-align:right;
 	padding-right: 15px;
-	padding-top: 5px;
 	color: #367D77;
 	background: white;
 	border: 1px solid white;
@@ -909,7 +910,7 @@ padding-left: 5px;</string>
               <x>0</x>
               <y>0</y>
               <width>735</width>
-              <height>89</height>
+              <height>94</height>
              </rect>
             </property>
             <property name="styleSheet">
@@ -918,6 +919,9 @@ padding-left: 5px;</string>
 }</string>
             </property>
             <layout class="QVBoxLayout" name="records_list_contents">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <property name="leftMargin">
               <number>2</number>
              </property>

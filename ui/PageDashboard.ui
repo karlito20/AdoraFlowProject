@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>653</width>
+    <width>759</width>
     <height>515</height>
    </rect>
   </property>
@@ -619,6 +619,86 @@ QPushButton#card1_val, #card2_val, #card3_val, #card4_val {
           <number>6</number>
          </property>
          <item>
+          <widget class="QWidget" name="card2" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>11</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="card2_label">
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>13</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Appointments
+Today</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="card2_val">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Slate Medium</family>
+                <pointsize>24</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="text">
+               <string>[value]</string>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
           <widget class="QWidget" name="card1" native="true">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -655,8 +735,9 @@ QPushButton#card1_val, #card2_val, #card3_val, #card4_val {
              <widget class="QLabel" name="card1_label">
               <property name="font">
                <font>
-                <family>Slate</family>
+                <family>Slate Medium</family>
                 <pointsize>13</pointsize>
+                <bold>false</bold>
                </font>
               </property>
               <property name="styleSheet">
@@ -713,85 +794,6 @@ Patients</string>
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="card2" native="true">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>120</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>120</height>
-            </size>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_4">
-            <property name="spacing">
-             <number>6</number>
-            </property>
-            <property name="topMargin">
-             <number>11</number>
-            </property>
-            <property name="rightMargin">
-             <number>6</number>
-            </property>
-            <property name="bottomMargin">
-             <number>6</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="card2_label">
-              <property name="font">
-               <font>
-                <family>Slate</family>
-                <pointsize>13</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Appointments
-Today</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="card2_val">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>45</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Slate Medium</family>
-                <pointsize>24</pointsize>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="text">
-               <string>[value]</string>
-              </property>
-              <property name="flat">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
           <widget class="QWidget" name="card3" native="true">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -831,8 +833,9 @@ Today</string>
              <widget class="QLabel" name="card3_label">
               <property name="font">
                <font>
-                <family>Slate</family>
+                <family>Slate Medium</family>
                 <pointsize>13</pointsize>
+                <bold>false</bold>
                </font>
               </property>
               <property name="text">
@@ -913,8 +916,9 @@ Revenue (PHP)</string>
              <widget class="QLabel" name="card4_label">
               <property name="font">
                <font>
-                <family>Slate</family>
+                <family>Slate Medium</family>
                 <pointsize>13</pointsize>
+                <bold>false</bold>
                </font>
               </property>
               <property name="text">
@@ -1574,7 +1578,7 @@ padding-top: 5px;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>597</width>
+              <width>703</width>
               <height>242</height>
              </rect>
             </property>

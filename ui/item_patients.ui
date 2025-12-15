@@ -506,17 +506,19 @@
        <height>65</height>
       </size>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">#records_list_container {
-	border: 1px solid rgba(150, 150, 150, 90);
+	border-top: 1px solid rgba(150, 150, 150, 90);
 	border-radius: 2px;
 	background: white;
 
 }
 
 #records_list_container:hover {
-	border: 1px solid #4DB2AA;
-
+	background: rgba(230, 230, 230, 150);
 }
 
  </string>

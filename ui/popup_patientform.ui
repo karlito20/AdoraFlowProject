@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>425</width>
-    <height>489</height>
+    <height>492</height>
    </rect>
   </property>
   <property name="palette">
@@ -999,6 +999,23 @@ padding-left: 5px;</string>
          </spacer>
         </item>
        </layout>
+      </item>
+      <item alignment="Qt::AlignmentFlag::AlignRight">
+       <widget class="QLabel" name="feedback_label">
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(220, 0, 0);
+padding-right: 10px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QWidget" name="button_container" native="true">

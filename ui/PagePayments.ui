@@ -526,6 +526,12 @@
    <item>
     <widget class="QWidget" name="placeholder" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>1</number>
+      </property>
+      <property name="rightMargin">
+       <number>1</number>
+      </property>
       <item>
        <widget class="QLineEdit" name="search_input">
         <property name="minimumSize">
@@ -547,10 +553,11 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-color: #1D3533;
+         <string notr="true">color: #1D3533;
 background: white;
-padding-left: 5px;</string>
+padding-left: 5px;
+border-radius: 5px;
+border: 1px solid gray;</string>
         </property>
         <property name="placeholderText">
          <string>Search invoices</string>
@@ -694,9 +701,9 @@ padding-left: 5px;</string>
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="main_container" native="true">
+    <widget class="QWidget" name="container" native="true">
      <property name="styleSheet">
-      <string notr="true">#main_container {
+      <string notr="true">#container {
 	background: white;
 	color: black;
 	border: 1px solid rgba(60, 60, 60, 60);
@@ -872,6 +879,9 @@ padding-left: 5px;</string>
 }</string>
          </property>
          <layout class="QVBoxLayout" name="invoice_list">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <property name="topMargin">
            <number>2</number>
           </property>
