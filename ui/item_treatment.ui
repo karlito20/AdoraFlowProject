@@ -525,7 +525,7 @@
      <property name="styleSheet">
       <string notr="true">#container {
 	border: 1px solid rgba(100, 100, 100, 90);
-	border-radius: 8px;
+	border-radius: 15px;
 	background: white;
 }
 
@@ -561,6 +561,9 @@
              <family>Slate Medium</family>
              <pointsize>13</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #1F4744;</string>
            </property>
            <property name="text">
             <string>[name]</string>
@@ -634,7 +637,8 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #607473;</string>
+            <string notr="true">color: #607473;
+</string>
            </property>
            <property name="text">
             <string>Diagnosis</string>

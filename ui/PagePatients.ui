@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>781</width>
-    <height>243</height>
+    <width>752</width>
+    <height>514</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -496,12 +496,15 @@
     <number>6</number>
    </property>
    <property name="leftMargin">
-    <number>10</number>
+    <number>6</number>
    </property>
    <property name="topMargin">
-    <number>20</number>
+    <number>18</number>
    </property>
    <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
     <number>18</number>
    </property>
    <item>
@@ -509,13 +512,13 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>30</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Slate Medium</family>
-       <pointsize>25</pointsize>
+       <pointsize>30</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -531,6 +534,18 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="button_container">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>6</number>
+     </property>
+     <property name="bottomMargin">
+      <number>12</number>
+     </property>
      <item alignment="Qt::AlignmentFlag::AlignLeft">
       <widget class="QLabel" name="feedback_label">
        <property name="font">
@@ -571,7 +586,7 @@
        <property name="minimumSize">
         <size>
          <width>250</width>
-         <height>32</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -583,7 +598,7 @@
        <property name="font">
         <font>
          <family>Slate</family>
-         <pointsize>11</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -594,7 +609,7 @@ border-radius: 5px;
 border: 1px solid gray;</string>
        </property>
        <property name="placeholderText">
-        <string>Search patient name</string>
+        <string>Search by patient name</string>
        </property>
       </widget>
      </item>
@@ -644,7 +659,7 @@ border: 1px solid gray;</string>
      <property name="styleSheet">
       <string notr="true">#records_container {
 	border: 1px solid rgba(100, 100, 100, 90);
-	border-radius: 10px;
+	border-radius: 15px;
 	background: white;
 }
 
@@ -657,31 +672,31 @@ border: 1px solid gray;</string>
        <number>0</number>
       </property>
       <property name="leftMargin">
-       <number>2</number>
+       <number>6</number>
       </property>
       <property name="topMargin">
-       <number>2</number>
+       <number>6</number>
       </property>
       <property name="rightMargin">
-       <number>2</number>
+       <number>6</number>
       </property>
       <property name="bottomMargin">
-       <number>2</number>
+       <number>6</number>
       </property>
       <item>
        <widget class="QWidget" name="widget_5" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <property name="leftMargin">
-          <number>15</number>
+          <number>6</number>
          </property>
          <property name="topMargin">
-          <number>4</number>
+          <number>6</number>
          </property>
          <property name="rightMargin">
           <number>6</number>
          </property>
          <property name="bottomMargin">
-          <number>0</number>
+          <number>6</number>
          </property>
          <item alignment="Qt::AlignmentFlag::AlignLeft">
           <widget class="QWidget" name="widget" native="true">
@@ -692,25 +707,32 @@ border: 1px solid gray;</string>
             </size>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="spacing">
+             <number>6</number>
+            </property>
             <property name="leftMargin">
              <number>25</number>
             </property>
             <property name="topMargin">
-             <number>4</number>
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
             </property>
             <property name="bottomMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
-            <item alignment="Qt::AlignmentFlag::AlignLeft">
+            <item alignment="Qt::AlignmentFlag::AlignHCenter">
              <widget class="QLabel" name="col1_name">
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>PATIENT NAME</string>
@@ -738,22 +760,29 @@ border: 1px solid gray;</string>
             <string notr="true">padding-left: 10px;</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
             <property name="topMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
             <property name="bottomMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
-            <item alignment="Qt::AlignmentFlag::AlignLeft">
+            <item alignment="Qt::AlignmentFlag::AlignHCenter">
              <widget class="QLabel" name="col4_name">
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>CONTACT</string>
@@ -770,21 +799,22 @@ border: 1px solid gray;</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_6">
             <property name="topMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
             <property name="bottomMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter">
              <widget class="QLabel" name="col3_name">
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>BIRTHDATE</string>
@@ -801,24 +831,25 @@ border: 1px solid gray;</string>
              <number>6</number>
             </property>
             <property name="topMargin">
-             <number>6</number>
+             <number>0</number>
             </property>
             <property name="rightMargin">
-             <number>4</number>
+             <number>6</number>
             </property>
             <property name="bottomMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter">
              <widget class="QLabel" name="col2_name">
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>GENDER</string>
@@ -832,10 +863,10 @@ border: 1px solid gray;</string>
           <widget class="QWidget" name="widget_6" native="true">
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <property name="topMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
             <property name="bottomMargin">
-             <number>4</number>
+             <number>0</number>
             </property>
             <item alignment="Qt::AlignmentFlag::AlignTop">
              <widget class="QPushButton" name="refresh_button">
@@ -848,7 +879,7 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>11</pointsize>
+                <pointsize>12</pointsize>
                 <underline>false</underline>
                </font>
               </property>
@@ -909,8 +940,8 @@ border: 1px solid gray;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>735</width>
-              <height>94</height>
+              <width>714</width>
+              <height>314</height>
              </rect>
             </property>
             <property name="styleSheet">

@@ -504,7 +504,7 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
-    <number>0</number>
+    <number>12</number>
    </property>
    <property name="leftMargin">
     <number>0</number>
@@ -513,7 +513,7 @@
     <number>0</number>
    </property>
    <property name="rightMargin">
-    <number>0</number>
+    <number>12</number>
    </property>
    <property name="bottomMargin">
     <number>0</number>
@@ -531,7 +531,10 @@
      </property>
      <layout class="QVBoxLayout" name="nav_side_menu">
       <property name="spacing">
-       <number>7</number>
+       <number>6</number>
+      </property>
+      <property name="rightMargin">
+       <number>6</number>
       </property>
       <item>
        <layout class="QHBoxLayout" name="system_info_labels">
@@ -1239,94 +1242,50 @@ letter-spacing: 1px;</string>
      </property>
      <layout class="QVBoxLayout" name="main_body">
       <property name="leftMargin">
-       <number>14</number>
+       <number>6</number>
       </property>
       <item>
        <widget class="QWidget" name="header" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="leftMargin">
+          <number>6</number>
          </property>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_5">
-           <item>
-            <widget class="QWidget" name="header_left_2" native="true">
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <layout class="QVBoxLayout" name="header_left">
-              <property name="spacing">
-               <number>6</number>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>1</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="system_title_label">
-                <property name="font">
-                 <font>
-                  <family>Slate</family>
-                  <pointsize>11</pointsize>
-                  <fontweight>Medium</fontweight>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">letter-spacing: 1px;
+          <widget class="QLabel" name="system_title_label">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>11</pointsize>
+             <fontweight>Medium</fontweight>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">letter-spacing: 1px;
 color: #607473;
-padding-top: 5px;</string>
-                </property>
-                <property name="text">
-                 <string>DENTAL CLINIC MANAGEMENT SYSTEM</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="current_user_label">
-                <property name="font">
-                 <font>
-                  <family>Slate</family>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">letter-spacing: 1px;
+</string>
+           </property>
+           <property name="text">
+            <string>DENTAL CLINIC MANAGEMENT SYSTEM</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="current_user_label">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">letter-spacing: 1px;
 color: #1F4744;
-padding-left: 1px;</string>
-                </property>
-                <property name="text">
-                 <string>[welcome]</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="connect_feedback">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-          </layout>
+</string>
+           </property>
+           <property name="text">
+            <string>[welcome]</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

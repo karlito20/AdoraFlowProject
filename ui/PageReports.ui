@@ -490,52 +490,34 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
-    <number>0</number>
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>18</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>18</number>
    </property>
    <item>
-    <widget class="QWidget" name="header_container" native="true">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>48</height>
-      </size>
+    <widget class="QLabel" name="header_label">
+     <property name="font">
+      <font>
+       <family>Slate Medium</family>
+       <pointsize>30</pointsize>
+      </font>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <property name="leftMargin">
-       <number>6</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>6</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="header_label">
-        <property name="font">
-         <font>
-          <family>Slate Medium</family>
-          <pointsize>25</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#header_label {
+     <property name="styleSheet">
+      <string notr="true">#header_label {
 	color: rgb(60, 60, 60);
 	letter-spacing: 1px;
 }</string>
-        </property>
-        <property name="text">
-         <string>Reports</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     </property>
+     <property name="text">
+      <string>Reports</string>
+     </property>
     </widget>
    </item>
    <item>
@@ -579,8 +561,9 @@
         <property name="styleSheet">
          <string notr="true">#card1,  #card2 {
 	border: 1px solid rgba(100, 100, 100, 90);
-	border-radius: 25px;
+	border-radius: 15px;
 	background: white;
+
 }
 
 #card1:hover, #card2:hover{

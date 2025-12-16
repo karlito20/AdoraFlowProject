@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>713</width>
+    <width>712</width>
     <height>65</height>
    </rect>
   </property>
@@ -81,11 +81,12 @@
            <property name="font">
             <font>
              <family>Slate</family>
-             <pointsize>11</pointsize>
+             <pointsize>12</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(60, 60, 60);</string>
+            <string notr="true">color: #607473;
+</string>
            </property>
            <property name="text">
             <string>[id]</string>
@@ -103,11 +104,11 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>11</pointsize>
+             <pointsize>12</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(60, 60, 60);</string>
+            <string notr="true">color: #1F4744;</string>
            </property>
            <property name="text">
             <string>[name]</string>
@@ -168,7 +169,7 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>10</pointsize>
+             <pointsize>12</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -208,7 +209,7 @@
           <widget class="QLabel" name="status_label">
            <property name="font">
             <font>
-             <family>Slate Medium</family>
+             <family>Slate</family>
              <bold>false</bold>
             </font>
            </property>

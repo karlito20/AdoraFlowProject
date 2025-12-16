@@ -101,5 +101,5 @@ class MainWindowController:
             self.appointments_controller.page.add_appointment_button.hide()
             self.page.nav_reports.hide()
             self.page.nav_access.hide()
-        elif self.usertype == 'Admin':
-            self.page.nav_treatments.hide()
+        # elif self.usertype == 'Admin':
+            # self.page.nav_treatments.hide()

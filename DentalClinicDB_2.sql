@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2025 at 09:28 AM
+-- Generation Time: Dec 16, 2025 at 09:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -255,7 +255,7 @@ CREATE TABLE `employee_roles` (
 
 INSERT INTO `employee_roles` (`roleID`, `role_name`) VALUES
 (100001, 'Dentist'),
-(100002, 'Dental Assistant'),
+(100002, 'Assistant'),
 (100003, 'Receptionist'),
 (100004, 'Admin');
 
@@ -366,8 +366,8 @@ INSERT INTO `invoices` (`invoiceID`, `patientID`, `treatmentID`, `invoice_date`,
 (800085, 400035, 600085, '2025-12-10', 180, 'Paid'),
 (800086, 400036, 600086, '2025-12-11', 350, 'Paid'),
 (800087, 400037, 600087, '2025-12-11', 75, 'Paid'),
-(800088, 400038, 600088, '2025-12-12', 120, 'Pending'),
-(800089, 400039, 600089, '2025-12-12', 950, 'Pending'),
+(800088, 400038, 600088, '2025-12-12', 120, 'Paid'),
+(800089, 400039, 600089, '2025-12-12', 950, 'Paid'),
 (800090, 400040, 600090, '2025-12-12', 220, 'Pending');
 
 -- --------------------------------------------------------
@@ -583,7 +583,9 @@ INSERT INTO `payments` (`paymentID`, `invoiceID`, `payment_date`, `payment_time`
 (900105, 800022, '2025-12-20', '09:00:00', 0, 'Cash'),
 (900106, 800024, '2025-12-20', '10:00:00', 0, 'Debit Card'),
 (900107, 800025, '2025-12-20', '11:00:00', 0, 'Credit Card'),
-(900108, 800023, '2025-12-14', '14:04:00', 50, 'Cash');
+(900108, 800023, '2025-12-14', '14:04:00', 50, 'Cash'),
+(900109, 800088, '2025-12-15', '22:32:23', 120, 'Credit Card'),
+(900110, 800089, '2025-12-15', '23:07:18', 950, 'Credit Card');
 
 -- --------------------------------------------------------
 
@@ -991,13 +993,13 @@ ALTER TABLE `invoices`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `patientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400061;
+  MODIFY `patientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400062;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900109;
+  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900111;
 
 --
 -- AUTO_INCREMENT for table `treatments`

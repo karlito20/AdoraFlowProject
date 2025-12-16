@@ -109,7 +109,7 @@ def apply_shadow(widget):
     shadow = QGraphicsDropShadowEffect()
     shadow.setBlurRadius(10)
     shadow.setXOffset(1)
-    shadow.setYOffset(1)
+    shadow.setYOffset(5)
     shadow.setColor(QColor(Qt.GlobalColor.gray))
     widget.setGraphicsEffect(shadow)
 

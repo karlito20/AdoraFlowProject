@@ -493,40 +493,34 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
-    <number>10</number>
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>18</number>
    </property>
    <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
     <number>18</number>
    </property>
    <item>
-    <widget class="QWidget" name="header" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="header_label">
-        <property name="font">
-         <font>
-          <family>Slate Medium</family>
-          <pointsize>25</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#header_label {
+    <widget class="QLabel" name="header_label">
+     <property name="font">
+      <font>
+       <family>Slate Medium</family>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#header_label {
 	color: rgb(60, 60, 60);
 	letter-spacing: 1px;
 }</string>
-        </property>
-        <property name="text">
-         <string>Payments</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     </property>
+     <property name="text">
+      <string>Payments</string>
+     </property>
     </widget>
    </item>
    <item>
@@ -566,7 +560,7 @@ border-radius: 5px;
 border: 1px solid gray;</string>
         </property>
         <property name="placeholderText">
-         <string>Search patient name</string>
+         <string>Search by patient name</string>
         </property>
        </widget>
       </item>
@@ -607,6 +601,7 @@ border: 1px solid gray;</string>
         <property name="font">
          <font>
           <family>Slate</family>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="cursor">
@@ -642,6 +637,7 @@ border: 1px solid gray;</string>
         <property name="font">
          <font>
           <family>Slate</family>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="cursor">
@@ -677,6 +673,7 @@ border: 1px solid gray;</string>
         <property name="font">
          <font>
           <family>Slate</family>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="cursor">
@@ -713,7 +710,7 @@ border: 1px solid gray;</string>
 	background: white;
 	color: black;
 	border: 1px solid rgba(60, 60, 60, 60);
-	border-radius: 10px;
+	border-radius: 15px;
 }</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -740,11 +737,11 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;
+               <string notr="true">	color: rgba(60, 60, 60, 200);
 </string>
               </property>
               <property name="text">
@@ -757,11 +754,12 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>PATIENT</string>
@@ -773,11 +771,12 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>SERVICE</string>
@@ -789,11 +788,12 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>DATE</string>
@@ -805,11 +805,12 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>AMOUNT</string>
@@ -821,11 +822,12 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>STATUS</string>
@@ -837,11 +839,12 @@ border: 1px solid gray;</string>
               <property name="font">
                <font>
                 <family>Slate</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:  #607473;</string>
+               <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
               </property>
               <property name="text">
                <string>ACTION</string>
@@ -875,8 +878,8 @@ border: 1px solid gray;</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>618</width>
-           <height>328</height>
+           <width>634</width>
+           <height>304</height>
           </rect>
          </property>
          <property name="styleSheet">

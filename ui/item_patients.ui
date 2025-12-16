@@ -553,11 +553,11 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>13</pointsize>
+             <pointsize>12</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(60, 60, 60);</string>
+            <string notr="true">color: #1F4744;</string>
            </property>
            <property name="text">
             <string>[name]</string>
@@ -573,7 +573,8 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(60, 60, 60);</string>
+            <string notr="true">color: #607473;
+</string>
            </property>
            <property name="text">
             <string>[id]</string>
@@ -617,7 +618,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(30, 30, 30);</string>
+            <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
             <string>[email]</string>
@@ -639,8 +640,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(50, 50, 50);
-</string>
+            <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
             <string>[birthdate]</string>
@@ -667,7 +667,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(50, 50, 50);
+            <string notr="true">color: rgb(60, 60, 60);
 padding-left: 20px;</string>
            </property>
            <property name="text">

@@ -498,125 +498,98 @@
    <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>6</number>
+   </property>
    <property name="leftMargin">
-    <number>5</number>
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>18</number>
    </property>
    <property name="rightMargin">
-    <number>0</number>
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
    </property>
    <item>
-    <widget class="QWidget" name="header_container" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="leftMargin">
-       <number>1</number>
-      </property>
-      <property name="rightMargin">
-       <number>1</number>
-      </property>
-      <property name="bottomMargin">
-       <number>2</number>
-      </property>
-      <item alignment="Qt::AlignmentFlag::AlignTop">
-       <widget class="QLabel" name="header_label">
-        <property name="font">
-         <font>
-          <family>Slate Medium</family>
-          <pointsize>25</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">	color: rgb(60, 60, 60);
+    <widget class="QLabel" name="header_label">
+     <property name="font">
+      <font>
+       <family>Slate Medium</family>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	color: rgb(60, 60, 60);
 	letter-spacing: 1px;</string>
-        </property>
-        <property name="text">
-         <string>Treatments</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     </property>
+     <property name="text">
+      <string>Treatments</string>
+     </property>
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="placeholder" native="true">
+    <widget class="QWidget" name="info_box" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="maximumSize">
       <size>
-       <width>16777215</width>
+       <width>610</width>
        <height>16777215</height>
       </size>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
+     <property name="styleSheet">
+      <string notr="true">#info_box {
+	border: 1px solid #B8E0DD;
+	border-radius: 15px;
+	background: #F0FDFA;
+}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <property name="leftMargin">
-       <number>1</number>
-      </property>
-      <property name="topMargin">
-       <number>2</number>
-      </property>
-      <property name="rightMargin">
-       <number>1</number>
+       <number>10</number>
       </property>
       <property name="bottomMargin">
        <number>6</number>
       </property>
       <item>
-       <widget class="QWidget" name="info_box" native="true">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>610</width>
-          <height>16777215</height>
-         </size>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Slate Medium</family>
+          <pointsize>12</pointsize>
+         </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">#info_box {
-	border: 1px solid #B8E0DD;
-	border-radius: 10px;
-	background: #F0FDFA;
-}</string>
+         <string notr="true">color: #1F4744;
+</string>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <property name="leftMargin">
-          <number>10</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="font">
-            <font>
-             <family>Slate Medium</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #1F4744;
+        <property name="text">
+         <string>Dentist Workspace</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #1F4744;
 </string>
-           </property>
-           <property name="text">
-            <string>Dentist Workspace</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_2">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #1F4744;
-</string>
-           </property>
-           <property name="text">
-            <string>Manage treatments and clinical notes. This is a dentist workspace. </string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        </property>
+        <property name="text">
+         <string>Manage treatments and clinical notes. This is a dentist workspace. </string>
+        </property>
        </widget>
       </item>
      </layout>
@@ -629,17 +602,17 @@
        <number>1</number>
       </property>
       <property name="topMargin">
-       <number>0</number>
+       <number>16</number>
       </property>
       <property name="bottomMargin">
-       <number>2</number>
+       <number>4</number>
       </property>
       <item>
        <widget class="QLineEdit" name="search_input">
         <property name="minimumSize">
          <size>
           <width>250</width>
-          <height>32</height>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -662,7 +635,7 @@ border-radius: 5px;
 border: 1px solid gray;</string>
         </property>
         <property name="placeholderText">
-         <string>Search patient name</string>
+         <string>Search by patient name</string>
         </property>
        </widget>
       </item>
@@ -700,8 +673,14 @@ border: 1px solid gray;</string>
       <property name="leftMargin">
        <number>1</number>
       </property>
+      <property name="topMargin">
+       <number>4</number>
+      </property>
       <property name="rightMargin">
        <number>1</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
       </property>
       <item>
        <widget class="QScrollArea" name="scrollArea">
@@ -730,8 +709,8 @@ border: 1px solid gray;</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>348</width>
-           <height>326</height>
+           <width>344</width>
+           <height>308</height>
           </rect>
          </property>
          <property name="palette">
