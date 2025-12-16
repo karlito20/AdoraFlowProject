@@ -571,7 +571,7 @@
 }
 
 #card1_label, #card2_label, #card3_label, #card4_label {
-	color: #607473;
+	color: rgba(60, 60, 60, 200);
 	padding-left: 3px;
 	padding-top: -15px; 
 }
@@ -627,7 +627,7 @@ QPushButton#card1_val, #card2_val, #card3_val, #card4_val {
               <property name="font">
                <font>
                 <family>Slate Medium</family>
-                <pointsize>13</pointsize>
+                <pointsize>14</pointsize>
                 <bold>false</bold>
                </font>
               </property>
@@ -722,7 +722,7 @@ Treatments</string>
               <property name="font">
                <font>
                 <family>Slate Medium</family>
-                <pointsize>13</pointsize>
+                <pointsize>14</pointsize>
                 <bold>false</bold>
                </font>
               </property>

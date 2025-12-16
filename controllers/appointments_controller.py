@@ -2,7 +2,8 @@ from datetime import datetime
 
 from PyQt6.QtCore import QDate, QTime
 
-from views.page_elements import AppointmentsListItem, AppointmentFormPopup, ConfirmDialog, ReschedulePopup
+from views.page_elements import AppointmentsListItem, AppointmentFormPopup, ConfirmDialog, ReschedulePopup, \
+    RemoveAppointmentPopup
 
 
 class AppointmentsController:
@@ -36,13 +37,14 @@ class AppointmentsController:
         for item in list:
             p = AppointmentsListItem()
             p.name_label.setText(item[0])
-            t = datetime.strptime(str(item[1]), '%H:%M:%S')
-            p.time_label.setText(t.strftime('%I:%M %p'))
-            p.service_label.setText(item[2] or "(Pending treatment)")
+            st = datetime.strptime(str(item[1]), '%H:%M:%S')
+            et = datetime.strptime(str(item[2]), '%H:%M:%S')
+            p.start_label.setText(st.strftime('%I:%M %p - ') + et.strftime('%I:%M %p'))
             d = datetime.strptime(str(item[3]), '%Y-%m-%d')
             p.date_label.setText(d.strftime('%Y, %B %d'))
             id = item[4]
             p.resched_button.clicked.connect(lambda _, pid=id: self.show_resched_popup(pid))
+            p.remove_button.clicked.connect(lambda _, pid=id: self.dialog_remove_appointment(pid))
             self.page.appointments_list.addWidget(p)
             self.appointment_widgets.append(p)
 
@@ -136,6 +138,18 @@ class AppointmentsController:
             self.db.appointments_db.update_appointment_date_time(id, *data)
             form.close()
             self.populate_appointments_list()
+
+    def dialog_remove_appointment(self, id):
+        popup = RemoveAppointmentPopup(self.page)
+        popup.show()
+        reason = popup.reason_input.currentText()
+        popup.save_button.clicked.connect(lambda: conf())
+        popup.cancel_button.clicked.connect(lambda: popup.hide())
+        def conf():
+            self.db.appointments_db.update_appointment_status(id, reason)
+            popup.close()
+            self.populate_appointments_list()
+
 
     def search_appointments(self, text):
         for widget in self.appointment_widgets:

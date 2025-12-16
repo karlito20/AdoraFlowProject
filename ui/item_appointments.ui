@@ -558,7 +558,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="time_label">
+          <widget class="QLabel" name="start_label">
            <property name="font">
             <font>
              <family>Slate</family>
@@ -569,24 +569,7 @@
             <string notr="true">color: rgb(60, 60, 60);</string>
            </property>
            <property name="text">
-            <string>[time]</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="service_label">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #607473;
-</string>
-           </property>
-           <property name="text">
-            <string>[service]</string>
+            <string>[start]</string>
            </property>
           </widget>
          </item>
@@ -607,26 +590,32 @@
        </spacer>
       </item>
       <item>
+       <widget class="QLabel" name="date_label">
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(60, 60, 60);</string>
+        </property>
+        <property name="text">
+         <string>[date]</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QWidget" name="date_container" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
-          <widget class="QLabel" name="date_label">
-           <property name="font">
-            <font>
-             <family>Slate</family>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(60, 60, 60);</string>
-           </property>
-           <property name="text">
-            <string>[date]</string>
-           </property>
-          </widget>
-         </item>
          <item>
           <widget class="QPushButton" name="resched_button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>25</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>80</width>
@@ -660,6 +649,44 @@
            </property>
            <property name="text">
             <string>Reschedule</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="remove_button">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Slate</family>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#remove_button {
+	background: white;
+	border-radius: 6px;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+
+}
+
+#remove_button:hover {
+	background: #DBF0EE;	
+}
+
+#remove_button:pressed {
+	background: #B8E0DD;
+}</string>
+           </property>
+           <property name="text">
+            <string>Remove</string>
            </property>
           </widget>
          </item>

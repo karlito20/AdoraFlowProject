@@ -65,6 +65,14 @@ class ReschedulePopup(QDialog):
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
+class RemoveAppointmentPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_cancelapt.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+
+
 class UserAccessListItem(QWidget):
     def __init__(self):
         super().__init__()

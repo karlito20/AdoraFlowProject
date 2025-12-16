@@ -54,6 +54,7 @@ class Treatments:
             'INSERT INTO invoices (patientID, treatmentID, invoice_date, total_amount, status) VALUES '
             '(%s, %s, CURDATE(), %s, "Unpaid") ', (patientID, treatmentID, default_price)
         )
+
         cursor.close()
 
     def get_service_count(self):

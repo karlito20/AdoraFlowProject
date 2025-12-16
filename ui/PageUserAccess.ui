@@ -490,17 +490,20 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>0</number>
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>18</number>
    </property>
    <property name="rightMargin">
-    <number>20</number>
+    <number>6</number>
    </property>
    <item>
     <widget class="QLabel" name="header_label">
      <property name="font">
       <font>
        <family>Slate Medium</family>
-       <pointsize>25</pointsize>
+       <pointsize>30</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -517,16 +520,22 @@
    <item>
     <widget class="QWidget" name="button_container" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <property name="topMargin">
-       <number>18</number>
+       <number>6</number>
       </property>
       <property name="rightMargin">
        <number>0</number>
       </property>
+      <property name="bottomMargin">
+       <number>14</number>
+      </property>
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>TextLabel</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -592,7 +601,7 @@
      <property name="styleSheet">
       <string notr="true">#container {
 	border: 1px solid rgba(90, 90, 90, 100);
-	border-radius: 10px;
+	border-radius: 15px;
 	background: white;
 }</string>
      </property>
@@ -605,13 +614,13 @@
         <property name="font">
          <font>
           <family>Slate Medium</family>
-          <pointsize>12</pointsize>
+          <pointsize>14</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">padding-left: 10px;
 padding-top: 5px;
-color: rgb(60, 60, 60);
+	color: rgba(60, 60, 60, 200);
 </string>
         </property>
         <property name="text">
@@ -639,8 +648,8 @@ color: rgb(60, 60, 60);
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>685</width>
-           <height>152</height>
+           <width>699</width>
+           <height>132</height>
           </rect>
          </property>
          <property name="sizePolicy">

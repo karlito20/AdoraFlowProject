@@ -23,13 +23,10 @@ class Appointments:
     def get_appointments_today_summary(self):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT a.start_time, CONCAT(p.first_name, " ", p.last_name), s.service_name, a.status '
+            'SELECT a.start_time, CONCAT(p.first_name, " ", p.last_name), p.phone, a.status '
             'FROM appointments a  '
             'LEFT JOIN patients p ON p.patientID = a.patientID '
-            'LEFT JOIN treatments t ON t.appointmentID = a.appointmentID '
-            'LEFT JOIN treatment_service ts ON ts.treatmentID = t.treatmentID '
-            'LEFT JOIN services s ON s.serviceID = ts.serviceID '
-            'WHERE a.appointment_date = CURDATE()'
+            'WHERE a.appointment_date = CURDATE() AND a.status = "Scheduled"'
         )
         result = cursor.fetchall()
         cursor.close()
@@ -38,13 +35,13 @@ class Appointments:
     def get_short_upcoming_appointments(self):
         cursor = self.db.cursor()
         cursor.execute(
-           'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, s.service_name, a.appointment_date, a.appointmentID '
+           'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, a.end_time, a.appointment_date, a.appointmentID '
             'FROM appointments a '
             'LEFT JOIN patients p ON (p.patientID=a.patientID) '
             'LEFT JOIN treatments t ON (t.appointmentID=a.appointmentID) '
             'LEFT JOIN treatment_service ts ON (ts.treatmentID=t.treatmentID) '
             'LEFT JOIN services s ON (s.serviceID=ts.serviceID) '
-            'WHERE a.appointment_date >= CURDATE() '
+            'WHERE a.status = "Scheduled" '
             'ORDER BY a.appointment_date, a.start_time'
         )
         result = cursor.fetchall()
@@ -55,13 +52,13 @@ class Appointments:
     def get_short_upcoming_appointments_specificdate(self, date):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, s.service_name, a.appointment_date, a.appointmentID '
+            'SELECT CONCAT(p.first_name, " ", p.last_name), a.start_time, a.end_time, a.appointment_date, a.appointmentID '
             'FROM appointments a '
             'LEFT JOIN patients p ON (p.patientID=a.patientID) '
             'LEFT JOIN treatments t ON (a.appointmentID=t.appointmentID) '
             'LEFT JOIN treatment_service ts ON (ts.treatmentID=t.treatmentID) '
             'LEFT JOIN services s ON (s.serviceID=ts.serviceID) '
-            'WHERE a.appointment_date = %s ' 
+            'WHERE a.appointment_date = %s AND a.status = "Scheduled" ' 
             'ORDER BY a.appointment_date', (date,)
         )
         result = cursor.fetchall()
@@ -77,6 +74,13 @@ class Appointments:
         id = cursor.lastrowid
         cursor.close()
         return id
+
+    def update_appointment_status(self, appointmentID, status):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'UPDATE appointments SET status = %s WHERE appointmentID = %s', (status, appointmentID)
+        )
+        cursor.close()
 
     def set_appointment_treatment(self, appointmentID, treatmentID, quantity):
         cursor = self.db.cursor()
@@ -116,7 +120,7 @@ class Appointments:
             'SELECT CONCAT(p.first_name, " ", p.last_name), a.appointment_date, a.start_time, a.appointmentID, p.patientID '
             'FROM appointments a '
             'LEFT JOIN patients p ON (p.patientID=a.patientID) '
-            'WHERE a.status <> "Completed" '
+            'WHERE a.status NOT IN ("Completed", "Cancelled", "No Show") '
             'ORDER BY a.appointment_date, a.start_time'
         )
         result = cursor.fetchall()

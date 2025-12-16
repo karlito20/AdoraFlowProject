@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>popup_cancelapt</class>
+ <widget class="QDialog" name="popup_cancelapt">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>305</width>
+    <height>167</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="main_container" native="true">
+     <property name="styleSheet">
+      <string notr="true">#main_container {
+border: 3px solid #2E6B66;
+	background: #F7FAFC;
+	border-radius: 15px;
+}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QWidget" name="label_container" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="header_label">
+           <property name="font">
+            <font>
+             <family>Slate Medium</family>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#header_label {
+	color: rgb(60, 60, 60);
+}</string>
+           </property>
+           <property name="text">
+            <string>Cancel Appointment</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="container" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QWidget" name="verticalWidget_2" native="true">
+           <property name="styleSheet">
+            <string notr="true">color: #1D3533;</string>
+           </property>
+           <layout class="QVBoxLayout" name="label_container_2">
+            <property name="rightMargin">
+             <number>31</number>
+            </property>
+            <item alignment="Qt::AlignmentFlag::AlignRight">
+             <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <family>Slate</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Reason:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QWidget" name="verticalWidget" native="true">
+             <property name="styleSheet">
+              <string notr="true">background: white;
+color: #1D3533;</string>
+             </property>
+             <layout class="QVBoxLayout" name="input_container">
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QComboBox" name="reason_input">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: white;
+color: #1D3533;</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Cancelled</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>No Show</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="button_container" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="save_button">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#save_button {
+	background: white;
+	border-radius: 6px;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+
+}
+
+#save_button:hover {
+	background: #DBF0EE;	
+}
+
+#save_button:pressed {
+	background: #B8E0DD;
+}</string>
+           </property>
+           <property name="text">
+            <string>Save</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="cancel_button">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#cancel_button {
+	border-radius: 6px;
+	color: white;
+	border: 2px solid #1F4744;
+	padding: 5px;
+	background: #2E6B66;
+}
+
+#cancel_button:hover {
+	border: 2px solid #1F4744;
+	background: #265955;
+
+}
+#cancel_button:pressed {
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
+}</string>
+           </property>
+           <property name="text">
+            <string>Cancel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

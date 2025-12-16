@@ -43,15 +43,6 @@ class TreatmentsController:
             self.page.treatment_list_contents.addWidget(t, row, col)
             self.treatments_widgets.append(t)
 
-    def refresh_treatments_list(self):
-        while self.page.treatment_list_contents.count():
-            item = self.page.treatment_list_contents.takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.setParent(None)
-
-        self.populate_treatments_list()
-
     def dialog_add_treatment(self, item, t):
         prompt = ConfirmDialog(self.page)
         prompt.show()
@@ -73,7 +64,7 @@ class TreatmentsController:
                 err.show()
                 return
             prompt.close()
-            self.refresh_treatments_list()
+            self.populate_treatments_list()
 
     def search_treatments(self, text):
         for widget in self.treatments_widgets:
