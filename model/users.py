@@ -53,7 +53,6 @@ class Users:
 
     def update_user_credentials(self, userid, password):
         cursor = self.db.cursor()
-        print(userid, password)
         cursor.execute(
             'UPDATE user_credentials SET password=%s WHERE employeeID=%s', (password, userid)
         )

@@ -4,10 +4,13 @@ from PyQt6.QtGui import QColor, QPainter, QFont
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QLineEdit
 from PyQt6.uic import loadUi
 
+from resources import resource_path
+
+
 class DashboardPage(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi('ui/PageDashboard.ui', self)
+        loadUi(resource_path('ui/PageDashboard.ui'), self)
 
         self.setup()
 
@@ -21,7 +24,7 @@ class DashboardPage(QWidget):
 class PatientsPage(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi('ui/PagePatients.ui', self)
+        loadUi(resource_path('ui/PagePatients.ui'), self)
 
         self.setup()
 
@@ -33,7 +36,7 @@ class PatientsPage(QWidget):
 class AppointmentsPage(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi('ui/PageAppointments.ui', self)
+        loadUi(resource_path('ui/PageAppointments.ui'), self)
 
         self.setup()
 
@@ -46,7 +49,7 @@ class AppointmentsPage(QWidget):
 class TreatmentsPage(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi('ui/PageTreatments.ui', self)
+        loadUi(resource_path('ui/PageTreatments.ui'), self)
 
         self.setup()
 
@@ -57,7 +60,7 @@ class TreatmentsPage(QWidget):
 class PaymentsPage(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi('ui/PagePayments.ui', self)
+        loadUi(resource_path('ui/PagePayments.ui'), self)
 
         self.setup()
 
@@ -68,7 +71,7 @@ class PaymentsPage(QWidget):
 class ReportsPage(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi('ui/PageReports.ui', self)
+        loadUi(resource_path('ui/PageReports.ui'), self)
 
         self.setup()
         self.setup_piechart()
@@ -115,7 +118,7 @@ class ReportsPage(QWidget):
 class UserAccessPage(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi('ui/PageUserAccess.ui', self)
+        loadUi(resource_path('ui/PageUserAccess.ui'), self)
 
         self.setup()
 

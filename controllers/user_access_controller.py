@@ -65,7 +65,6 @@ class UserAccessController:
 
     def set_useraccess_form_options(self, form):
         employees = self.db.users_db.get_employees_without_user()
-        print(employees)
         for e in employees:
             form.user_field.addItem(e[1] + ' ' + e[2] + ' - ' + str(e[0]), e[0])
         form.user_field.setCurrentIndex(-1)

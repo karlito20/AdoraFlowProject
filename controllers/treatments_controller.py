@@ -48,8 +48,6 @@ class TreatmentsController:
         prompt.show()
         prompt.confirm.connect(lambda: conf())
         def conf():
-            print(item[4], self.mainWindow_controller.userid, item[3], date.today(), t.notes_field.toPlainText(),
-                  int(t.service_field.currentData()))
             try:
                 self.db.treatments_db.handle_add_treatment(
                     int(item[4]),

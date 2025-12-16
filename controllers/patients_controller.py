@@ -62,6 +62,10 @@ class PatientsController:
         popup.close_button.clicked.connect(lambda: popup.close())
         popup.delete_button.hide()  # shouldnt delete records
 
+        if self.mainWindow_controller.usertype in ['Dentist', 'Assistant']: popup.edit_button.hide()  # hide from dentist & assitant
+        if self.mainWindow_controller.usertype == ['Receptionist', 'Admin']: popup.edit_button.show()
+        print(self.mainWindow_controller.usertype)
+
     def show_patient_form(self, parent, edit=None, id=None):
         form = PatientFormPopup(parent)
         form.show()

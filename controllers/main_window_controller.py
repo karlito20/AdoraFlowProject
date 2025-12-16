@@ -18,6 +18,7 @@ class MainWindowController:
         self.application = application
         self.userid = userid
         self.usertype = usertype
+        print(self.usertype)
 
         self.pages = None
         self.setup_pages()
@@ -80,7 +81,7 @@ class MainWindowController:
             self.page.mainstack_pages.addWidget(page)
 
     def hide_buttons(self)  :
-        # improve this
+        # very simple
         if self.usertype == 'Receptionist':
             self.page.nav_treatments.hide()
             self.page.nav_access.hide()
@@ -101,5 +102,5 @@ class MainWindowController:
             self.appointments_controller.page.add_appointment_button.hide()
             self.page.nav_reports.hide()
             self.page.nav_access.hide()
-        # elif self.usertype == 'Admin':
-            # self.page.nav_treatments.hide()
+        elif self.usertype == 'Admin':
+            self.page.nav_treatments.hide()

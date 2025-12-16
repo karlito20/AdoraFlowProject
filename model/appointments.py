@@ -46,7 +46,6 @@ class Appointments:
         )
         result = cursor.fetchall()
         cursor.close()
-        print(len(result))
         return result
 
     def get_short_upcoming_appointments_specificdate(self, date):
