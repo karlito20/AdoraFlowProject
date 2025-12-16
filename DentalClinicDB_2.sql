@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 16, 2025 at 09:17 AM
+-- Generation Time: Dec 16, 2025 at 04:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -133,12 +133,12 @@ INSERT INTO `appointments` (`appointmentID`, `dentistID`, `patientID`, `assistan
 (500088, 200001, 400038, 200002, '2025-12-12', '09:00:00', '09:30:00', 'Completed'),
 (500089, 200001, 400039, NULL, '2025-12-12', '10:00:00', '10:45:00', 'Completed'),
 (500090, 200001, 400040, 200002, '2025-12-12', '13:00:00', '13:45:00', 'Completed'),
-(500091, 200001, 400041, 200002, '2025-12-14', '09:00:00', '09:45:00', 'Scheduled'),
-(500092, 200001, 400042, NULL, '2025-12-14', '10:30:00', '11:15:00', 'Scheduled'),
-(500093, 200001, 400043, 200002, '2025-12-14', '13:00:00', '13:45:00', 'Scheduled'),
-(500094, 200001, 400044, 200002, '2025-12-15', '09:00:00', '09:30:00', 'Scheduled'),
-(500095, 200001, 400045, NULL, '2025-12-15', '10:00:00', '10:45:00', 'Scheduled'),
-(500096, 200001, 400046, 200002, '2025-12-16', '09:00:00', '09:45:00', 'Scheduled'),
+(500091, 200001, 400041, 200002, '2025-12-14', '09:00:00', '09:45:00', 'Completed'),
+(500092, 200001, 400042, NULL, '2025-12-14', '10:30:00', '11:15:00', 'Completed'),
+(500093, 200001, 400043, 200002, '2025-12-14', '13:00:00', '13:45:00', 'Cancelled'),
+(500094, 200001, 400044, 200002, '2025-12-15', '09:00:00', '09:30:00', 'Cancelled'),
+(500095, 200001, 400045, NULL, '2025-12-15', '10:00:00', '10:45:00', 'Cancelled'),
+(500096, 200001, 400046, 200002, '2025-12-16', '09:00:00', '09:45:00', 'Cancelled'),
 (500097, 200001, 400047, 200002, '2025-12-16', '10:30:00', '11:00:00', 'Scheduled'),
 (500098, 200001, 400048, NULL, '2025-12-17', '09:00:00', '09:30:00', 'Scheduled'),
 (500099, 200001, 400049, 200002, '2025-12-17', '10:00:00', '10:45:00', 'Scheduled'),
@@ -368,7 +368,10 @@ INSERT INTO `invoices` (`invoiceID`, `patientID`, `treatmentID`, `invoice_date`,
 (800087, 400037, 600087, '2025-12-11', 75, 'Paid'),
 (800088, 400038, 600088, '2025-12-12', 120, 'Paid'),
 (800089, 400039, 600089, '2025-12-12', 950, 'Paid'),
-(800090, 400040, 600090, '2025-12-12', 220, 'Pending');
+(800090, 400040, 600090, '2025-12-12', 220, 'Pending'),
+(800091, 400001, 600092, '2025-12-16', 220, 'Pending'),
+(800092, 400041, 600093, '2025-12-16', 1100, 'Pending'),
+(800093, 400042, 600094, '2025-12-16', 220, 'Pending');
 
 -- --------------------------------------------------------
 
@@ -741,7 +744,10 @@ INSERT INTO `treatments` (`treatmentID`, `patientID`, `dentistID`, `appointmentI
 (600087, 400037, 200001, 500087, '2025-12-11', 'Consultation for bridge'),
 (600088, 400038, 200001, 500088, '2025-12-12', 'Regular checkup'),
 (600089, 400039, 200001, 500089, '2025-12-12', 'Root canal treatment'),
-(600090, 400040, 200001, 500090, '2025-12-12', 'Tooth extraction #17');
+(600090, 400040, 200001, 500090, '2025-12-12', 'Tooth extraction #17'),
+(600092, 400001, 200001, 500001, '2025-12-16', 'N/a'),
+(600093, 400041, 200001, 500091, '2025-12-16', 'N/a'),
+(600094, 400042, 200001, 500092, '2025-12-16', 'N/a');
 
 -- --------------------------------------------------------
 
@@ -850,7 +856,10 @@ INSERT INTO `treatment_service` (`treatmentserviceID`, `treatmentID`, `serviceID
 (700087, 600087, 300007, 75),
 (700088, 600088, 300001, 120),
 (700089, 600089, 300003, 950),
-(700090, 600090, 300004, 220);
+(700090, 600090, 300004, 220),
+(700091, 600092, 300004, 220),
+(700092, 600093, 300005, 1100),
+(700093, 600094, 300004, 220);
 
 -- --------------------------------------------------------
 
@@ -987,7 +996,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `invoiceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800091;
+  MODIFY `invoiceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800094;
 
 --
 -- AUTO_INCREMENT for table `patients`
@@ -1005,13 +1014,13 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `treatments`
 --
 ALTER TABLE `treatments`
-  MODIFY `treatmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=600091;
+  MODIFY `treatmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=600095;
 
 --
 -- AUTO_INCREMENT for table `treatment_service`
 --
 ALTER TABLE `treatment_service`
-  MODIFY `treatmentserviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=700091;
+  MODIFY `treatmentserviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=700094;
 
 --
 -- Constraints for dumped tables

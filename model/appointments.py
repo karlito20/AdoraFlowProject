@@ -126,3 +126,39 @@ class Appointments:
         result = cursor.fetchall()
         cursor.close()
         return result
+
+    def get_completed_appointment_today_count(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(*) FROM appointments WHERE status = "Completed" AND appointment_date = CURDATE()'
+        )
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0]
+
+    def get_cancelled_appointment_today_count(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(*) FROM appointments WHERE status = "Cancelled" AND appointment_date = CURDATE()'
+        )
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0]
+
+    def get_scheduled_appointment_today_count(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(*) FROM appointments WHERE appointment_date = CURDATE() AND status = "Scheduled"'
+        )
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0]
+
+    def get_noshow_appointment_today_count(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(*) FROM appointments WHERE status = "No Show" AND appointment_date = CURDATE()'
+        )
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0]

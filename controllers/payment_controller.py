@@ -1,6 +1,6 @@
 from PyQt6.QtCore import QMarginsF, QPoint
 from PyQt6.QtGui import QPainter, QPageSize, QPdfWriter, QPageLayout, QColor, QRegion
-from PyQt6.QtWidgets import QWidget
+from PyQt6.QtWidgets import QWidget, QFileDialog
 
 from views.page_elements import InvoiceListItem, PaymentFormPopup, ConfirmDialog, ReceiptPopup
 
@@ -142,8 +142,22 @@ class PaymentController:
         popup.method_label.setText(str(details[9]))
         popup.amountpaid_label.setText('PHP ' + str(details[10]))
 
-        popup.export_button.clicked.connect(lambda: self.export_widget_to_pdf(popup.receipt_container, 'receipt.pdf'))
+        popup.export_button.clicked.connect(lambda: self.save_receipt_dialog(popup.receipt_container))
         popup.close_button.clicked.connect(lambda: popup.close())
+
+    def save_receipt_dialog(self, widget):
+        path, _ = QFileDialog.getSaveFileName(
+            self.page,
+            "Save Receipt",
+            "PaymentReceipt.pdf",
+            "PDF Files (*.pdf)"
+        )
+        if not path:
+            return
+        if not path.lower().endswith(".pdf"):
+            path += ".pdf"
+
+        self.export_widget_to_pdf(widget, path)
 
     def export_widget_to_pdf(self, widget, filename):
         writer = QPdfWriter(filename)

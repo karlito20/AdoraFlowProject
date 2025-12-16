@@ -52,7 +52,7 @@ class Treatments:
 
         cursor.execute(
             'INSERT INTO invoices (patientID, treatmentID, invoice_date, total_amount, status) VALUES '
-            '(%s, %s, CURDATE(), %s, "Unpaid") ', (patientID, treatmentID, default_price)
+            '(%s, %s, CURDATE(), %s, "Pending") ', (patientID, treatmentID, default_price)
         )
 
         cursor.close()

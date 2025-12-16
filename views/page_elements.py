@@ -112,6 +112,24 @@ class ReceiptPopup(QDialog):
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
+class CardPopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi('ui/popup_card.ui', self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+
+        self.setup()
+
+    def setup(self):
+        self.label1.hide()
+        self.label2.hide()
+        self.label3.hide()
+        self.label4.hide()
+        self.val1.hide()
+        self.val2.hide()
+        self.val3.hide()
+        self.val4.hide()
 
 def apply_shadow(widget):
     shadow = QGraphicsDropShadowEffect()

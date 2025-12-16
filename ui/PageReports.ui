@@ -566,9 +566,6 @@
 
 }
 
-#card1:hover, #card2:hover{
-	border: 1px solid #367D77;
-}
 
 #card1_label, #card2_label, #card3_label, #card4_label {
 	color: rgba(60, 60, 60, 200);
@@ -588,6 +585,12 @@ QPushButton#card1_val, #card2_val, #card3_val, #card4_val {
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <property name="spacing">
           <number>20</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
          </property>
          <item>
           <widget class="QWidget" name="card1" native="true">
@@ -659,7 +662,7 @@ Treatments</string>
                </font>
               </property>
               <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
+               <cursorShape>ArrowCursor</cursorShape>
               </property>
               <property name="layoutDirection">
                <enum>Qt::LayoutDirection::LeftToRight</enum>
@@ -754,7 +757,7 @@ Revenue (PHP)</string>
                </font>
               </property>
               <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
+               <cursorShape>ArrowCursor</cursorShape>
               </property>
               <property name="layoutDirection">
                <enum>Qt::LayoutDirection::LeftToRight</enum>
@@ -783,10 +786,211 @@ Revenue (PHP)</string>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string/>
-        </property>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="rightMargin">
+            <number>26</number>
+           </property>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label">
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
+             </property>
+             <property name="text">
+              <string>From:</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">	color: rgba(60, 60, 60, 200);
+</string>
+             </property>
+             <property name="text">
+              <string>To:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QDateEdit" name="start_date">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#start_date {
+color: #1D3533;
+background: white;
+padding-left: 5px;
+}</string>
+             </property>
+             <property name="buttonSymbols">
+              <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
+             </property>
+             <property name="displayFormat">
+              <string>yyyy-MM-dd</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+             <property name="date">
+              <date>
+               <year>2025</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="end_date">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#end_date {
+color: #1D3533;
+background: white;
+padding-left: 5px;
+}</string>
+             </property>
+             <property name="displayFormat">
+              <string>yyyy-MM-dd</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+             <property name="date">
+              <date>
+               <year>2025</year>
+               <month>12</month>
+               <day>1</day>
+              </date>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QPushButton" name="generate_button">
+             <property name="minimumSize">
+              <size>
+               <width>80</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Slate</family>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#generate_button {
+	border-radius: 6px;
+	color: white;
+	border: 2px solid #1F4744;
+	padding: 5px;
+	background: #2E6B66;
+}
+
+#generate_button:hover {
+	border-radius: 6px;
+	color: white;
+	border: 2px solid #1F4744;
+	padding: 5px;
+	background: #265955;
+
+}
+#generate_button:pressed {
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
+}</string>
+             </property>
+             <property name="text">
+              <string>Generate Report</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
@@ -809,6 +1013,12 @@ Revenue (PHP)</string>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
        <number>20</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
       </property>
       <item>
        <widget class="QWidget" name="linegraph_container" native="true">

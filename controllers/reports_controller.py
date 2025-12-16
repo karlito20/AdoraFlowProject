@@ -3,6 +3,7 @@ import datetime
 from PyQt6.QtCharts import QPieSlice, QCategoryAxis, QLineSeries, QValueAxis
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor, QFont
+from PyQt6.QtWidgets import QFileDialog
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.pagesizes import A4
@@ -18,12 +19,12 @@ class ReportsController:
 
         self.update_piechart()
         self.update_linegraph()
-        self.setup_labels()
-        self.generate_full_report_pdf('report.pdf', self.db.reports.get_full_report_data('2025-10-10', '2025-12-10'), ['2025-10-10', '2025-12-10'])
+        self.setup()
 
-    def setup_labels(self):
+    def setup(self):
         self.page.card1_val.setText(str(self.db.treatments_db.get_treatments_count()))
         self.page.card2_val.setText(str(f'{self.db.reports.get_overall_revenue():,}'))
+        self.page.generate_button.clicked.connect(lambda: self.generate_full_report())
 
     def get_payment_method_percentages(self):
         df = self.db.treatments_db.get_service_count()
@@ -79,7 +80,24 @@ class ReportsController:
         self.update_piechart()
         self.setup_labels()
 
-    def generate_full_report_pdf(self, path, data, date_range):
+    def generate_full_report(self):
+        date_period = [str(self.page.start_date.text()), str(self.page.end_date.text())]
+        path, _ = QFileDialog.getSaveFileName(
+            self.page,
+            "Save Report",
+            f"Clinic_Report_{date_period[0]}-{date_period[1]}.pdf",
+            "PDF Files (*.pdf)"
+        )
+        if not path:
+            return
+
+        self.full_report_to_pdf(
+            path,
+            self.db.reports.get_full_report_data(date_period[0], date_period[1]),
+            [date_period[0], date_period[1]]
+        )
+
+    def full_report_to_pdf(self, path, data, date_range):
         doc = SimpleDocTemplate(
             path, pagesize=A4, rightMargin=36, leftMargin=36, topMargin=36, bottomMargin=36
         )
@@ -130,7 +148,7 @@ class ReportsController:
         elements.append(Spacer(1,20))
 
             # Revenue by services report
-        elements.append(Paragraph('Revenue by Services', styles['Heading2']))
+        elements.append(Paragraph('Top Treatments by Revenue', styles['Heading2']))
         elements.append(Spacer(1,10))
 
         services_table = [['Service', 'Total (PHP)']]
@@ -149,7 +167,27 @@ class ReportsController:
         elements.append(table)
         elements.append(Spacer(1,20))
 
-            # Appointments by status report
+        # Popular services report
+        elements.append(Paragraph('Top Treatments by Volume', styles['Heading2']))
+        elements.append(Spacer(1, 10))
+
+        popular_services_table = [['Service', 'Total Treatments']]
+        for row in data['most_performed_services']:
+            popular_services_table.append([row[0], row[1]])
+
+        table = None
+        table = Table(popular_services_table, colWidths=[100, 150])
+        table.hAlign = 'LEFT'
+        table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.gray),
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),
+            ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.whitesmoke, colors.lightgrey])
+        ]))
+        elements.append(table)
+        elements.append(Spacer(1, 20))
+
+        # Appointments by status report
         elements.append(Paragraph('Appointments by Status', styles['Heading2']))
         elements.append(Spacer(1, 10))
 
@@ -158,7 +196,7 @@ class ReportsController:
             apt_status_table.append([row[0], row[1]])
 
         table = None
-        table = Table(apt_status_table, colWidths=[200, 200])
+        table = Table(apt_status_table, colWidths=[100, 150])
         table.hAlign = 'LEFT'
         table.setStyle(TableStyle([
             ('BACKGROUND', (0, 0), (-1, 0), colors.gray),
@@ -167,27 +205,5 @@ class ReportsController:
             ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.whitesmoke, colors.lightgrey])
         ]))
         elements.append(table)
-        elements.append(Spacer(1,20))
-
-            # Popular services report
-        elements.append(Paragraph(' Treatment Service Popularity', styles['Heading2']))
-        elements.append(Spacer(1,10))
-
-        popular_services_table = [['Service', 'Total Treatments']]
-        for row in data['most_performed_services']:
-            popular_services_table.append([row[0], row[1]])
-
-        table = None
-        table = Table(popular_services_table, colWidths=[200, 200])
-        table.hAlign = 'LEFT'
-        table.setStyle(TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.gray),
-            ('GRID', (0, 0), (-1, -1), 1, colors.black),
-            ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.whitesmoke, colors.lightgrey])
-        ]))
-        elements.append(table)
-        elements.append(Spacer(1,20))
-
-
+        elements.append(Spacer(1,30))
         doc.build(elements)

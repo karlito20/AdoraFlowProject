@@ -798,6 +798,9 @@ padding-left: 5px;</string>
          <property name="topMargin">
           <number>16</number>
          </property>
+         <property name="rightMargin">
+          <number>30</number>
+         </property>
          <item>
           <spacer name="horizontalSpacer_4">
            <property name="orientation">

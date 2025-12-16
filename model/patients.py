@@ -71,3 +71,12 @@ class Patients():
         cursor.close()
         return result
 
+    def get_new_patients_this_month(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT COUNT(*) FROM patients WHERE MONTH(date_registered) = MONTH(CURDATE())',
+        )
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0]
+
