@@ -58,3 +58,15 @@ class Users:
             'UPDATE user_credentials SET password=%s WHERE employeeID=%s', (password, userid)
         )
         cursor.close()
+
+    def get_employee_name(self, userid):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT CONCAT(e.emp_first_name, " ", e.emp_last_name) '
+            'FROM user_credentials uc '
+            '   LEFT JOIN employees e ON e.employeeID=uc.employeeID '
+            'WHERE uc.employeeID=%s ', (userid,)
+        )
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0]
