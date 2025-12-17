@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 16, 2025 at 04:50 PM
+-- Generation Time: Dec 17, 2025 at 04:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -139,7 +139,7 @@ INSERT INTO `appointments` (`appointmentID`, `dentistID`, `patientID`, `assistan
 (500094, 200001, 400044, 200002, '2025-12-15', '09:00:00', '09:30:00', 'Cancelled'),
 (500095, 200001, 400045, NULL, '2025-12-15', '10:00:00', '10:45:00', 'Cancelled'),
 (500096, 200001, 400046, 200002, '2025-12-16', '09:00:00', '09:45:00', 'Cancelled'),
-(500097, 200001, 400047, 200002, '2025-12-16', '10:30:00', '11:00:00', 'Scheduled'),
+(500097, 200001, 400047, 200002, '2025-12-16', '10:30:00', '11:00:00', 'Completed'),
 (500098, 200001, 400048, NULL, '2025-12-17', '09:00:00', '09:30:00', 'Scheduled'),
 (500099, 200001, 400049, 200002, '2025-12-17', '10:00:00', '10:45:00', 'Scheduled'),
 (500100, 200001, 400050, 200002, '2025-12-18', '09:00:00', '09:45:00', 'Scheduled'),
@@ -172,7 +172,8 @@ INSERT INTO `appointments` (`appointmentID`, `dentistID`, `patientID`, `assistan
 (500127, 200001, 400017, 200002, '2026-01-09', '09:00:00', '09:30:00', 'Scheduled'),
 (500128, 200001, 400018, NULL, '2026-01-09', '10:00:00', '10:45:00', 'Scheduled'),
 (500129, 200001, 400019, 200002, '2026-01-12', '09:00:00', '09:45:00', 'Scheduled'),
-(500130, 200001, 400020, 200002, '2026-01-12', '10:30:00', '11:00:00', 'Scheduled');
+(500130, 200001, 400020, 200002, '2026-01-12', '10:30:00', '11:00:00', 'Scheduled'),
+(500131, 200001, 400060, NULL, '2025-12-17', '08:00:00', '08:30:00', 'Scheduled');
 
 -- --------------------------------------------------------
 
@@ -371,7 +372,8 @@ INSERT INTO `invoices` (`invoiceID`, `patientID`, `treatmentID`, `invoice_date`,
 (800090, 400040, 600090, '2025-12-12', 220, 'Pending'),
 (800091, 400001, 600092, '2025-12-16', 220, 'Pending'),
 (800092, 400041, 600093, '2025-12-16', 1100, 'Pending'),
-(800093, 400042, 600094, '2025-12-16', 220, 'Pending');
+(800093, 400042, 600094, '2025-12-16', 220, 'Pending'),
+(800094, 400047, 600095, '2025-12-17', 180, 'Paid');
 
 -- --------------------------------------------------------
 
@@ -390,74 +392,76 @@ CREATE TABLE `patients` (
   `phone` varchar(32) DEFAULT NULL,
   `email` varchar(32) DEFAULT NULL,
   `address` varchar(128) DEFAULT NULL,
-  `date_registered` date NOT NULL
+  `date_registered` date NOT NULL,
+  `status` varchar(32) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `patients`
 --
 
-INSERT INTO `patients` (`patientID`, `first_name`, `middle_name`, `last_name`, `birthdate`, `sex`, `blood_type`, `phone`, `email`, `address`, `date_registered`) VALUES
-(400001, 'Jennifer', 'Anne', 'Smith', '1985-04-12', 'Female', 'O+', '555-0201', 'jennifer.smith@email.com', '123 Maple St, Springfield', '2025-10-15'),
-(400002, 'Robert', 'James', 'Johnson', '1990-07-23', 'Male', 'A+', '555-0202', 'robert.johnson@email.com', '456 Oak Ave, Springfield', '2025-10-16'),
-(400003, 'Maria', 'Isabel', 'Garcia', '1978-11-05', 'Female', 'B+', '555-0203', 'maria.garcia@email.com', '789 Pine Rd, Springfield', '2025-10-17'),
-(400004, 'David', 'Thomas', 'Williams', '1995-02-18', 'Male', 'AB+', '555-0204', 'david.williams@email.com', '101 Elm St, Springfield', '2025-10-18'),
-(400005, 'Lisa', 'Marie', 'Brown', '1982-09-30', 'Female', 'O-', '555-0205', 'lisa.brown@email.com', '202 Birch Ln, Springfield', '2025-10-19'),
-(400006, 'James', 'Edward', 'Davis', '1975-12-15', 'Male', 'A-', '555-0206', 'james.davis@email.com', '303 Cedar Blvd, Springfield', '2025-10-20'),
-(400007, 'Patricia', 'Lynn', 'Miller', '1992-03-22', 'Female', 'B+', '555-0207', 'patricia.miller@email.com', '404 Spruce Dr, Springfield', '2025-10-21'),
-(400008, 'John', 'Michael', 'Wilson', '1988-06-08', 'Male', 'O+', '555-0208', 'john.wilson@email.com', '505 Walnut Ct, Springfield', '2025-10-22'),
-(400009, 'Linda', 'Susan', 'Moore', '1979-01-14', 'Female', 'A+', '555-0209', 'linda.moore@email.com', '606 Cherry St, Springfield', '2025-10-23'),
-(400010, 'William', 'Robert', 'Taylor', '1991-08-09', 'Male', 'B-', '555-0210', 'william.taylor@email.com', '707 Aspen Way, Springfield', '2025-10-24'),
-(400011, 'Elizabeth', 'Grace', 'Anderson', '1987-05-17', 'Female', 'AB+', '555-0211', 'elizabeth.anderson@email.com', '808 Redwood Rd, Springfield', '2025-10-25'),
-(400012, 'Richard', 'Charles', 'Thomas', '1993-10-31', 'Male', 'O+', '555-0212', 'richard.thomas@email.com', '909 Magnolia Ave, Springfield', '2025-10-26'),
-(400013, 'Jessica', 'Ann', 'Jackson', '1984-12-25', 'Female', 'A-', '555-0213', 'jessica.jackson@email.com', '110 Palm St, Springfield', '2025-10-27'),
-(400014, 'Charles', 'Henry', 'White', '1976-02-28', 'Male', 'B+', '555-0214', 'charles.white@email.com', '111 Sycamore Ln, Springfield', '2025-10-28'),
-(400015, 'Karen', 'Diane', 'Harris', '1990-07-04', 'Female', 'O-', '555-0215', 'karen.harris@email.com', '112 Willow Way, Springfield', '2025-10-29'),
-(400016, 'Christopher', 'Paul', 'Martin', '1981-09-11', 'Male', 'AB-', '555-0216', 'christopher.martin@email.com', '113 Oakwood Dr, Springfield', '2025-10-30'),
-(400017, 'Nancy', 'Carol', 'Thompson', '1994-04-19', 'Female', 'A+', '555-0217', 'nancy.thompson@email.com', '114 Pinecrest Rd, Springfield', '2025-10-31'),
-(400018, 'Daniel', 'Joseph', 'Garcia', '1989-11-07', 'Male', 'B+', '555-0218', 'daniel.garcia@email.com', '115 Maplewood Ave, Springfield', '2025-11-01'),
-(400019, 'Betty', 'Louise', 'Martinez', '1977-03-26', 'Female', 'O+', '555-0219', 'betty.martinez@email.com', '116 Birchwood St, Springfield', '2025-11-02'),
-(400020, 'Matthew', 'Andrew', 'Robinson', '1995-06-13', 'Male', 'A-', '555-0220', 'matthew.robinson@email.com', '117 Cedarhurst Ln, Springfield', '2025-11-03'),
-(400021, 'Susan', 'Margaret', 'Clark', '1986-08-24', 'Female', 'B+', '555-0221', 'susan.clark@email.com', '118 Elmwood Dr, Springfield', '2025-11-04'),
-(400022, 'Anthony', 'Mark', 'Rodriguez', '1983-01-09', 'Male', 'AB+', '555-0222', 'anthony.rodriguez@email.com', '119 Sprucewood Ct, Springfield', '2025-11-05'),
-(400023, 'Sarah', 'Elizabeth', 'Lewis', '1992-05-30', 'Female', 'O+', '555-0223', 'sarah.lewis@email.com', '120 Walnutwood Way, Springfield', '2025-11-06'),
-(400024, 'Donald', 'Patrick', 'Lee', '1974-10-12', 'Male', 'A+', '555-0224', 'donald.lee@email.com', '121 Cherrywood Rd, Springfield', '2025-11-07'),
-(400025, 'Dorothy', 'Jean', 'Walker', '1988-02-17', 'Female', 'B-', '555-0225', 'dorothy.walker@email.com', '122 Aspenwood Ave, Springfield', '2025-11-08'),
-(400026, 'Mark', 'Steven', 'Hall', '1991-12-03', 'Male', 'O-', '555-0226', 'mark.hall@email.com', '123 Redwoodwood St, Springfield', '2025-11-09'),
-(400027, 'Sandra', 'Ruth', 'Allen', '1979-06-28', 'Female', 'AB+', '555-0227', 'sandra.allen@email.com', '124 Palmwood Ln, Springfield', '2025-11-10'),
-(400028, 'Paul', 'Christopher', 'Young', '1985-03-15', 'Male', 'A-', '555-0228', 'paul.young@email.com', '125 Magnoliawood Dr, Springfield', '2025-11-11'),
-(400029, 'Carol', 'Ann', 'King', '1993-09-22', 'Female', 'B+', '555-0229', 'carol.king@email.com', '126 Willowwood Ct, Springfield', '2025-11-12'),
-(400030, 'Steven', 'John', 'Wright', '1978-07-19', 'Male', 'O+', '555-0230', 'steven.wright@email.com', '127 Sycamorewood Way, Springfield', '2025-11-13'),
-(400031, 'Donna', 'Marie', 'Scott', '1987-04-11', 'Female', 'A+', '555-0231', 'donna.scott@email.com', '128 Oakwoodwood Rd, Springfield', '2025-11-14'),
-(400032, 'Kenneth', 'George', 'Green', '1990-08-05', 'Male', 'B-', '555-0232', 'kenneth.green@email.com', '129 Pinewoodwood Ave, Springfield', '2025-11-15'),
-(400033, 'Michelle', 'Lynn', 'Baker', '1982-11-27', 'Female', 'AB-', '555-0233', 'michelle.baker@email.com', '130 Maplecrest St, Springfield', '2025-11-16'),
-(400034, 'Edward', 'Francis', 'Adams', '1976-05-14', 'Male', 'O+', '555-0234', 'edward.adams@email.com', '131 Birchcrest Ln, Springfield', '2025-11-17'),
-(400035, 'Emily', 'Rose', 'Nelson', '1994-01-08', 'Female', 'A-', '555-0235', 'emily.nelson@email.com', '132 Cedarcrest Dr, Springfield', '2025-11-18'),
-(400036, 'Brian', 'Joseph', 'Hill', '1989-10-23', 'Male', 'B+', '555-0236', 'brian.hill@email.com', '133 Elmcrest Ct, Springfield', '2025-11-19'),
-(400037, 'Amanda', 'Kay', 'Ramirez', '1977-12-16', 'Female', 'O-', '555-0237', 'amanda.ramirez@email.com', '134 Sprucecrest Way, Springfield', '2025-11-20'),
-(400038, 'Ronald', 'David', 'Campbell', '1983-02-04', 'Male', 'AB+', '555-0238', 'ronald.campbell@email.com', '135 Walnutcrest Rd, Springfield', '2025-11-21'),
-(400039, 'Melissa', 'Sue', 'Mitchell', '1991-06-29', 'Female', 'A+', '555-0239', 'melissa.mitchell@email.com', '136 Cherrycrest Ave, Springfield', '2025-11-22'),
-(400040, 'Kevin', 'Raymond', 'Roberts', '1979-09-07', 'Male', 'B-', '555-0240', 'kevin.roberts@email.com', '137 Aspencrest St, Springfield', '2025-11-23'),
-(400041, 'Deborah', 'Jane', 'Carter', '1986-03-18', 'Female', 'O+', '555-0241', 'deborah.carter@email.com', '138 Redwoodcrest Ln, Springfield', '2025-11-24'),
-(400042, 'Jason', 'Thomas', 'Phillips', '1993-07-02', 'Male', 'A-', '555-0242', 'jason.phillips@email.com', '139 Palmcrest Dr, Springfield', '2025-11-25'),
-(400043, 'Laura', 'Beth', 'Evans', '1975-10-25', 'Female', 'B+', '555-0243', 'laura.evans@email.com', '140 Magnoliacrest Ct, Springfield', '2025-11-26'),
-(400044, 'Gary', 'William', 'Turner', '1988-05-31', 'Male', 'AB-', '555-0244', 'gary.turner@email.com', '141 Willowcrest Way, Springfield', '2025-11-27'),
-(400045, 'Sharon', 'Anne', 'Parker', '1980-01-26', 'Female', 'O-', '555-0245', 'sharon.parker@email.com', '142 Sycamorecrest Rd, Springfield', '2025-11-28'),
-(400046, 'Eric', 'Michael', 'Collins', '1992-04-13', 'Male', 'A+', '555-0246', 'eric.collins@email.com', '143 Oakcrest Ave, Springfield', '2025-11-29'),
-(400047, 'Cynthia', 'Diane', 'Edwards', '1978-08-20', 'Female', 'B-', '555-0247', 'cynthia.edwards@email.com', '144 Pinehurst St, Springfield', '2025-11-30'),
-(400048, 'Joshua', 'Andrew', 'Stewart', '1985-11-09', 'Male', 'O+', '555-0248', 'joshua.stewart@email.com', '145 Maplehurst Ln, Springfield', '2025-12-01'),
-(400049, 'Kathleen', 'Mary', 'Flores', '1990-12-22', 'Female', 'AB+', '555-0249', 'kathleen.flores@email.com', '146 Birchhurst Dr, Springfield', '2025-12-05'),
-(400050, 'Timothy', 'John', 'Morris', '1983-06-06', 'Male', 'A-', '555-0250', 'timothy.morris@email.com', '147 Cedarhurst Ct, Springfield', '2025-12-10'),
-(400051, 'Barbara', 'Sue', 'Collins', '1975-03-18', 'Female', 'O+', '555-0251', 'barbara.collins@email.com', '148 Elmhurst St, Springfield', '2025-12-11'),
-(400052, 'Thomas', 'Edward', 'Parker', '1988-09-22', 'Male', 'A+', '555-0252', 'thomas.parker@email.com', '149 Oakhurst Ln, Springfield', '2025-12-12'),
-(400053, 'Margaret', 'Rose', 'Evans', '1991-11-30', 'Female', 'B+', '555-0253', 'margaret.evans@email.com', '150 Pinecrest Ave, Springfield', '2025-12-13'),
-(400054, 'Joseph', 'Michael', 'Stewart', '1979-04-25', 'Male', 'AB-', '555-0254', 'joseph.stewart@email.com', '151 Maplewood Dr, Springfield', '2025-10-19'),
-(400055, 'Helen', 'Grace', 'Morris', '1986-07-12', 'Female', 'O-', '555-0255', 'helen.morris@email.com', '152 Birchwood Rd, Springfield', '2025-10-20'),
-(400056, 'Frank', 'William', 'Rivera', '1993-02-28', 'Male', 'A-', '555-0256', 'frank.rivera@email.com', '153 Cedarwood Ct, Springfield', '2025-10-21'),
-(400057, 'Donna', 'Jean', 'Peterson', '1974-08-14', 'Female', 'B+', '555-0257', 'donna.peterson@email.com', '154 Elmwood Way, Springfield', '2025-10-22'),
-(400058, 'Raymond', 'James', 'Reed', '1989-12-03', 'Male', 'AB+', '555-0258', 'raymond.reed@email.com', '155 Sprucewood St, Springfield', '2025-10-23'),
-(400059, 'Carolyn', 'Ann', 'Cook', '1982-05-19', 'Female', 'O+', '555-0259', 'carolyn.cook@email.com', '156 Walnutwood Ln, Springfield', '2025-10-24'),
-(400060, 'Patrick', 'John', 'Morgan', '1995-10-07', 'Male', 'A+', '555-0260', 'patrick.morgan@email.com', '157 Cherrywood Dr, Springfield', '2025-10-25');
+INSERT INTO `patients` (`patientID`, `first_name`, `middle_name`, `last_name`, `birthdate`, `sex`, `blood_type`, `phone`, `email`, `address`, `date_registered`, `status`) VALUES
+(400001, 'Jennifer', 'Anne', 'Smith', '1985-04-12', 'Female', 'O+', '555-0201', 'jennifer.smith@email.com', '123 Maple St, Springfield', '2025-10-15', 'Active'),
+(400002, 'Roberttt', 'James', 'Johnson', '1990-07-23', 'Male', 'A+', '555-0202', 'robert.johnson@email.com', '456 Oak Ave, Springfield', '2025-10-16', 'Active'),
+(400003, 'Maria', 'Isabel', 'Garcia', '1978-11-05', 'Female', 'B+', '555-0203', 'maria.garcia@email.com', '789 Pine Rd, Springfield', '2025-10-17', 'Active'),
+(400004, 'David', 'Thomas', 'Williams', '1995-02-18', 'Male', 'AB+', '555-0204', 'david.williams@email.com', '101 Elm St, Springfield', '2025-10-18', 'Active'),
+(400005, 'Lisa', 'Marie', 'Brown', '1982-09-30', 'Female', 'O-', '555-0205', 'lisa.brown@email.com', '202 Birch Ln, Springfield', '2025-10-19', 'Active'),
+(400006, 'James', 'Edward', 'Davis', '1975-12-15', 'Male', 'A-', '555-0206', 'james.davis@email.com', '303 Cedar Blvd, Springfield', '2025-10-20', 'Active'),
+(400007, 'Patricia', 'Lynn', 'Miller', '1992-03-22', 'Female', 'B+', '555-0207', 'patricia.miller@email.com', '404 Spruce Dr, Springfield', '2025-10-21', 'Active'),
+(400008, 'John', 'Michael', 'Wilson', '1988-06-08', 'Male', 'O+', '555-0208', 'john.wilson@email.com', '505 Walnut Ct, Springfield', '2025-10-22', 'Active'),
+(400009, 'Linda', 'Susan', 'Moore', '1979-01-14', 'Female', 'A+', '555-0209', 'linda.moore@email.com', '606 Cherry St, Springfield', '2025-10-23', 'Active'),
+(400010, 'William', 'Robert', 'Taylor', '1991-08-09', 'Male', 'B-', '555-0210', 'william.taylor@email.com', '707 Aspen Way, Springfield', '2025-10-24', 'Active'),
+(400011, 'Elizabeth', 'Grace', 'Anderson', '1987-05-17', 'Female', 'AB+', '555-0211', 'elizabeth.anderson@email.com', '808 Redwood Rd, Springfield', '2025-10-25', 'Active'),
+(400012, 'Richard', 'Charles', 'Thomas', '1993-10-31', 'Male', 'O+', '555-0212', 'richard.thomas@email.com', '909 Magnolia Ave, Springfield', '2025-10-26', 'Active'),
+(400013, 'Jessica', 'Ann', 'Jackson', '1984-12-25', 'Female', 'A-', '555-0213', 'jessica.jackson@email.com', '110 Palm St, Springfield', '2025-10-27', 'Active'),
+(400014, 'Charles', 'Henry', 'White', '1976-02-28', 'Male', 'B+', '555-0214', 'charles.white@email.com', '111 Sycamore Ln, Springfield', '2025-10-28', 'Active'),
+(400015, 'Karen', 'Diane', 'Harris', '1990-07-04', 'Female', 'O-', '555-0215', 'karen.harris@email.com', '112 Willow Way, Springfield', '2025-10-29', 'Active'),
+(400016, 'Christopher', 'Paul', 'Martin', '1981-09-11', 'Male', 'AB-', '555-0216', 'christopher.martin@email.com', '113 Oakwood Dr, Springfield', '2025-10-30', 'Active'),
+(400017, 'Nancy', 'Carol', 'Thompson', '1994-04-19', 'Female', 'A+', '555-0217', 'nancy.thompson@email.com', '114 Pinecrest Rd, Springfield', '2025-10-31', 'Active'),
+(400018, 'Daniel', 'Joseph', 'Garcia', '1989-11-07', 'Male', 'B+', '555-0218', 'daniel.garcia@email.com', '115 Maplewood Ave, Springfield', '2025-11-01', 'Active'),
+(400019, 'Betty', 'Louise', 'Martinez', '1977-03-26', 'Female', 'O+', '555-0219', 'betty.martinez@email.com', '116 Birchwood St, Springfield', '2025-11-02', 'Active'),
+(400020, 'Matthew', 'Andrew', 'Robinson', '1995-06-13', 'Male', 'A-', '555-0220', 'matthew.robinson@email.com', '117 Cedarhurst Ln, Springfield', '2025-11-03', 'Active'),
+(400021, 'Susan', 'Margaret', 'Clark', '1986-08-24', 'Female', 'B+', '555-0221', 'susan.clark@email.com', '118 Elmwood Dr, Springfield', '2025-11-04', 'Active'),
+(400022, 'Anthony', 'Mark', 'Rodriguez', '1983-01-09', 'Male', 'AB+', '555-0222', 'anthony.rodriguez@email.com', '119 Sprucewood Ct, Springfield', '2025-11-05', 'Active'),
+(400023, 'Sarah', 'Elizabeth', 'Lewis', '1992-05-30', 'Female', 'O+', '555-0223', 'sarah.lewis@email.com', '120 Walnutwood Way, Springfield', '2025-11-06', 'Active'),
+(400024, 'Donald', 'Patrick', 'Lee', '1974-10-12', 'Male', 'A+', '555-0224', 'donald.lee@email.com', '121 Cherrywood Rd, Springfield', '2025-11-07', 'Active'),
+(400025, 'Dorothyyy', 'Jean', 'Walker', '1988-02-17', 'Female', 'B-', '555-0225', 'dorothy.walker@email.com', '122 Aspenwood Ave, Springfield', '2025-11-08', 'Active'),
+(400026, 'Mark', 'Steven', 'Hall', '1991-12-03', 'Male', 'O-', '555-0226', 'mark.hall@email.com', '123 Redwoodwood St, Springfield', '2025-11-09', 'Active'),
+(400027, 'Sandra', 'Ruth', 'Allen', '1979-06-28', 'Female', 'AB+', '555-0227', 'sandra.allen@email.com', '124 Palmwood Ln, Springfield', '2025-11-10', 'Active'),
+(400028, 'Paul', 'Christopher', 'Young', '1985-03-15', 'Male', 'A-', '555-0228', 'paul.young@email.com', '125 Magnoliawood Dr, Springfield', '2025-11-11', 'Active'),
+(400029, 'Carol', 'Ann', 'King', '1993-09-22', 'Female', 'B+', '555-0229', 'carol.king@email.com', '126 Willowwood Ct, Springfield', '2025-11-12', 'Active'),
+(400030, 'Steven', 'John', 'Wright', '1978-07-19', 'Male', 'O+', '555-0230', 'steven.wright@email.com', '127 Sycamorewood Way, Springfield', '2025-11-13', 'Active'),
+(400031, 'Donna', 'Marie', 'Scott', '1987-04-11', 'Female', 'A+', '555-0231', 'donna.scott@email.com', '128 Oakwoodwood Rd, Springfield', '2025-11-14', 'Active'),
+(400032, 'Kenneth', 'George', 'Green', '1990-08-05', 'Male', 'B-', '555-0232', 'kenneth.green@email.com', '129 Pinewoodwood Ave, Springfield', '2025-11-15', 'Active'),
+(400033, 'Michelle', 'Lynn', 'Baker', '1982-11-27', 'Female', 'AB-', '555-0233', 'michelle.baker@email.com', '130 Maplecrest St, Springfield', '2025-11-16', 'Active'),
+(400034, 'Edward', 'Francis', 'Adams', '1976-05-14', 'Male', 'O+', '555-0234', 'edward.adams@email.com', '131 Birchcrest Ln, Springfield', '2025-11-17', 'Active'),
+(400035, 'Emily', 'Rose', 'Nelson', '1994-01-08', 'Female', 'A-', '555-0235', 'emily.nelson@email.com', '132 Cedarcrest Dr, Springfield', '2025-11-18', 'Active'),
+(400036, 'Brian', 'Joseph', 'Hill', '1989-10-23', 'Male', 'B+', '555-0236', 'brian.hill@email.com', '133 Elmcrest Ct, Springfield', '2025-11-19', 'Active'),
+(400037, 'Amanda', 'Kay', 'Ramirez', '1977-12-16', 'Female', 'O-', '555-0237', 'amanda.ramirez@email.com', '134 Sprucecrest Way, Springfield', '2025-11-20', 'Active'),
+(400038, 'Ronald', 'David', 'Campbell', '1983-02-04', 'Male', 'AB+', '555-0238', 'ronald.campbell@email.com', '135 Walnutcrest Rd, Springfield', '2025-11-21', 'Active'),
+(400039, 'Melissa', 'Sue', 'Mitchell', '1991-06-29', 'Female', 'A+', '555-0239', 'melissa.mitchell@email.com', '136 Cherrycrest Ave, Springfield', '2025-11-22', 'Active'),
+(400040, 'Kevin', 'Raymond', 'Roberts', '1979-09-07', 'Male', 'B-', '555-0240', 'kevin.roberts@email.com', '137 Aspencrest St, Springfield', '2025-11-23', 'Active'),
+(400041, 'Deborah', 'Jane', 'Carter', '1986-03-18', 'Female', 'O+', '555-0241', 'deborah.carter@email.com', '138 Redwoodcrest Ln, Springfield', '2025-11-24', 'Active'),
+(400042, 'Jason', 'Thomas', 'Phillips', '1993-07-02', 'Male', 'A-', '555-0242', 'jason.phillips@email.com', '139 Palmcrest Dr, Springfield', '2025-11-25', 'Active'),
+(400043, 'Laura', 'Beth', 'Evans', '1975-10-25', 'Female', 'B+', '555-0243', 'laura.evans@email.com', '140 Magnoliacrest Ct, Springfield', '2025-11-26', 'Active'),
+(400044, 'Gary', 'William', 'Turner', '1988-05-31', 'Male', 'AB-', '555-0244', 'gary.turner@email.com', '141 Willowcrest Way, Springfield', '2025-11-27', 'Active'),
+(400045, 'Sharon', 'Anne', 'Parker', '1980-01-26', 'Female', 'O-', '555-0245', 'sharon.parker@email.com', '142 Sycamorecrest Rd, Springfield', '2025-11-28', 'Active'),
+(400046, 'Eric', 'Michael', 'Collins', '1992-04-13', 'Male', 'A+', '555-0246', 'eric.collins@email.com', '143 Oakcrest Ave, Springfield', '2025-11-29', 'Active'),
+(400047, 'Cynthia', 'Diane', 'Edwards', '1978-08-20', 'Female', 'B-', '555-0247', 'cynthia.edwards@email.com', '144 Pinehurst St, Springfield', '2025-11-30', 'Active'),
+(400048, 'Joshua', 'Andrew', 'Stewart', '1985-11-09', 'Male', 'O+', '555-0248', 'joshua.stewart@email.com', '145 Maplehurst Ln, Springfield', '2025-12-01', 'Active'),
+(400049, 'Kathleen', 'Mary', 'Flores', '1990-12-22', 'Female', 'AB+', '555-0249', 'kathleen.flores@email.com', '146 Birchhurst Dr, Springfield', '2025-12-05', 'Active'),
+(400050, 'Timothy', 'John', 'Morris', '1983-06-06', 'Male', 'A-', '555-0250', 'timothy.morris@email.com', '147 Cedarhurst Ct, Springfield', '2025-12-10', 'Active'),
+(400051, 'Barbara', 'Sue', 'Collins', '1975-03-18', 'Female', 'O+', '555-0251', 'barbara.collins@email.com', '148 Elmhurst St, Springfield', '2025-12-11', 'Active'),
+(400052, 'Thomas', 'Edward', 'Parker', '1988-09-22', 'Male', 'A+', '555-0252', 'thomas.parker@email.com', '149 Oakhurst Ln, Springfield', '2025-12-12', 'Active'),
+(400053, 'Margaret', 'Rose', 'Evans', '1991-11-30', 'Female', 'B+', '555-0253', 'margaret.evans@email.com', '150 Pinecrest Ave, Springfield', '2025-12-13', 'Active'),
+(400054, 'Joseph', 'Michael', 'Stewart', '1979-04-25', 'Male', 'AB-', '555-0254', 'joseph.stewart@email.com', '151 Maplewood Dr, Springfield', '2025-10-19', 'Active'),
+(400055, 'Helen', 'Grace', 'Morris', '1986-07-12', 'Female', 'O-', '555-0255', 'helen.morris@email.com', '152 Birchwood Rd, Springfield', '2025-10-20', 'Active'),
+(400056, 'Frank', 'William', 'Rivera', '1993-02-28', 'Male', 'A-', '555-0256', 'frank.rivera@email.com', '153 Cedarwood Ct, Springfield', '2025-10-21', 'Active'),
+(400057, 'Donna', 'Jean', 'Peterson', '1974-08-14', 'Female', 'B+', '555-0257', 'donna.peterson@email.com', '154 Elmwood Way, Springfield', '2025-10-22', 'Active'),
+(400058, 'Raymond', 'James', 'Reed', '1989-12-03', 'Male', 'AB+', '555-0258', 'raymond.reed@email.com', '155 Sprucewood St, Springfield', '2025-10-23', 'Active'),
+(400059, 'Carolyn', 'Ann', 'Cook', '1982-05-19', 'Female', 'O+', '555-0259', 'carolyn.cook@email.com', '156 Walnutwood Ln, Springfield', '2025-10-24', 'Active'),
+(400060, 'Patrick', 'John', 'Morgan', '1995-10-07', 'Male', 'A+', '555-0260', 'patrick.morgan@email.com', '157 Cherrywood Dr, Springfield', '2025-10-25', 'Active'),
+(400062, 'Jennifer', 'm', 'Smith', '2000-01-01', 'Female', 'A-', '12321', 'mail@mail.com', '123', '2025-12-17', 'Archived');
 
 -- --------------------------------------------------------
 
@@ -588,7 +592,8 @@ INSERT INTO `payments` (`paymentID`, `invoiceID`, `payment_date`, `payment_time`
 (900107, 800025, '2025-12-20', '11:00:00', 0, 'Credit Card'),
 (900108, 800023, '2025-12-14', '14:04:00', 50, 'Cash'),
 (900109, 800088, '2025-12-15', '22:32:23', 120, 'Credit Card'),
-(900110, 800089, '2025-12-15', '23:07:18', 950, 'Credit Card');
+(900110, 800089, '2025-12-15', '23:07:18', 950, 'Credit Card'),
+(900111, 800094, '2025-12-17', '08:51:30', 180, 'Credit Card');
 
 -- --------------------------------------------------------
 
@@ -747,7 +752,8 @@ INSERT INTO `treatments` (`treatmentID`, `patientID`, `dentistID`, `appointmentI
 (600090, 400040, 200001, 500090, '2025-12-12', 'Tooth extraction #17'),
 (600092, 400001, 200001, 500001, '2025-12-16', 'N/a'),
 (600093, 400041, 200001, 500091, '2025-12-16', 'N/a'),
-(600094, 400042, 200001, 500092, '2025-12-16', 'N/a');
+(600094, 400042, 200001, 500092, '2025-12-16', 'N/a'),
+(600095, 400047, 200001, 500097, '2025-12-17', 'mild pain');
 
 -- --------------------------------------------------------
 
@@ -859,7 +865,8 @@ INSERT INTO `treatment_service` (`treatmentserviceID`, `treatmentID`, `serviceID
 (700090, 600090, 300004, 220),
 (700091, 600092, 300004, 220),
 (700092, 600093, 300005, 1100),
-(700093, 600094, 300004, 220);
+(700093, 600094, 300004, 220),
+(700094, 600095, 300002, 180);
 
 -- --------------------------------------------------------
 
@@ -984,7 +991,7 @@ ALTER TABLE `user_credentials`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=500131;
+  MODIFY `appointmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=500132;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -996,31 +1003,31 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `invoiceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800094;
+  MODIFY `invoiceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800095;
 
 --
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `patientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400062;
+  MODIFY `patientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400063;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900111;
+  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900112;
 
 --
 -- AUTO_INCREMENT for table `treatments`
 --
 ALTER TABLE `treatments`
-  MODIFY `treatmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=600095;
+  MODIFY `treatmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=600096;
 
 --
 -- AUTO_INCREMENT for table `treatment_service`
 --
 ALTER TABLE `treatment_service`
-  MODIFY `treatmentserviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=700094;
+  MODIFY `treatmentserviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=700095;
 
 --
 -- Constraints for dumped tables
