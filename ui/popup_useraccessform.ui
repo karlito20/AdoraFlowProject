@@ -107,6 +107,9 @@
                 <pointsize>11</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: #1D3533;</string>
+              </property>
               <property name="text">
                <string>Password:</string>
               </property>
@@ -195,20 +198,24 @@ padding-left: 5px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">#save_button {
-	background: white;
+            <string notr="true">
+#save_button {
 	border-radius: 6px;
-	border: 1px solid #1F4744;
-	color: #1F4744;
-
+	color: white;
+	border: 2px solid #1F4744;
+	padding: 5px;
+	background: #2E6B66;
 }
 
 #save_button:hover {
-	background: #DBF0EE;	
-}
+	border: 2px solid #1F4744;
+	background: #265955;
 
+}
 #save_button:pressed {
-	background: #B8E0DD;
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
 }</string>
            </property>
            <property name="text">
@@ -229,23 +236,21 @@ padding-left: 5px;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">#cancel_button {
+	background: white;
 	border-radius: 6px;
-	color: white;
-	border: 2px solid #1F4744;
-	padding: 5px;
-	background: #2E6B66;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+
 }
 
 #cancel_button:hover {
-	border: 2px solid #1F4744;
-	background: #265955;
-
+	background: #DBF0EE;	
 }
+
 #cancel_button:pressed {
-	background: #1F4744;
-	color: white;
-	border: 2px solid #1F4744;
-}</string>
+	background: #B8E0DD;
+}
+</string>
            </property>
            <property name="text">
             <string>Cancel</string>

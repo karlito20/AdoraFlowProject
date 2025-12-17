@@ -689,6 +689,7 @@ padding-left: 20px;</string>
         <property name="font">
          <font>
           <family>Slate</family>
+          <underline>true</underline>
          </font>
         </property>
         <property name="cursor">
@@ -699,10 +700,11 @@ padding-left: 20px;</string>
 	color: #367D77;
 	background: transparent;
 	border: 0px;
+text-decoration: underline;
 }
 
-#viewdetails_button:hover {
-	text-decoration: underline;
+#viewdetails_button:pressed {
+	text-decoration: none;
 }
 
 </string>

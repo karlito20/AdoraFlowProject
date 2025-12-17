@@ -576,20 +576,33 @@
         </layout>
        </widget>
       </item>
-      <item alignment="Qt::AlignmentFlag::AlignRight">
-       <widget class="QLabel" name="date_label">
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(60, 60, 60);</string>
-        </property>
-        <property name="text">
-         <string>[date]</string>
-        </property>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item alignment="Qt::AlignmentFlag::AlignRight">
+          <widget class="QLabel" name="date_label">
+           <property name="font">
+            <font>
+             <family>Slate</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 60, 60);</string>
+           </property>
+           <property name="text">
+            <string>[date]</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignRight">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
@@ -612,6 +625,7 @@
            <property name="font">
             <font>
              <family>Slate</family>
+             <underline>true</underline>
             </font>
            </property>
            <property name="cursor">
@@ -627,6 +641,10 @@
 #resched_button:hover {
 	text-decoration: underline;
 }
+
+#resched_button:pressed {
+	text-decoration: none;
+}	
 
 </string>
            </property>
@@ -646,6 +664,7 @@
            <property name="font">
             <font>
              <family>Slate</family>
+             <underline>true</underline>
             </font>
            </property>
            <property name="cursor">
@@ -653,7 +672,7 @@
            </property>
            <property name="styleSheet">
             <string notr="true">#remove_button {
-	color: #367D77;
+	color: #A91B0D;
 	background: transparent;
 	border: 0px;
 	text-align: right;
@@ -663,6 +682,9 @@
 	text-decoration: underline;
 }
 
+#remove_button:pressed {
+	text-decoration: none;
+}
 </string>
            </property>
            <property name="text">

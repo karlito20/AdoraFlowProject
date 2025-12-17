@@ -419,20 +419,24 @@ color: #1F4744;
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">#edit_button {
-	background: white;
+            <string notr="true">
+#edit_button {
 	border-radius: 6px;
-	border: 1px solid #1F4744;
-	color: #1F4744;
-
+	color: white;
+	border: 2px solid #1F4744;
+	padding: 5px;
+	background: #2E6B66;
 }
 
 #edit_button:hover {
-	background: #DBF0EE;	
-}
+	border: 2px solid #1F4744;
+	background: #265955;
 
+}
 #edit_button:pressed {
-	background: #B8E0DD;
+	background: #1F4744;
+	color: white;
+	border: 2px solid #1F4744;
 }</string>
            </property>
            <property name="text">
@@ -461,21 +465,21 @@ color: #1F4744;
             <string notr="true">#delete_button {
 	background: white;
 	border-radius: 6px;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	border: 1px solid #A91B0D;
+	color: #A91B0D;
 
 }
 
 #delete_button:hover {
-	background: #DBF0EE;	
+	background: rgba(169, 27, 13, 50);	
 }
 
 #delete_button:pressed {
-	background: #B8E0DD;
+	background: rgba(169, 27, 13, 70);
 }</string>
            </property>
            <property name="text">
-            <string>Delete Record</string>
+            <string>Archive</string>
            </property>
           </widget>
          </item>
@@ -498,26 +502,21 @@ color: #1F4744;
            </property>
            <property name="styleSheet">
             <string notr="true">#close_button {
+	background: white;
 	border-radius: 6px;
-	color: white;
-	border: 2px solid #1F4744;
-	padding: 5px;
-	background: #2E6B66;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+
 }
 
 #close_button:hover {
-	border-radius: 6px;
-	color: white;
-	border: 2px solid #1F4744;
-	padding: 5px;
-	background: #265955;
-
+	background: #DBF0EE;	
 }
+
 #close_button:pressed {
-	background: #1F4744;
-	color: white;
-	border: 2px solid #1F4744;
-}</string>
+	background: #B8E0DD;
+}
+</string>
            </property>
            <property name="text">
             <string>Close</string>

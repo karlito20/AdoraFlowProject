@@ -58,9 +58,9 @@ class PatientsController:
         popup.show()
 
         popup.edit_button.clicked.connect(lambda: self.show_patient_form(popup, True, details[0]))
-        popup.delete_button.clicked.connect(lambda: self.dialog_delete_patient(popup, details[0]))
+        popup.delete_button.clicked.connect(lambda: self.dialog_archive_patient(popup, details[0]))
         popup.close_button.clicked.connect(lambda: popup.close())
-        popup.delete_button.hide()  # shouldnt delete records
+        # popup.delete_button.hide()  # shouldnt delete records
 
         if self.mainWindow_controller.usertype in ['Dentist', 'Assistant']: popup.edit_button.hide()  # hide from dentist & assitant
         if self.mainWindow_controller.usertype == ['Receptionist', 'Admin']: popup.edit_button.show()
@@ -127,14 +127,16 @@ class PatientsController:
         form.clear_button.clicked.connect(lambda: clearFields())
         form.cancel_button.clicked.connect(lambda: form.close())
 
-    def dialog_delete_patient(self, popup, id):
+    def dialog_archive_patient(self, popup, id):
         prompt = ConfirmDialog(popup)
         prompt.show()
+        prompt.header_label.setText("Archive patient?")
+        prompt.confirm_button.setStyleSheet('#confirm_button{background: white;border-radius: 6px;border: 1px solid #A91B0D;color:#A91B0D;}#confirm_button:hover {background: rgba(169, 27, 13, 50);}#confirm_button:pressed {background: rgba(169, 27, 13, 70);}')
         prompt.confirm.connect(lambda: conf())
 
         def conf():
-            self.db.patients_db.delete_patient(id)
-            self.page.feedback_label.setText('Deleted PatientID: ' + str(id))
+            self.db.patients_db.archive_patient(id)
+            self.page.feedback_label.setText('Archived PatientID: ' + str(id))
             popup.close()
             self.populate_patients_list()
 

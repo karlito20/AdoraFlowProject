@@ -16,7 +16,7 @@ class Patients():
     def get_short_allpatients_details(self):
         cursor = self.db.cursor()
         cursor.execute(
-        'SELECT patientID, CONCAT(first_name, " ", last_name), phone, email, birthdate, sex FROM patients'
+        'SELECT patientID, CONCAT(first_name, " ", last_name), phone, email, birthdate, sex FROM patients WHERE status <> "Archived"'
         )
         result = cursor.fetchall()
         cursor.close()
@@ -31,10 +31,10 @@ class Patients():
         cursor.close()
         return result
 
-    def delete_patient(self, patientID):
+    def archive_patient(self, patientID):
         cursor = self.db.cursor()
         cursor.execute(
-            'DELETE FROM patients WHERE patientID = %s', (patientID, )
+            'UPDATE patients SET status = "Archived" WHERE patientID = %s', (patientID, )
         )
         cursor.close()
 
@@ -65,7 +65,7 @@ class Patients():
     def get_patient_id_list(self):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT CONCAT(first_name, " ", last_name), patientID FROM patients'
+            'SELECT CONCAT(first_name, " ", last_name), patientID FROM patients WHERE status <> "Archived"'
         )
         result = cursor.fetchall()
         cursor.close()

@@ -102,6 +102,8 @@ class AppointmentsController:
             form.dentist_field.addItem(d[0], d[1])
         form.dentist_field.setCurrentIndex(-1)
 
+        form.date_field.setDate(self.page.calendar_widget.selectedDate())
+
     def dialog_new_appointment(self, form, data):
         prompt = ConfirmDialog(form)
         prompt.show()

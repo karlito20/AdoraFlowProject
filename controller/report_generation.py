@@ -12,7 +12,6 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 
 
-
 class ReportsController:
     def __init__(self, reports_page, mainWindow_controller):
         self.page = reports_page
@@ -187,7 +186,7 @@ class ReportsController:
             ['Total Revenue', f'{invoice_summary["total_revenue"]:,.2f} PHP'],
         ]
 
-        summary_table = Table(invoice_summary_table_data, colWidths=[260, 260])
+        summary_table = Table(invoice_summary_table_data, colWidths=[200, 200])
         summary_table.hAlign = 'LEFT'
 
         standard_tbl_style = TableStyle([
@@ -199,7 +198,6 @@ class ReportsController:
             ('FONTSIZE', (0, 0), (-1, 0), 10),
             ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
             ('TOPPADDING', (0, 0), (-1, 0), 8),
-            ('GRID', (0, 0), (-1, -1), 0.5, colors.lightgrey),
             ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, acc_color]),
             ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
             ('FONTSIZE', (0, 1), (-1, -1), 9),
