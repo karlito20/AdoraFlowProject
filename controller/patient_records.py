@@ -147,7 +147,7 @@ class PatientsController:
 
         def conf():
             self.db.patients_db.add_patient(*data)
-            self.page.feedback_label.setText('Added patient: ' + data[1] + ' ' + data[2] + '.')
+            self.page.feedback_label.setText('Added patient:  ' + data[1] + ' ' + data[2] + '.')
             form.close()
             self.populate_patients_list()
 
@@ -158,7 +158,7 @@ class PatientsController:
 
         def conf():
             self.db.patients_db.edit_patient(*data)
-            self.page.feedback_label.setText('PatientID: ' + str(data[0]) + ' details changed.')
+            self.page.feedback_label.setText('PatientID:  ' + str(data[0]) + ' details changed.')
             form.close()
             self.populate_patients_list()
 

@@ -575,13 +575,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="feedback_label">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
@@ -593,6 +586,29 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="feedback_label">
+        <property name="font">
+         <font>
+          <family>Slate</family>
+          <pointsize>12</pointsize>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#feedback_label {
+	color: #EC5B13;
+	background: white;
+	text-decoration: underline;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLineEdit" name="search_input">

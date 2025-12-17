@@ -546,17 +546,18 @@
      <property name="bottomMargin">
       <number>12</number>
      </property>
-     <item alignment="Qt::AlignmentFlag::AlignLeft">
+     <item>
       <widget class="QLabel" name="feedback_label">
        <property name="font">
         <font>
          <family>Slate</family>
+         <pointsize>12</pointsize>
          <underline>true</underline>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">#feedback_label {
-	color: #367D77;
+	color: #EC5B13;
 	background: white;
 	text-decoration: underline;
 }
