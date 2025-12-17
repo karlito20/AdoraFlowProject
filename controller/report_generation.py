@@ -100,21 +100,17 @@ class ReportsController:
         )
 
     def full_report_to_pdf(self, path, data, date_range):
-        # --- configuration & Colors ---
-        # A professional color palette (Dark Teal & Slate Grey)
-        theme_color = HexColor('#367D77')  # Dark Blue/Teal for Headers
-        acc_color = HexColor('#DBF0EE')  # Light Blue for row banding
+
+        theme_color = HexColor('#367D77')  # headers
+        acc_color = HexColor('#DBF0EE')  # secondary
         header_text_color = colors.whitesmoke
 
-        # Page Setup (A4 width is approx 595.27 points)
-        # Margins: 36pt. Usable width approx 520pt.
         doc = SimpleDocTemplate(
             path, pagesize=A4, rightMargin=36, leftMargin=36, topMargin=36, bottomMargin=36
         )
 
         styles = getSampleStyleSheet()
 
-        # Custom Styles
         title_style = ParagraphStyle(
             'CustomTitle',
             parent=styles['Heading1'],
@@ -123,14 +119,12 @@ class ReportsController:
             textColor=theme_color,
             spaceAfter=10
         )
-
         subtitle_style = ParagraphStyle(
             'CustomSubtitle',
             parent=styles['Normal'],
             fontSize=10,
             textColor=colors.gray,
         )
-
         section_header_style = ParagraphStyle(
             'SectionHeader',
             parent=styles['Heading2'],
@@ -140,15 +134,12 @@ class ReportsController:
             spaceAfter=10,
             borderPadding=5,
             borderColor=colors.lightgrey,
-            borderWidth=0,  # Set to 1 if you want a box around headers
-            backColor=None  # Set to HexColor('#f0f0f0') for grey background
+            backColor=None
         )
 
         elements = []
 
-        # --- 1. Report Header Section ---
-        # We use a table for the header to neatly align Title (Left) and Date (Right)
-
+        # Header
         clinic_name = "AdoraFlow Dental Clinic Management System"
         emp_name = self.db.users_db.get_employee_name(self.mainWindow_controller.userid)
         emp_id = self.mainWindow_controller.userid
@@ -160,7 +151,7 @@ class ReportsController:
             Paragraph(f"Source: {clinic_name}", subtitle_style),
         ]
 
-        # Right side of header (Metadata)
+        # Right side of header
         meta_style = ParagraphStyle('Meta', parent=styles['Normal'], alignment=2, fontSize=9)  # Right align
         header_right = [
             Paragraph(f"<b>Date Range:</b> {date_range[0]} - {date_range[1]}", meta_style),
@@ -186,7 +177,7 @@ class ReportsController:
         elements.append(d)
         elements.append(Spacer(1, 20))
 
-        # --- 2. Summary Report ---
+        # Summary
         invoice_summary = data['summary']
         invoice_summary_table_data = [
             ['Key Metric', 'Value'],
@@ -196,23 +187,20 @@ class ReportsController:
             ['Total Revenue', f'{invoice_summary["total_revenue"]:,.2f} PHP'],
         ]
 
-        # Style for data tables
-        # Note: colWidths adjusted to fill page (Total ~520)
         summary_table = Table(invoice_summary_table_data, colWidths=[260, 260])
         summary_table.hAlign = 'LEFT'
 
-        # Standard Table Style Definition
         standard_tbl_style = TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), theme_color),  # Header Background
-            ('TEXTCOLOR', (0, 0), (-1, 0), header_text_color),  # Header Text
-            ('ALIGN', (0, 0), (-1, -1), 'LEFT'),  # Default Alignment
-            ('ALIGN', (1, 1), (-1, -1), 'RIGHT'),  # Right align numbers
-            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),  # Header Font
+            ('BACKGROUND', (0, 0), (-1, 0), theme_color),
+            ('TEXTCOLOR', (0, 0), (-1, 0), header_text_color),
+            ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+            ('ALIGN', (1, 1), (-1, -1), 'RIGHT'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
             ('FONTSIZE', (0, 0), (-1, 0), 10),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 8),  # Header Padding
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
             ('TOPPADDING', (0, 0), (-1, 0), 8),
-            ('GRID', (0, 0), (-1, -1), 0.5, colors.lightgrey),  # Thin Grid
-            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, acc_color]),  # Banding
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.lightgrey),
+            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, acc_color]),
             ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
             ('FONTSIZE', (0, 1), (-1, -1), 9),
         ])
@@ -223,14 +211,13 @@ class ReportsController:
         elements.append(summary_table)
         elements.append(Spacer(1, 20))
 
-        # --- 3. Revenue by Services ---
+        # Revenue by service
         elements.append(Paragraph('Financial Performance: Top Treatments', section_header_style))
 
         services_data = [['Service Name', 'Total Revenue (PHP)']]
         for row in data['revenue_by_service']:
             services_data.append([row[0], row[1]])
 
-        # Adjusted widths to fit page: 350 + 170 = 520
         rev_table = Table(services_data, colWidths=[350, 170])
         rev_table.hAlign = 'LEFT'
         rev_table.setStyle(standard_tbl_style)
@@ -238,14 +225,13 @@ class ReportsController:
         elements.append(rev_table)
         elements.append(Spacer(1, 20))
 
-        # --- 4. Popular Services ---
+        # Service by volume
         elements.append(Paragraph('Operational Volume: Most Performed Services', section_header_style))
 
         popular_services_data = [['Service Name', 'Volume (Count)']]
         for row in data['most_performed_services']:
             popular_services_data.append([row[0], row[1]])
 
-        # Adjusted widths
         pop_table = Table(popular_services_data, colWidths=[350, 170])
         pop_table.hAlign = 'LEFT'
         pop_table.setStyle(standard_tbl_style)
@@ -253,7 +239,7 @@ class ReportsController:
         elements.append(pop_table)
         elements.append(Spacer(1, 20))
 
-        # --- 5. Appointments by Status ---
+        # Appointment by status
         elements.append(Paragraph('Appointment Status Breakdown', section_header_style))
 
         apt_status_data = [['Current Status', 'Total Count']]
@@ -267,12 +253,10 @@ class ReportsController:
         elements.append(status_table)
         elements.append(Spacer(1, 30))
 
-        # --- Final Footer Note (Optional) ---
         footer_text = Paragraph(
             "<i>* This report contains confidential medical and financial data. Please handle with care.</i>",
             styles['Italic']
         )
         elements.append(footer_text)
 
-        # Build
         doc.build(elements)
