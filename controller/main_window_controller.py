@@ -1,14 +1,14 @@
 from PyQt6.QtCore import QDateTime, QTimer
 
-from controllers.appointments_controller import AppointmentsController
-from controllers.dashboard_controller import DashboardController
-from controllers.patients_controller import PatientsController
-from controllers.payment_controller import PaymentController
-from controllers.reports_controller import ReportsController
-from controllers.treatments_controller import TreatmentsController
-from controllers.user_access_controller import UserAccessController
-from views import *
-from views.page_elements import ConfirmDialog
+from controller.appointment_manager import AppointmentsController
+from controller.dashboard import DashboardController
+from controller.patient_records import PatientsController
+from controller.payment_manager import PaymentController
+from controller.report_generation import ReportsController
+from controller.patient_treatments import TreatmentsController
+from controller.useraccess_control import UserAccessController
+from view import *
+from view.page_elements import ConfirmDialog
 
 
 class MainWindowController:

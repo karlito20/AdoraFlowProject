@@ -78,7 +78,7 @@ class ReportsController:
 
     def refresh_page(self):
         self.update_piechart()
-        self.setup_labels()
+        self.setup()
 
     def generate_full_report(self):
         date_period = [str(self.page.start_date.text()), str(self.page.end_date.text())]

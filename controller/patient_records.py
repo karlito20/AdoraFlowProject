@@ -1,7 +1,7 @@
 from PyQt6.QtCore import QDate
 
-from views import PatientsListItem
-from views.page_elements import PatientDetailsPopup, PatientFormPopup, ConfirmDialog
+from view import PatientsListItem
+from view.page_elements import PatientDetailsPopup, PatientFormPopup, ConfirmDialog
 
 
 class PatientsController:

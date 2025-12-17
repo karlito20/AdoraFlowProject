@@ -123,20 +123,16 @@
            </property>
            <property name="styleSheet">
             <string notr="true">#edit_button {
-	background: white;
-	border-radius: 6px;
-	border: 1px solid #1F4744;
-	color: #1F4744;
-
+	color: #367D77;
+	background: transparent;
+	border: 0px;
 }
 
 #edit_button:hover {
-	background: #DBF0EE;	
+	text-decoration: underline;
 }
 
-#edit_button:pressed {
-	background: #B8E0DD;
-}</string>
+</string>
            </property>
            <property name="text">
             <string>Change Password</string>

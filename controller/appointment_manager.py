@@ -2,7 +2,7 @@ from datetime import datetime
 
 from PyQt6.QtCore import QDate, QTime
 
-from views.page_elements import AppointmentsListItem, AppointmentFormPopup, ConfirmDialog, ReschedulePopup, \
+from view.page_elements import AppointmentsListItem, AppointmentFormPopup, ConfirmDialog, ReschedulePopup, \
     RemoveAppointmentPopup
 
 
@@ -149,7 +149,6 @@ class AppointmentsController:
             self.db.appointments_db.update_appointment_status(id, reason)
             popup.close()
             self.populate_appointments_list()
-
 
     def search_appointments(self, text):
         for widget in self.appointment_widgets:

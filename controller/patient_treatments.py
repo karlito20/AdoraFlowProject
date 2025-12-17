@@ -1,6 +1,6 @@
 from datetime import datetime, date
 
-from views.page_elements import TreatmentsListItem, ConfirmDialog, ErrorDialog
+from view.page_elements import TreatmentsListItem, ConfirmDialog, ErrorDialog
 
 
 class TreatmentsController:

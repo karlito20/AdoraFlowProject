@@ -24,11 +24,11 @@ class LoginController:
             return
         self.userid = self.page.login_user_field.text()
         self.passwd = self.page.login_pass_field.text()
-        if self.db.validate_login(self.userid, self.passwd): self.login_success()
+        if self.db.users_db.validate_login(self.userid, self.passwd): self.login_success()
         else: self.login_fail()
 
     def login_success(self):
-        self.usertype = self.db.get_user_type(self.userid)
+        self.usertype = self.db.users_db.get_user_type(self.userid)
         self.page.close()
         self.application.show_mainwindow(self.userid, self.usertype) # Pass user id and type
 

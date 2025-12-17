@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>305</width>
-    <height>167</height>
+    <width>333</width>
+    <height>214</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,6 +42,18 @@ border: 3px solid #2E6B66;
 }</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="leftMargin">
+       <number>18</number>
+      </property>
+      <property name="topMargin">
+       <number>18</number>
+      </property>
+      <property name="rightMargin">
+       <number>18</number>
+      </property>
+      <property name="bottomMargin">
+       <number>18</number>
+      </property>
       <item>
        <widget class="QWidget" name="label_container" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -50,7 +62,7 @@ border: 3px solid #2E6B66;
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>20</pointsize>
+             <pointsize>25</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -112,7 +124,7 @@ border: 3px solid #2E6B66;
            <item>
             <widget class="QWidget" name="verticalWidget" native="true">
              <property name="styleSheet">
-              <string notr="true">background: white;
+              <string notr="true">
 color: #1D3533;</string>
              </property>
              <layout class="QVBoxLayout" name="input_container">

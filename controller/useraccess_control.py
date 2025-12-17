@@ -1,7 +1,7 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication
 
-from views.page_elements import UserAccessListItem, UserAccessFormPopup, ConfirmDialog
+from view.page_elements import UserAccessListItem, UserAccessFormPopup, ConfirmDialog
 
 
 class UserAccessController:

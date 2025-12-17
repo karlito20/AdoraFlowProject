@@ -36,28 +36,4 @@ class Database:
 
         return db
 
-    def validate_login(self, user, pswd):
-        cursor = self.db.cursor()
-        cursor.execute(
-            'SELECT employeeID, password FROM user_credentials '
-            'WHERE employeeID = %s AND password = %s',
-            (user, pswd)
-        )
-        result = cursor.fetchone()
-        cursor.close()
 
-        if result is None: return False
-        else: return True
-
-    def get_user_type(self, employeeID):
-        cursor = self.db.cursor()
-        cursor.execute(
-            'SELECT er.role_name '
-            'FROM employees e '
-            'LEFT JOIN employee_roles er ON (e.roleID=er.roleID) '
-            'WHERE e.employeeID = %s',
-            (int(employeeID),)
-        )
-        result = cursor.fetchone()
-        cursor.close()
-        return result[0]

@@ -678,7 +678,7 @@ padding-left: 20px;</string>
         </layout>
        </widget>
       </item>
-      <item>
+      <item alignment="Qt::AlignmentFlag::AlignRight">
        <widget class="QPushButton" name="viewdetails_button">
         <property name="maximumSize">
          <size>
@@ -696,20 +696,16 @@ padding-left: 20px;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">#viewdetails_button {
-background: white;
-
-border-radius: 6px;
-
-border: 1px solid #1F4744;
-
-color: #1F4744;
+	color: #367D77;
+	background: transparent;
+	border: 0px;
 }
+
 #viewdetails_button:hover {
-background: #DBF0EE;	
+	text-decoration: underline;
 }
-#viewdetails_button:pressed {
-background: #B8E0DD;
-}</string>
+
+</string>
         </property>
         <property name="text">
          <string>View details</string>

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>422</width>
-    <height>376</height>
+    <width>421</width>
+    <height>366</height>
    </rect>
   </property>
   <property name="palette">
@@ -499,16 +499,16 @@
     <number>12</number>
    </property>
    <property name="leftMargin">
-    <number>12</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
-    <number>12</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
-    <number>12</number>
+    <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>12</number>
+    <number>0</number>
    </property>
    <item>
     <widget class="QWidget" name="container_2" native="true">
@@ -520,6 +520,18 @@
 }</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <property name="leftMargin">
+       <number>18</number>
+      </property>
+      <property name="topMargin">
+       <number>18</number>
+      </property>
+      <property name="rightMargin">
+       <number>18</number>
+      </property>
+      <property name="bottomMargin">
+       <number>18</number>
+      </property>
       <item>
        <widget class="QWidget" name="header_container" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -530,7 +542,7 @@
           <number>14</number>
          </property>
          <property name="topMargin">
-          <number>6</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
@@ -540,7 +552,7 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>20</pointsize>
+             <pointsize>25</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -559,19 +571,6 @@
       <item>
        <widget class="QWidget" name="container" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
          <item alignment="Qt::AlignmentFlag::AlignRight">
           <widget class="QWidget" name="label_container" native="true">
            <property name="styleSheet">
@@ -653,7 +652,7 @@
           <widget class="QWidget" name="input_container" native="true">
            <property name="styleSheet">
             <string notr="true">color: #1D3533;
-background: white;
+
 padding-left: 5px;</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -680,6 +679,9 @@ padding-left: 5px;</string>
                 <pointsize>11</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background: white;</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -701,6 +703,9 @@ padding-left: 5px;</string>
                 <family>Slate</family>
                 <pointsize>11</pointsize>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: white;</string>
               </property>
               <property name="displayFormat">
                <string>yyyy-MM-d</string>
@@ -727,6 +732,9 @@ padding-left: 5px;</string>
                 <pointsize>11</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background: white;</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -748,6 +756,9 @@ padding-left: 5px;</string>
                 <family>Slate</family>
                 <pointsize>11</pointsize>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: white;</string>
               </property>
              </widget>
             </item>
@@ -771,23 +782,13 @@ padding-left: 5px;</string>
                 <pointsize>11</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background: white;</string>
+              </property>
              </widget>
             </item>
            </layout>
           </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </widget>
@@ -796,10 +797,10 @@ padding-left: 5px;</string>
        <widget class="QWidget" name="buttons_container" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <property name="topMargin">
-          <number>16</number>
+          <number>2</number>
          </property>
          <property name="rightMargin">
-          <number>30</number>
+          <number>14</number>
          </property>
          <item>
           <spacer name="horizontalSpacer_4">

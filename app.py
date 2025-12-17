@@ -1,10 +1,10 @@
 import sys
 
 from PyQt6.QtWidgets import QApplication
-from controllers import LoginController, MainWindowController
+from controller import LoginController, MainWindowController
 from model.database import Database
-from views.login import Login
-from views.main_window import MainWindow
+from view.login import Login
+from view.main_window import MainWindow
 
 
 class Application:

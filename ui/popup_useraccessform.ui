@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>347</width>
-    <height>253</height>
+    <width>374</width>
+    <height>242</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,6 +37,18 @@
 }</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="leftMargin">
+       <number>18</number>
+      </property>
+      <property name="topMargin">
+       <number>18</number>
+      </property>
+      <property name="rightMargin">
+       <number>18</number>
+      </property>
+      <property name="bottomMargin">
+       <number>18</number>
+      </property>
       <item>
        <widget class="QWidget" name="header" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout">
@@ -45,13 +57,13 @@
            <property name="font">
             <font>
              <family>Slate Medium</family>
-             <pointsize>16</pointsize>
+             <pointsize>25</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">#header_label {
 	color: rgb(60, 60, 60);
-	letter-spacing: 1px;
+
 }</string>
            </property>
            <property name="text">

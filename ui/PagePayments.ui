@@ -588,20 +588,20 @@ border: 1px solid gray;</string>
        <widget class="QPushButton" name="pending_button">
         <property name="minimumSize">
          <size>
-          <width>80</width>
-          <height>25</height>
+          <width>70</width>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>80</width>
-          <height>25</height>
+          <width>70</width>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
          <font>
           <family>Slate</family>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="cursor">
@@ -624,20 +624,20 @@ border: 1px solid gray;</string>
        <widget class="QPushButton" name="paid_button">
         <property name="minimumSize">
          <size>
-          <width>80</width>
-          <height>25</height>
+          <width>70</width>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>80</width>
-          <height>25</height>
+          <width>70</width>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
          <font>
           <family>Slate</family>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="cursor">
@@ -673,7 +673,7 @@ border: 1px solid gray;</string>
         <property name="font">
          <font>
           <family>Slate</family>
-          <pointsize>12</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="cursor">

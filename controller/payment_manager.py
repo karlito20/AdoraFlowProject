@@ -2,7 +2,7 @@ from PyQt6.QtCore import QMarginsF, QPoint
 from PyQt6.QtGui import QPainter, QPageSize, QPdfWriter, QPageLayout, QColor, QRegion
 from PyQt6.QtWidgets import QWidget, QFileDialog
 
-from views.page_elements import InvoiceListItem, PaymentFormPopup, ConfirmDialog, ReceiptPopup
+from view.page_elements import InvoiceListItem, PaymentFormPopup, ConfirmDialog, ReceiptPopup
 
 
 class PaymentController:
@@ -39,7 +39,7 @@ class PaymentController:
 
             def handle_status_variations():
                 if str(item[6]) == 'Paid':
-                    l.cont6.setStyleSheet('#cont6 {background-color: #F0FDFA; border: 1px solid #B8E0DD; border-radius: 15px;}')
+                    l.cont6.setStyleSheet('#cont6 {background-color: #F0FDFA; border: 1px solid #B8E0DD; border-radius: 10px;}')
                     l.status_label.setStyleSheet('background-color: #F0FDFA; color: #2E6B66;')
                     l.action_button.setText('View\nReceipt')
                     l.action_button.setStyleSheet('#action_button{color:#367d77;background:transparent;border:0px;}#action_button:hover{text-decoration:underline;}')

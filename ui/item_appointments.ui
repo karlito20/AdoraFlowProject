@@ -619,21 +619,16 @@
            </property>
            <property name="styleSheet">
             <string notr="true">#resched_button {
-	background: white;
-	border-radius: 6px;
+	color: #367D77;
+	background: transparent;
 	border: 0px;
-	color: #1F4744;
-	text-align: right;
-
 }
 
 #resched_button:hover {
 	text-decoration: underline;
 }
 
-#resched_button:pressed {
-	text-decoration: underline;
-}</string>
+</string>
            </property>
            <property name="text">
             <string>Reschedule</string>
@@ -658,22 +653,17 @@
            </property>
            <property name="styleSheet">
             <string notr="true">#remove_button {
-	background: white;
-	border-radius: 6px;
+	color: #367D77;
+	background: transparent;
 	border: 0px;
-	color: #1F4744;
 	text-align: right;
-
-
 }
 
 #remove_button:hover {
 	text-decoration: underline;
 }
 
-#remove_button:pressed {
-	text-decoration: underline;
-}</string>
+</string>
            </property>
            <property name="text">
             <string>Remove</string>

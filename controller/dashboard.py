@@ -1,6 +1,6 @@
 from datetime import datetime
-from views import DashboardListItem
-from views.page_elements import CardPopup
+from view import DashboardListItem
+from view.page_elements import CardPopup
 
 
 class DashboardController:
