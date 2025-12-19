@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>712</width>
+    <width>784</width>
     <height>65</height>
    </rect>
   </property>
@@ -75,8 +75,20 @@
       </property>
       <item>
        <widget class="QWidget" name="cont1" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+         <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="id_label">
            <property name="font">
             <font>
@@ -98,6 +110,18 @@
       </item>
       <item>
        <widget class="QWidget" name="cont2" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>110</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item alignment="Qt::AlignmentFlag::AlignLeft">
           <widget class="QLabel" name="name_label">
@@ -120,17 +144,30 @@
       </item>
       <item>
        <widget class="QWidget" name="cont3" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item alignment="Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="service_label">
            <property name="font">
             <font>
              <family>Slate</family>
-             <pointsize>10</pointsize>
+             <pointsize>12</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(60, 60, 60);</string>
+            <string notr="true">color: #607473;
+</string>
            </property>
            <property name="text">
             <string>[service]</string>
@@ -142,16 +179,30 @@
       </item>
       <item>
        <widget class="QWidget" name="cont4" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item alignment="Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="date_label">
            <property name="font">
             <font>
              <family>Slate</family>
+             <pointsize>12</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(60, 60, 60);</string>
+            <string notr="true">color: #607473;
+</string>
            </property>
            <property name="text">
             <string>[date]</string>
@@ -163,6 +214,18 @@
       </item>
       <item>
        <widget class="QWidget" name="cont5" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item alignment="Qt::AlignmentFlag::AlignVCenter">
           <widget class="QLabel" name="amount_label">

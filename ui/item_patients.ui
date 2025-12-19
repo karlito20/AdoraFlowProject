@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>601</width>
+    <width>804</width>
     <height>65</height>
    </rect>
   </property>
@@ -542,7 +542,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding-left: 15px;</string>
+         <string notr="true"/>
         </property>
         <layout class="QVBoxLayout" name="info_container_1">
          <property name="topMargin">
@@ -588,7 +588,7 @@
        <widget class="QWidget" name="info_2_container" native="true">
         <property name="minimumSize">
          <size>
-          <width>150</width>
+          <width>180</width>
           <height>0</height>
          </size>
         </property>

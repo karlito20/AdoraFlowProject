@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>229</width>
-    <height>114</height>
+    <width>236</width>
+    <height>122</height>
    </rect>
   </property>
   <property name="palette">
@@ -570,24 +570,27 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">#confirm_button {
-	background: white;
+           <string notr="true">
+#confirm_button {
 	border-radius: 6px;
-	border: 1px solid #1F4744;
-	color: #1F4744;
-
+	color: white;
+	border: 2px solid #1F4744;
+	padding: 5px;
+	background: #2E6B66;
 }
 
 #confirm_button:hover {
-	background: #2E6B66;
+	border-radius: 6px;
 	color: white;
-	border: 1px solid #367D77;
-}
+	border: 2px solid #2E6B66;
+	padding: 5px;
+	background: #367D77;
 
+}
 #confirm_button:pressed {
-	background: #DBF0EE;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	background: white;
+	color: #2E6B66;
+	border: 2px solid #2E6B66;
 }</string>
           </property>
           <property name="text">
@@ -613,26 +616,25 @@
           </property>
           <property name="styleSheet">
            <string notr="true">#cancel_button {
+	background: white;
 	border-radius: 6px;
-	color: white;
-	border: 2px solid #1F4744;
-	padding: 5px;
-	background: #2E6B66;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+
 }
 
 #cancel_button:hover {
-	border-radius: 6px;
+	background: #2E6B66;
 	color: white;
-	border: 2px solid #2E6B66;
-	padding: 5px;
-	background: #367D77;
-
+	border: 1px solid #367D77;
 }
+
 #cancel_button:pressed {
-	background: white;
-	color: #2E6B66;
-	border: 2px solid #2E6B66;
-}</string>
+	background: #DBF0EE;
+	border: 1px solid #1F4744;
+	color: #1F4744;
+}
+</string>
           </property>
           <property name="text">
            <string>Cancel</string>

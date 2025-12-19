@@ -587,10 +587,10 @@ QPushButton#card1_val, #card2_val, #card3_val, #card4_val {
           <number>20</number>
          </property>
          <property name="leftMargin">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="rightMargin">
-          <number>0</number>
+          <number>1</number>
          </property>
          <item>
           <widget class="QWidget" name="card1" native="true">
@@ -791,6 +791,12 @@ Revenue (PHP)</string>
          <property name="spacing">
           <number>6</number>
          </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <property name="rightMargin">
@@ -850,7 +856,7 @@ Revenue (PHP)</string>
            <property name="spacing">
             <number>6</number>
            </property>
-           <item>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
             <widget class="QDateEdit" name="start_date">
              <property name="minimumSize">
               <size>
@@ -898,7 +904,7 @@ padding-left: 5px;
              </property>
             </widget>
            </item>
-           <item>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
             <widget class="QDateEdit" name="end_date">
              <property name="minimumSize">
               <size>

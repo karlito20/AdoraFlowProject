@@ -540,14 +540,14 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>610</width>
+       <width>16777215</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="styleSheet">
       <string notr="true">#info_box {
 	border: 1px solid #B8E0DD;
-	border-radius: 15px;
+	border-radius: 10px;
 	background: #F0FDFA;
 }</string>
      </property>

@@ -16,7 +16,7 @@ class Patients():
     def get_short_allpatients_details(self):
         cursor = self.db.cursor()
         cursor.execute(
-        'SELECT patientID, CONCAT(first_name, " ", last_name), phone, email, birthdate, sex FROM patients WHERE status <> "Archived"'
+        'SELECT patientID, CONCAT(first_name, " ", last_name), phone, email, birthdate, sex FROM patients WHERE status <> "Archived" ORDER BY first_name'
         )
         result = cursor.fetchall()
         cursor.close()

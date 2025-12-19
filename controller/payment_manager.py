@@ -16,8 +16,7 @@ class PaymentController:
         self.setup()
 
     def setup(self):
-        self.page.paid_button.clicked.connect(lambda: self.sort_status_invoice('Paid'))
-        self.page.pending_button.clicked.connect(lambda: self.sort_status_invoice('Pending'))
+        self.page.payment_filter.currentTextChanged.connect(self.sort_status_invoice)
         self.page.search_input.textChanged.connect(self.search_invoice)
         self.page.clear_button.clicked.connect(lambda: self.populate_invoice_list())
 
@@ -34,7 +33,7 @@ class PaymentController:
             l.name_label.setText(str(item[1]) + '\n' + str(item[2]))
             l.service_label.setText(str(item[3]))
             l.date_label.setText(str(item[4]))
-            l.amount_label.setText(str(item[5]))
+            l.amount_label.setText('PHP ' + str(item[5]))
             l.status_label.setText(str(item[6]))
 
             def handle_status_variations():
@@ -42,7 +41,6 @@ class PaymentController:
                     l.cont6.setStyleSheet('#cont6 {background-color: #F0FDFA; border: 1px solid #B8E0DD; border-radius: 10px;}')
                     l.status_label.setStyleSheet('background-color: #F0FDFA; color: #2E6B66;')
                     l.action_button.setText('View\nReceipt')
-                    l.action_button.setStyleSheet('#action_button{color:#367d77;background:transparent;border:0px;}#action_button:hover{text-decoration:underline;}')
 
             handle_status_variations()
             id = item[0]

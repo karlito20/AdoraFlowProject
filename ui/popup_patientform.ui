@@ -814,6 +814,11 @@ padding-left: 5px;</string>
                <height>30</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Slate</family>
+              </font>
+             </property>
              <property name="displayFormat">
               <string>yyyy-MM-dd</string>
              </property>

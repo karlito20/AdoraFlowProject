@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>759</width>
-    <height>516</height>
+    <width>704</width>
+    <height>521</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -563,7 +563,7 @@
        <number>2</number>
       </property>
       <property name="rightMargin">
-       <number>2</number>
+       <number>4</number>
       </property>
       <property name="bottomMargin">
        <number>6</number>
@@ -1020,13 +1020,13 @@ This Month</string>
           <number>6</number>
          </property>
          <property name="topMargin">
-          <number>6</number>
+          <number>8</number>
          </property>
          <property name="rightMargin">
           <number>6</number>
          </property>
          <property name="bottomMargin">
-          <number>6</number>
+          <number>8</number>
          </property>
          <item>
           <widget class="QLabel" name="sched_header_label">
@@ -1587,8 +1587,8 @@ This Month</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>721</width>
-              <height>213</height>
+              <width>666</width>
+              <height>214</height>
              </rect>
             </property>
             <property name="palette">

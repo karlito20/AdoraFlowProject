@@ -606,6 +606,12 @@
 }</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
       <property name="rightMargin">
        <number>6</number>
       </property>
@@ -618,7 +624,7 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding-left: 10px;
+         <string notr="true">padding-left: 15px;
 padding-top: 5px;
 	color: rgba(60, 60, 60, 200);
 </string>
@@ -649,7 +655,7 @@ padding-top: 5px;
            <x>0</x>
            <y>0</y>
            <width>699</width>
-           <height>132</height>
+           <height>128</height>
           </rect>
          </property>
          <property name="sizePolicy">

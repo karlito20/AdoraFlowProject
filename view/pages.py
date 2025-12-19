@@ -42,7 +42,6 @@ class AppointmentsPage(QWidget):
 
     def setup(self):
         apply_shadow(self.table_container)
-        apply_shadow(self.calendar_container)
         apply_shadow(self.add_appointment_button)
         apply_shadow(self.search_input)
 
@@ -78,8 +77,6 @@ class ReportsPage(QWidget):
         self.setup_linegraph()
 
     def setup(self):
-        apply_shadow(self.piechart_container)
-        apply_shadow(self.linegraph_container)
         apply_shadow(self.card1)
         apply_shadow(self.card2)
 

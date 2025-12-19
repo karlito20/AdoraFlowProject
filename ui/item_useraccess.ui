@@ -160,17 +160,17 @@
             <string notr="true">#delete_button {
 	background: white;
 	border-radius: 6px;
-	border: 1px solid #1F4744;
-	color: #1F4744;
+	border: 1px solid #A91B0D;
+	color: #A91B0D;
 
 }
 
 #delete_button:hover {
-	background: #DBF0EE;	
+	background: rgba(169, 27, 13, 50);	
 }
 
 #delete_button:pressed {
-	background: #B8E0DD;
+	background: rgba(169, 27, 13, 70);
 }</string>
            </property>
            <property name="text">

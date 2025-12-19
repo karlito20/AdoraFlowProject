@@ -75,7 +75,6 @@ class RemoveAppointmentPopup(QDialog):
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
-
 class UserAccessListItem(QWidget):
     def __init__(self):
         super().__init__()
