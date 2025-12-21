@@ -1,5 +1,6 @@
 from PyQt6.QtCore import QDateTime, QTimer
 
+from controller.auth import verify_password
 from model.database import Database
 
 
@@ -23,8 +24,9 @@ class LoginController:
             self.page.login_feedback.setStyleSheet('color: rgb(220, 0, 0);')
             return
         self.userid = self.page.login_user_field.text()
-        self.passwd = self.page.login_pass_field.text()
-        if self.db.users_db.validate_login(self.userid, self.passwd): self.login_success()
+        self.passwd = self.page.login_pass_field.text() # from UI plain text
+
+        if verify_password(self.passwd, self.db.users_db.get_hashed_pw(self.userid)): self.login_success()
         else: self.login_fail()
 
     def login_success(self):

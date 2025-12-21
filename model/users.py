@@ -2,18 +2,15 @@ class Users:
     def __init__(self, db):
         self.db = db
 
-    def validate_login(self, user, pswd):
+    def get_hashed_pw(self, user):
         cursor = self.db.cursor()
         cursor.execute(
-            'SELECT employeeID, password FROM user_credentials '
-            'WHERE employeeID = %s AND password = %s',
-            (user, pswd)
+            'SELECT password FROM user_credentials '
+            'WHERE employeeID = %s', (user,)
         )
         result = cursor.fetchone()
         cursor.close()
-
-        if result is None: return False
-        else: return True
+        return result[0]
 
     def get_user_type(self, employeeID):
         cursor = self.db.cursor()

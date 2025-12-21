@@ -1,7 +1,7 @@
 from PyQt6.QtCore import QDate
 
 from view import PatientsListItem
-from view.page_elements import PatientDetailsPopup, PatientFormPopup, ConfirmDialog
+from view.page_elements import PatientDetailsPopup, PatientFormPopup, ConfirmDialog, FeedbackPopupDialog
 
 
 class PatientsController:
@@ -136,7 +136,10 @@ class PatientsController:
 
         def conf():
             self.db.patients_db.archive_patient(id)
-            #self.page.feedback_label.setText('Archived PatientID: ' + str(id))
+            prompt.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.show()
+            fb.message_label.setText(f"Archived PatientID: {str(id)}")
             popup.close()
             self.populate_patients_list()
 
@@ -147,8 +150,11 @@ class PatientsController:
 
         def conf():
             self.db.patients_db.add_patient(*data)
-            #self.page.feedback_label.setText('Added patient:  ' + data[1] + ' ' + data[2] + '.')
+            prompt.close()
             form.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.show()
+            fb.message_label.setText(f"Added patient: {data[1]} {data[2]}")
             self.populate_patients_list()
 
     def dialog_edit_patient(self, form, data):
@@ -158,7 +164,11 @@ class PatientsController:
 
         def conf():
             self.db.patients_db.edit_patient(*data)
-           # self.page.feedback_label.setText('PatientID: ' + str(data[0]) + '  details changed.')
+            form.parent.close()
+            prompt.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.show()
+            fb.message_label.setText(f"PatientID: {str(data[0])} details changed.")
             form.close()
             self.populate_patients_list()
 

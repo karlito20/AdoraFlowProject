@@ -1,5 +1,6 @@
 from PyQt6.QtCore import Qt
 
+from controller.auth import hash_password
 from view.page_elements import UserAccessListItem, UserAccessFormPopup, ConfirmDialog
 
 
@@ -25,6 +26,7 @@ class UserAccessController:
             id = item[3]
             p.delete_button.clicked.connect(lambda _, pid=id: self.dialog_delete_user(pid))
             p.edit_button.clicked.connect(lambda _, pid=id: self.show_modify_user_form(pid))
+        self.page.user_access_contents.addStretch(1)
 
     def clear_list(self):
         while self.page.user_access_contents.count():
@@ -41,7 +43,7 @@ class UserAccessController:
         def get_field_data():
             data = []
             data.append(form.user_field.currentData())
-            data.append(form.pass_field.text())
+            data.append(hash_password(form.pass_field.text()))
             return data
 
         form.save_button.clicked.connect(lambda: self.dialog_add_user_credentials(form, get_field_data()))
@@ -51,13 +53,12 @@ class UserAccessController:
         form = UserAccessFormPopup(self.page)
         form.show()
         data = self.db.users_db.get_user_credentials(id)
-        form.pass_field.setText(data[1])
         form.user_field.setDisabled(True)
         form.user_field.setEditable(True)
         form.user_field.setCurrentText(str(id))
 
         def get_pwdfield_data():
-            return form.pass_field.text()
+            return hash_password(form.pass_field.text())
 
         form.save_button.clicked.connect(lambda: self.dialog_modify_user_credentials(form, id, get_pwdfield_data()))
         form.cancel_button.clicked.connect(lambda: form.close())

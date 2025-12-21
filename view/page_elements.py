@@ -25,6 +25,14 @@ class ConfirmDialog(QDialog):
         self.confirm_button.clicked.connect(lambda: self.confirm.emit())
         self.cancel_button.clicked.connect(lambda: self.close())
 
+class FeedbackPopupDialog(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        loadUi(resource_path('ui/popup_feedback.ui'), self)
+        self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.confirm_button.clicked.connect(lambda: self.close())
+
 class DashboardListItem(QWidget):
     def __init__(self):
         super().__init__()
@@ -45,6 +53,7 @@ class PatientDetailsPopup(QDialog):
 class PatientFormPopup(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.parent = parent
         loadUi(resource_path('ui/popup_patientform.ui'), self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
