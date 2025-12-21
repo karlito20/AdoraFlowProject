@@ -22,6 +22,7 @@ class ConfirmDialog(QDialog):
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
+        self.show()
         self.confirm_button.clicked.connect(lambda: self.confirm.emit())
         self.cancel_button.clicked.connect(lambda: self.close())
 
@@ -31,6 +32,7 @@ class FeedbackPopupDialog(QDialog):
         loadUi(resource_path('ui/popup_feedback.ui'), self)
         self.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.show()
         self.confirm_button.clicked.connect(lambda: self.close())
 
 class DashboardListItem(QWidget):

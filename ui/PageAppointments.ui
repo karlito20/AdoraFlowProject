@@ -541,29 +541,6 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLabel" name="feedback_label">
-        <property name="font">
-         <font>
-          <family>Slate</family>
-          <pointsize>12</pointsize>
-          <underline>true</underline>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#feedback_label {
-	color: #EC5B13;
-	background: white;
-	text-decoration: underline;
-}
-
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
       <item alignment="Qt::AlignmentFlag::AlignBottom">
        <widget class="QLineEdit" name="search_input">
         <property name="minimumSize">

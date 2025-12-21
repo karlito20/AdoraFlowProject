@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>507</height>
+    <height>555</height>
    </rect>
   </property>
   <property name="palette">
@@ -679,6 +679,22 @@
                 </widget>
                </item>
                <item>
+                <widget class="QLabel" name="label_4">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:  #607473;</string>
+                 </property>
+                 <property name="text">
+                  <string>Date:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QLabel" name="label_3">
                  <property name="font">
                   <font>
@@ -695,7 +711,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_4">
+                <widget class="QLabel" name="label_12">
                  <property name="font">
                   <font>
                    <family>Slate</family>
@@ -706,7 +722,23 @@
                   <string notr="true">color:  #607473;</string>
                  </property>
                  <property name="text">
-                  <string>Date:</string>
+                  <string>Price:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:  #607473;</string>
+                 </property>
+                 <property name="text">
+                  <string>Tax (12%):</string>
                  </property>
                 </widget>
                </item>
@@ -740,6 +772,7 @@
               <property name="font">
                <font>
                 <family>Slate</family>
+                <pointsize>11</pointsize>
                </font>
               </property>
               <property name="styleSheet">
@@ -773,6 +806,19 @@
                 </widget>
                </item>
                <item>
+                <widget class="QLabel" name="date_label">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>[date]</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QLabel" name="service_label">
                  <property name="font">
                   <font>
@@ -786,7 +832,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="date_label">
+                <widget class="QLabel" name="price_label">
                  <property name="font">
                   <font>
                    <family>Slate</family>
@@ -794,7 +840,20 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>[date]</string>
+                  <string>[price]</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="tax_label">
+                 <property name="font">
+                  <font>
+                   <family>Slate</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>[tax]</string>
                  </property>
                 </widget>
                </item>
@@ -967,6 +1026,12 @@
                  <property name="styleSheet">
                   <string notr="true">background: white;
 padding-left:5px;</string>
+                 </property>
+                 <property name="currentIndex">
+                  <number>-1</number>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Select</string>
                  </property>
                  <item>
                   <property name="text">

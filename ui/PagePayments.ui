@@ -623,7 +623,7 @@ border: 1px solid gray;
         <property name="styleSheet">
          <string notr="true">#clear_button {
 	color: #367D77;
-	background: white;
+	background: none;
 	border: 1px solid white;
 }
 

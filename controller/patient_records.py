@@ -129,7 +129,6 @@ class PatientsController:
 
     def dialog_archive_patient(self, popup, id):
         prompt = ConfirmDialog(popup)
-        prompt.show()
         prompt.header_label.setText("Archive patient?")
         prompt.confirm_button.setStyleSheet('#confirm_button{background: white;border-radius: 6px;border: 1px solid #A91B0D;color:#A91B0D;}#confirm_button:hover {background: rgba(169, 27, 13, 50);}#confirm_button:pressed {background: rgba(169, 27, 13, 70);}')
         prompt.confirm.connect(lambda: conf())
@@ -138,14 +137,12 @@ class PatientsController:
             self.db.patients_db.archive_patient(id)
             prompt.close()
             fb = FeedbackPopupDialog(self.page)
-            fb.show()
             fb.message_label.setText(f"Archived PatientID: {str(id)}")
             popup.close()
             self.populate_patients_list()
 
     def dialog_add_patient(self, form, data):
         prompt = ConfirmDialog(form)
-        prompt.show()
         prompt.confirm.connect(lambda: conf())
 
         def conf():
@@ -153,13 +150,11 @@ class PatientsController:
             prompt.close()
             form.close()
             fb = FeedbackPopupDialog(self.page)
-            fb.show()
             fb.message_label.setText(f"Added patient: {data[1]} {data[2]}")
             self.populate_patients_list()
 
     def dialog_edit_patient(self, form, data):
         prompt = ConfirmDialog(form)
-        prompt.show()
         prompt.confirm.connect(lambda: conf())
 
         def conf():
@@ -167,7 +162,6 @@ class PatientsController:
             form.parent.close()
             prompt.close()
             fb = FeedbackPopupDialog(self.page)
-            fb.show()
             fb.message_label.setText(f"PatientID: {str(data[0])} details changed.")
             form.close()
             self.populate_patients_list()

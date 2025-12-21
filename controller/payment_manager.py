@@ -2,7 +2,7 @@ from PyQt6.QtCore import QMarginsF, QPoint
 from PyQt6.QtGui import QPainter, QPageSize, QPdfWriter, QPageLayout, QColor, QRegion
 from PyQt6.QtWidgets import QWidget, QFileDialog
 
-from view.page_elements import InvoiceListItem, PaymentFormPopup, ConfirmDialog, ReceiptPopup
+from view.page_elements import InvoiceListItem, PaymentFormPopup, ConfirmDialog, ReceiptPopup, FeedbackPopupDialog
 
 
 class PaymentController:
@@ -75,9 +75,14 @@ class PaymentController:
 
         form.invoiceid_label.setText(str(details[0]))
         form.name_label.setText(details[1])
-        form.service_label.setText(details[2])
         form.date_label.setText(str(details[3]))
-        form.amount_label.setText(str(details[4]) + ' PHP')
+        form.service_label.setText(details[2])
+        form.price_label.setText(str(details[4]) + ' PHP')
+        tax = 0.12
+        tax_amount = details[4] * tax
+        amount_due = tax_amount + details[4]
+        form.tax_label.setText(str(f'{tax_amount:.2f}') + ' PHP')
+        form.amount_label.setText(str(details[4] + details[4]*0.12) + ' PHP')
 
         def check_amount(text):
             try:
@@ -107,19 +112,20 @@ class PaymentController:
                 form.method_field.currentText()
                 ]
 
-        form.amount_field.setText(str(details[4]))
+        form.amount_field.setText(str(amount_due))
         form.amount_field.textChanged.connect(check_amount)
         form.save_button.clicked.connect(lambda _, : self.dialog_add_payment(form, get_data()))
         form.cancel_button.clicked.connect(lambda: form.close())
 
     def dialog_add_payment(self, form, data=None):
         prompt = ConfirmDialog(form)
-        prompt.show()
         prompt.confirm.connect(lambda: conf())
         def conf():
             self.db.invoices_db.pay_invoice(*data)
             prompt.close()
             form.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.message_label.setText('Payment successful.')
             self.populate_invoice_list()
             self.mainWindow_controller.reports_controller.refresh_page()
 

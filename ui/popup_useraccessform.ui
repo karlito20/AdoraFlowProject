@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>374</width>
+    <width>393</width>
     <height>242</height>
    </rect>
   </property>
@@ -129,7 +129,7 @@
                <string notr="true">color: #1D3533;</string>
               </property>
               <property name="text">
-               <string>Password:</string>
+               <string>New Password:</string>
               </property>
              </widget>
             </item>

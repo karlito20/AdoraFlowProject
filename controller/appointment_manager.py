@@ -3,7 +3,7 @@ from datetime import datetime
 from PyQt6.QtCore import QDate, QTime
 
 from view.page_elements import AppointmentsListItem, AppointmentFormPopup, ConfirmDialog, ReschedulePopup, \
-    RemoveAppointmentPopup
+    RemoveAppointmentPopup, FeedbackPopupDialog
 
 
 class AppointmentsController:
@@ -106,13 +106,14 @@ class AppointmentsController:
 
     def dialog_new_appointment(self, form, data):
         prompt = ConfirmDialog(form)
-        prompt.show()
         prompt.confirm.connect(lambda: conf())
         def conf():
             self.db.appointments_db.add_new_appointment(*data)
+            prompt.close()
             form.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.message_label.setText(f'New appointment added for PatientID: {data[1]}')
             self.populate_appointments_list()
-           # self.page.feedback_label.setText(f'New appointment added for PatientID: {data[1]}')
 
     def show_resched_popup(self, id):
         form = ReschedulePopup(self.page)
@@ -135,13 +136,14 @@ class AppointmentsController:
 
     def dialog_update_appointment_date_time(self, form, id, data):
         prompt = ConfirmDialog(form)
-        prompt.show()
         prompt.confirm.connect(lambda: conf())
         def conf():
             self.db.appointments_db.update_appointment_date_time(id, *data)
+            prompt.close()
             form.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.message_label.setText(f'Rescheduled PatientID: {id}')
             self.populate_appointments_list()
-            #self.page.feedback_label.setText(f'Rescheduled PatientID: {id}')
 
     def dialog_remove_appointment(self, id):
         popup = RemoveAppointmentPopup(self.page)
@@ -152,8 +154,9 @@ class AppointmentsController:
         def conf():
             self.db.appointments_db.update_appointment_status(id, reason)
             popup.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.message_label.setText(f'Removed appointment for PatientID: {id}')
             self.populate_appointments_list()
-           # self.page.feedback_label.setText(f'Appointment removed for PatientID:  {id}')
 
     def search_appointments(self, text):
         for widget in self.appointment_widgets:

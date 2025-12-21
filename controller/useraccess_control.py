@@ -1,7 +1,7 @@
 from PyQt6.QtCore import Qt
 
 from controller.auth import hash_password
-from view.page_elements import UserAccessListItem, UserAccessFormPopup, ConfirmDialog
+from view.page_elements import UserAccessListItem, UserAccessFormPopup, ConfirmDialog, FeedbackPopupDialog
 
 
 class UserAccessController:
@@ -75,7 +75,10 @@ class UserAccessController:
         prompt.confirm.connect(lambda: conf())
         def conf():
             self.db.users_db.add_new_user(*data)
+            prompt.close()
             form.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.message_label.setText('User successfully added.')
             self.clear_list()
             self.populate_useraccess_list()
 
@@ -85,6 +88,8 @@ class UserAccessController:
         prompt.confirm.connect(lambda: conf())
         def conf():
             prompt.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.message_label.setText('User access revoked.')
             self.db.users_db.remove_user(id)
             self.clear_list()
             self.populate_useraccess_list()
@@ -97,3 +102,5 @@ class UserAccessController:
             self.db.users_db.update_user_credentials(id, pwd)
             prompt.close()
             form.close()
+            fb = FeedbackPopupDialog(self.page)
+            fb.message_label.setText('Successfully updated.')
